@@ -1,3 +1,12 @@
+# Site settings
+title: Buomsoo Kim
+description: "Buomsoo Kim's Homepage"
+url: "http://buomsoo-kim.github.io"
+author:
+  name: "Buomsoo Kim"
+  email: "buomsookim@email.arizona.edu"
+  url: "http://buomsoo-kim.github.io"
+
 # Setup
 name:         Project or Site name (Architect Theme)
 tagline:      A responsive theme for your project on GitHub Pages
