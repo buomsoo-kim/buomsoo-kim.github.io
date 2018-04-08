@@ -1,4 +1,4 @@
-# About
+# Site settings
 title: Buomsoo Kim
 description: I am Research Associate at INSITE: Center for Business Intelligence & Analytics, University of Arizona. My research interests comprise natural language processing, deep learning, and reinforcement learning.
 url: "https://buomsoo-kim.github.io/"
@@ -6,7 +6,6 @@ author:
     name: "Buomsoo Kim"
     email: "buomsookim@email.arizona.edu"
     url: "https://buomsoo-kim.github.io/"
-
 
 # Setup
 name:         Project or Site name (Architect Theme)
