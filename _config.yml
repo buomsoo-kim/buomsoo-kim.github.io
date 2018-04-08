@@ -1,6 +1,10 @@
 # Site settings
 title: Buomsoo Kim
+<<<<<<< HEAD
 description: "I am Research Associate at INSITE: Center for Business Intelligence + Analytics, University of Arizona. My research interests comprise natural language processing, deep learning, and reinforcement learning."
+=======
+description: "I am Research Associate at INSITE: Center for Business Intelligence & Analytics, University of Arizona. My research interests comprise natural language processing, deep learning, and reinforcement learning."
+>>>>>>> 5ba766e6d15a153790d9e8fc3f67f608d52b2115
 url: "https://buomsoo-kim.github.io/"
 author:
     name: "Buomsoo Kim"
