@@ -55,9 +55,7 @@ category_page: '/blog/categories/'
 hero:
   image: /public/img/photo.jpg
   caption: Original Artwork &copy; <a href="https://www.pexels.com/photo/business-computer-connection-contemporary-450035/">Mateusz Dach</a>
-  image: /public/img/we_will_be_giants_by_yalestewart.jpg
-  caption: Original Artwork &copy; 
-
+  
 # Puglins
 mathjax: true # whether support mathjax
 google_analytics_token: 'UA-00000000-1' # leave blank if you don't want google analytics
