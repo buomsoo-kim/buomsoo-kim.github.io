@@ -2,7 +2,7 @@
 title: Buomsoo Kim
 tagline: 'Buomsoo Kim'
 description: ''
-baseurl: ''
+baseurl: 'http://buomsoo-kim.github.io/'
 url: 'http://buomsoo-kim.github.io'
 logo: '/public/logo.png'
 
@@ -46,15 +46,15 @@ nav:
   About:          
     - '/about/'
   Github Project: 
-    - 'http://buomsoo-kim.github.io/'
+    - 'http://github.com/buomsoo-kim'
 
 # Where are tags and categories displayed
 tag_page: '/blog/tags/'
 category_page: '/blog/categories/'
 
 hero:
-  image: /public/img/we_will_be_giants_by_yalestewart.jpg
-  caption: Original Artwork &copy; <a href="http://yalestewart.deviantart.com/art/We-Will-Be-Giants-370176475">Yale Stewart</a>
+  image: /public/img/wallpaper.jpg
+  caption: Original Artwork &copy; <a href="https://www.pexels.com/photo/business-computer-connection-contemporary-450035/">Mateusz Dach</a>
 
 # Puglins
 mathjax: true # whether support mathjax
