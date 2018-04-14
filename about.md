@@ -2,7 +2,7 @@
 layout: page
 title: About
 ---
-<img src ="/public/img/profile.jpg" style="width:200px;"/> 
+<img src ="/public/img/profile.jpg" width = "50px"/> 
 
 Hello there!
 
