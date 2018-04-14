@@ -2,7 +2,7 @@
 layout: page
 title: About
 ---
-<img src ="/public/img/profile.jpg" width = "600px"/> 
+<img src ="/public/img/profile.jpg" width = "600px"/ align = "middle"> 
 
 # About
 
