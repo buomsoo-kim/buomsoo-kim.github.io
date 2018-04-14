@@ -2,7 +2,7 @@
 layout: page
 title: About
 ---
-![alt text](/public/img/profile.jpg =250x)
+<img src ="/public/img/profile.jpg" style="width:200px;"/> 
 Hello there!
 
 <p class="message">
