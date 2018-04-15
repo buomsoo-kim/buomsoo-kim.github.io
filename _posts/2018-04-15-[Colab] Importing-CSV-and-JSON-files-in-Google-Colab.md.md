@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Importing local files in Google Colab
+title: [Colab] Importing local files in Google Colab
 category: Python
 tags: [Python, Colab, Colaboratory]
 ---
@@ -23,19 +23,19 @@ Then use ```files.upload()``` function to upload CSV or TXT file.
 You could select the file by clicking the grey button and choose the file by clicking.
 
 <p align = "center">
-<img src ="/data/images/2018-04-15/7.png" width = "600px"/>
+<img src ="/data/images/2018-04-15/7.PNG" width = "600px"/>
 </p>
 
 Uploaded file is in Python dictionary format, with ```key``` as name of uploaded file and corresponding ```value``` as the contents of the file.
 
 <p align = "center">
-<img src ="/data/images/2018-04-15/8.png" width = "600px"/>
+<img src ="/data/images/2018-04-15/8.PNG" width = "600px"/>
 </p>
 
 Note that in this case, each line is separated by ```\r\n```.
 
 <p align = "center">
-<img src ="/data/images/2018-04-15/9.png" width = "600px"/>
+<img src ="/data/images/2018-04-15/9.PNG" width = "600px"/>
 </p>
 
 ## 2. Decode file
@@ -43,7 +43,7 @@ Note that in this case, each line is separated by ```\r\n```.
 One way is to directly decode the contents using ```decode()``` function and separate each sentence using ```split()``` function. Result is a list with each element as contents in each line of the dataset.
 
 <p align = "center">
-<img src ="/data/images/2018-04-15/10.png" width = "600px"/>
+<img src ="/data/images/2018-04-15/10.PNG" width = "600px"/>
 </p>
 
 ## 3. Parse data
@@ -51,7 +51,7 @@ One way is to directly decode the contents using ```decode()``` function and sep
 We can further separate each features in line using ```split()``` function again.
 
 <p align = "center">
-<img src ="/data/images/2018-04-15/11.png" width = "600px"/>
+<img src ="/data/images/2018-04-15/11.PNG" width = "600px"/>
 </p>
 
 ## Using Pandas
@@ -60,13 +60,13 @@ Another way is to use ```pandas``` and ```io``` packages. This is slightly simpl
 First convert dataset into ```StringIO``` object.
 
 <p align = "center">
-<img src ="/data/images/2018-04-15/12.png" width = "600px"/>
+<img src ="/data/images/2018-04-15/12.PNG" width = "600px"/>
 </p>
 
 Then, parse the dataset using ```read_csv()``` function. Note that result is ```pandas dataframe```, instead of 2-D list like above method.
 
 <p align = "center">
-<img src ="/data/images/2018-04-15/13.png" width = "600px"/>
+<img src ="/data/images/2018-04-15/13.PNG" width = "600px"/>
 </p>
 
 <br>
@@ -79,7 +79,7 @@ When importing JSON files in Python, we fall back on ```json``` library.
 ## 1. Upload data
 
 <p align = "center">
-<img src ="/data/images/2018-04-15/14.png" width = "600px"/>
+<img src ="/data/images/2018-04-15/14.PNG" width = "600px"/>
 </p>
 
 ## 2. Decode file
@@ -87,7 +87,7 @@ When importing JSON files in Python, we fall back on ```json``` library.
 Decode and create ```StringIO``` object.
 
 <p align = "center">
-<img src ="/data/images/2018-04-15/15.png" width = "600px"/>
+<img src ="/data/images/2018-04-15/15.PNG" width = "600px"/>
 </p>
 
 ## 3. Parse file
@@ -96,7 +96,7 @@ JSON file can be easily parsed using ```json.loads()``` function.
 Result is Python dictionary, which is pretty similar data structure to JavaScript Object.
 
 <p align = "center">
-<img src ="/data/images/2018-04-15/16.png" width = "600px"/>
+<img src ="/data/images/2018-04-15/16.PNG" width = "600px"/>
 </p>
 
 <br>

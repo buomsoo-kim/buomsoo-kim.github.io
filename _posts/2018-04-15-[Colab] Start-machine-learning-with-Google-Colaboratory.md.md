@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Start machine learning with Google Colaboratory!
+title: [Colab] Start machine learning with Google Colaboratory!
 category: Python
 tags: [Python, Colab, Colaboratory]
 ---
@@ -12,7 +12,7 @@ It is based on Jupyter but does not require installation of Jupyter, or even Pyt
 You just need Google ID to use Google Colab service.
 
 <p align = "center">
-<img src ="/data/images/2018-04-15/0.png" width = "600px"/>
+<img src ="/data/images/2018-04-15/0.PNG" width = "600px"/>
 </p>
 
 # Reasons why you should use Google Colab
