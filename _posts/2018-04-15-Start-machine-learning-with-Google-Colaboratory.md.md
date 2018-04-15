@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [Colab] Start machine learning with Google Colaboratory!
+title: Start machine learning with Google Colaboratory!
 category: Python
 tags: [Python, Colab, Colaboratory]
 ---
