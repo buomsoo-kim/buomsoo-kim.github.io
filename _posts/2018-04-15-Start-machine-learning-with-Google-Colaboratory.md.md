@@ -5,15 +5,15 @@ category: Python
 tags: [Python, Colab, Colaboratory]
 ---
 
-<p align = "center">
-<img src ="/data/images/2018-04-15/0.png" width = "600px"/>
-</p>
-
 # Google Colaboratory (Google Colab)
 
 **Google Colab** is a free development tool for machine learning research and education.
 It is based on Jupyter but does not require installation of Jupyter, or even Python on your machine!
 You just need Google ID to use Google Colab service.
+
+<p align = "center">
+<img src ="/data/images/2018-04-15/0.png" width = "600px"/>
+</p>
 
 # Reasons why you should use Google Colab
 
