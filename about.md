@@ -15,9 +15,10 @@ My interests include, but are not limited to:
 * ```Deep Learning```
 * ```Reinforcement Learning```
 * ```Data Visualization```
+* ```Text Analytics```
 * ```Web```
 
-The aim of this web page is to organize and share my works from research, lectures, and projects. **Anyone is welcome to use and contribute to materials exhibited in this page. **
+The aim of this web page is to organize and share my works from research, lectures, and projects. <strong>Anyone is welcome to use and contribute to materials exhibited in this page. </strong>
 
 
 Also, I am an avid reader of (Evolutionary) Biology and Philosophy. My favorite authors are Richard Dawkins and Karl R. Popper.
