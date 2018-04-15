@@ -23,5 +23,5 @@ The aim of this web page is to organize and share my works from research, lectur
 
 Also, I am an avid reader of (Evolutionary) Biology and Philosophy. My favorite authors are Richard Dawkins and Karl R. Popper.
 
-> The method of science is the method of bold conjectures and ingenious and severe attempts to refute them. - Karl R. Popper (from Objective Knowledge - An Evolutionary Approach)
+> The method of science is the method of bold conjectures and ingenious and severe attempts to refute them. - Karl R. Popper (from <i>Objective Knowledge - An Evolutionary Approach</i>)
 
