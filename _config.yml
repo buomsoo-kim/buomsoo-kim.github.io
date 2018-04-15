@@ -15,7 +15,7 @@ kramdown:
 excerpt_separator: "<!-- more -->"
 sass:
   style: compressed
-  sass_dir: _scss    
+  sass_dir: _scss
 paginate: 5
 paginate_path: '/blog/page:num'
 permalink: pretty
@@ -31,21 +31,21 @@ author:
     linkedin:  http://www.linkedin.com/in/buomsoo-kim
     github:    https://github.com/buomsoo-kim
     # facebook:  <hide>
-    twitter:   
-    weibo:     
-    email:     
-    
+    twitter:
+    weibo:
+    email:
+
 # Navigation (2nd level links supported)
 nav:
-  Home:           
+  Home:
     - '/'
-  Blog:           
+  Blog:
     - '/blog/'
     - { Categories: '/blog/categories/' }
     - { Tags: '/blog/tags/' }
-  About:          
+  About:
     - '/about/'
-  Github Project: 
+  Github Project:
     - 'http://github.com/buomsoo-kim'
 
 # Where are tags and categories displayed
@@ -55,9 +55,8 @@ category_page: '/blog/categories/'
 hero:
   image: /public/img/front_page.jpg
   caption: Original Artwork &copy; <a href="https://pixabay.com/ko/%EB%B0%94-%EC%A7%80%EB%B0%A9%EC%9D%98-cong-%EC%95%84%EC%9D%BC%EB%9E%9C%EB%93%9C-%EC%95%84%EC%9D%B4-%EB%A6%AC-%EC%89%AC-%ED%8E%8D-%ED%8E%8D-%EB%B3%91-209148/"> Pixabay </a>
-  
+
 # Puglins
 mathjax: true # whether support mathjax
-google_analytics_token: 'UA-00000000-1' # leave blank if you don't want google analytics
+google_analytics_token: 'UA-117580622-1' # leave blank if you don't want google analytics
 disqus_short_name:  # leave blank if you don't want disqus
-
