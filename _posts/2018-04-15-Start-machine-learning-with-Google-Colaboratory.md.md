@@ -5,6 +5,10 @@ category: Python
 tags: [Python, Colab, Colaboratory]
 ---
 
+<p align = "center">
+<img src ="/data/images/2018-04-15/0.png" width = "600px"/>
+</p>
+
 # Google Colaboratory (Google Colab)
 
 **Google Colab** is a free development tool for machine learning research and education.
@@ -30,38 +34,45 @@ As the name suggests, Google Colab is suited for collaborating with others. You 
 
 # Google Colab 101
 
+## 1. Connect with Colab application
 
+If you are using Colab for the first time, you have to connect to the application.
+In any folder of your choice, press **[NEW] > [More] > [+ Connect more apps]**
 
-Lanyon is an unassuming [Jekyll](http://jekyllrb.com) theme that places content first by tucking away navigation in a hidden drawer. It's based on [Poole](http://getpoole.com), the Jekyll butler.
+<p align = "center">
+<img src ="/data/images/2018-04-15/1.png" width = "600px"/>
+</p>
 
-### Built on Poole
+Then in **[Connect apps to Drive]** window, search for *colaboratory*.
+By pressing **[+CONNECT]**, you will be able to add Colaboratory to your Google Drive apps.
 
-Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by [@mdo](https://twitter.com/mdo). Poole, and every theme built on it (like Lanyon here) includes the following:
+<p align = "center">
+<img src ="/data/images/2018-04-15/2.png" width = "600px"/>
+</p>
 
-* Complete Jekyll setup included (layouts, config, [404](/404), [RSS feed](/atom.xml), posts, and [example page](/about))
-* Mobile friendly design and development
-* Easily scalable text and component sizing with `rem` units in the CSS
-* Support for a wide gamut of HTML elements
-* Related posts (time-based, because Jekyll) below each post
-* Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)
+<p align = "center">
+<img src ="/data/images/2018-04-15/3.png" width = "600px"/>
+</p>
 
-### Lanyon features
+## 2. Create Colab file
 
-In addition to the features of Poole, Lanyon adds the following:
+Now, you can create Colab files in the same way you create Google Docs, Sheets, or Forms.
 
-* Toggleable sliding sidebar (built with only CSS) via **☰** link in top corner
-* Sidebar includes support for textual modules and a dynamically generated navigation with active link support
-* Two orientations for content and sidebar, default (left sidebar) and [reverse](https://github.com/poole/lanyon#reverse-layout) (right sidebar), available via `<body>` classes
-* [Eight optional color schemes](https://github.com/poole/lanyon#themes), available via `<body>` classes
+<p align = "center">
+<img src ="/data/images/2018-04-15/4.png" width = "600px"/>
+</p>
 
-[Head to the readme](https://github.com/poole/lanyon#readme) to learn more.
+By choosing *colaboratry*, new Colab file (actually *.ipynb* file in your Drive) will appear in new window.
 
-### Browser support
+<p align = "center">
+<img src ="/data/images/2018-04-15/5.png" width = "600px"/>
+</p>
 
-Lanyon is by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.
+## 3. Code & Enjoy!
 
-### Download
+Now with a new Colab file, you can start coding without any further ado.
+As you could see, many data science packages including NumPy, Pandas, and Tensorflow are ready-to-go in any Colab environment.
 
-Lanyon is developed on and hosted with GitHub. Head to the <a href="https://github.com/poole/lanyon">GitHub repository</a> for downloads, bug reports, and features requests.
-
-Thanks!
+<p align = "center">
+<img src ="/data/images/2018-04-15/6.png" width = "600px"/>
+</p>
