@@ -13,7 +13,7 @@ tags: [Python, Web Crawling, Text Mining]
 
 
 <p align = "center">
-<img src ="/data/images/2018-04-16/3.PNG" width = "800px"/>
+<img src ="/data/images/2018-04-16/3.png" width = "800px"/>
 </p>
 
 ## Gitub repository
@@ -35,7 +35,7 @@ To access all lecture materials, click [here](https://github.com/buomsoo-kim/Web
 4. Web Crawling - 4: (lab) [Daum Movie Crawling (using Splinter)](Web-Crawling-and-Text-mining-with-Python-in-Korean/src/6-Web-Crawling-4/web-crawling-4.ipynb)
 
 <p align = "center">
-<img src ="/data/images/2018-04-16/1.jpg" width = "600px"/>
+<img src ="/data/images/2018-04-16/1.JPG" width = "600px"/>
 </p>
 
 <br>
@@ -48,5 +48,5 @@ To access all lecture materials, click [here](https://github.com/buomsoo-kim/Web
 5. Text Analysis - 5: (lab) [Sentiment Analysis with Korean Movie Reviews](Web-Crawling-and-Text-mining-with-Python-in-Korean/src/11-Text-Analysis-5/text-analysis-5.ipynb)
 
 <p align = "center">
-<img src ="/data/images/2018-04-16/4.PNG" width = "600px"/>
+<img src ="/data/images/2018-04-16/4.JPG" width = "600px"/>
 </p>
