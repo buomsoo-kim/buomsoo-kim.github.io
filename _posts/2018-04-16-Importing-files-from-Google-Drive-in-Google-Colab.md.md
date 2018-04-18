@@ -1,52 +1,126 @@
 ---
 layout: post
-title: Importing files from Google Drive in Google Colab
+title: \[Colab\] Importing files from Google Drive in Google Colab
 category: Python
 tags: [Python, Colab, Colaboratory]
 ---
 
-# Opening files from 
+# Importing files from Google Drive
 
-* Lecture materials for SNU Big Data Academy / Urban Data Science Lab (UDSL) / etc
-* Materials are provided in Korean
-* Lecture Website: [SNU Big Data Academy](http://bdi.snu.ac.kr/?cat=54)
+In [last posting](https://buomsoo-kim.github.io/python/2018/04/15/Colab-Importing-CSV-and-JSON-files-in-Google-Colab.md/), we have figured out how to import files from local hard drive.
 
+In this posting, I will delineate how to import files directly from Google Drive. As you know Colab is based on Google Drive, so it is convenient to import files from Google Drive once you know the drills.
+
+**Note**: Contents of this posting is based on one of [Stackoverflow questions](https://stackoverflow.com/questions/46986398/import-data-into-google-colaboratory?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
+
+## 1. Create file in Google Drive
+
+Save file in any folder of your Google Drive. In my case, I put ```data.txt``` under ```Untitled folder```.
 
 <p align = "center">
-<img src ="/data/images/2018-04-16/3.png" width = "800px"/>
+<img src ="/data/images/2018-04-16/5.PNG" width = "600px"/>
 </p>
 
-## Gitub repository
-To access all lecture materials, click [here](https://github.com/buomsoo-kim/Web-Crawling-and-Text-mining-with-Python-in-Korean/)
+## 2. Get shareable link of your file
 
-## Contents
-
-### <Part 0> Preliminaries
-
-1. (lab) [Python Preliminaries](Web-Crawling-and-Text-mining-with-Python-in-Korean/src/1-Python-preliminaries/python-preliminaries.ipynb)
-2. (lecture) [Fundamentals of HTML & CSS](Web-Crawling-and-Text-mining-with-Python-in-Korean/ppts/2-HTML&CSS.pptx) / (lab) [HTML/CSS](https://github.com/buomsoo-kim/Web-Crawling-and-Text-mining-with-Python-in-Korean/tree/master/src/2-html%26css)
-
-<br>
-### <Part 1> Web Crawling
-
-1. Web Crawling - 1: (lecture) [Urllib & BeautifulSoup](Web-Crawling-and-Text-mining-with-Python-in-Korean/ppts/3-Web-Crawling-1 (urllib&bs4).pptx) / (lab) [Daum Dictionary Crawling](https://github.com/buomsoo-kim/Web-Crawling-and-Text-mining-with-Python-in-Korean/blob/master/src/3-Web-Crawling-1/web-crawling-1.ipynb)
-2. Web Crawling - 2: (lab) [Daum Movie Crawling](https://github.com/buomsoo-kim/Web-Crawling-and-Text-mining-with-Python-in-Korean/blob/master/src/4-Web-Crawling-2/web-crawling-2.ipynb)
-3. Web Crawling - 3: (lecture) [Splinter](Web-Crawling-and-Text-mining-with-Python-in-Korean/src/5-Web-Crawling-3/web-crawling-3.ipynb) / (lab) [Dictionary.com Crawling](Web-Crawling-and-Text-mining-with-Python-in-Korean/src/5-Web-Crawling-3/web-crawling-3.ipynb)
-4. Web Crawling - 4: (lab) [Daum Movie Crawling (using Splinter)](Web-Crawling-and-Text-mining-with-Python-in-Korean/src/6-Web-Crawling-4/web-crawling-4.ipynb)
+One way to get access to your Google Drive file is via the shareable link. Press ```Get shareable link``` button and copy the link to your file.
 
 <p align = "center">
-<img src ="/data/images/2018-04-16/1.JPG" width = "600px"/>
+<img src ="/data/images/2018-04-16/6.PNG" width = "600px"/>
 </p>
 
-<br>
-### <Part 2> Text Analysis
+## 3. Get file ID
 
-1. Text Analysis - 1: (lecture) [Fundamentals of Text Analysis](Web-Crawling-and-Text-mining-with-Python-in-Korean/ppts/7-Text-Analysis-1.pptx) / (lab) [Text Data Processing (KoNlPy)](https://github.com/buomsoo-kim/Web-Crawling-and-Text-mining-with-Python-in-Korean/blob/master/src/7-Text-Analysis-1/text-analysis-1-.ipynb)
-2. Text Analysis - 2: (lab) [Text Data Processing (KoNlPy)](https://github.com/buomsoo-kim/Web-Crawling-and-Text-mining-with-Python-in-Korean/blob/master/src/8-Text-Analysis-2/text-analysis-2.ipynb)
-3. Text Analysis - 3: (lab) [Text Data Exploration (Nltk)](https://github.com/buomsoo-kim/Web-Crawling-and-Text-mining-with-Python-in-Korean/blob/master/src/9-Text-Analysis-3/text-analysis-3.ipynb)
-4. Text Analysis - 4: (lab) [Text Visualization (World Cloud & Network Graphs)](https://github.com/buomsoo-kim/Web-Crawling-and-Text-mining-with-Python-in-Korean/blob/master/src/10-Text-Analysis-4/text-analysis-4.ipynb)
-5. Text Analysis - 5: (lab) [Sentiment Analysis with Korean Movie Reviews](Web-Crawling-and-Text-mining-with-Python-in-Korean/src/11-Text-Analysis-5/text-analysis-5.ipynb)
+Then, we create file ID from the shareable linked obtained in **Step 2**.
+In doing so, we use JavaScript. First, open javascript console in your Chrome browser (Press ```Ctrl``` + ```Shift``` + ```J```).
 
 <p align = "center">
-<img src ="/data/images/2018-04-16/4.JPG" width = "600px"/>
+<img src ="/data/images/2018-04-16/7.PNG" width = "600px"/>
+</p>
+
+Then, type in below JavaScript code to obtain file ID.
+
+```javascript
+var url = "your_shareable_link_to_file"
+function getIdFromUrl(url) { return url.match(/[-\w]{25,}/); }
+```
+
+Now, remember the string that comes first in resulting list. This is the file ID that you are going to use when importing file in Colab.
+
+<p align = "center">
+<img src ="/data/images/2018-04-16/8.PNG" width = "600px"/>
+</p>
+
+
+## 4. Install PyDrive
+
+Now create and open any Google Colab document. First we need to install ```PyDrive```, which can be easily done with ```pip install``` command.
+
+```python
+!pip install PyDrive
+```
+
+<p align = "center">
+<img src ="/data/images/2018-04-16/13.PNG" width = "600px"/>
+</p>
+
+
+## 5. Import modules
+
+Some modules need to be imported in advance to create connection between Colab and Drive.
+
+```python
+from pydrive.auth import GoogleAuth
+from pydrive.drive import GoogleDrive
+from google.colab import auth
+from oauth2client.client import GoogleCredentials
+```
+
+## 6. Authenticate and create the PyDrive client
+
+```python
+auth.authenticate_user()
+gauth = GoogleAuth()
+gauth.credentials = GoogleCredentials.get_application_default()
+drive = GoogleDrive(gauth)
+```
+
+Authorize with your Google ID, and paste in the link that comes up and press ```Enter```!
+
+<p align = "center">
+<img src ="/data/images/2018-04-16/9.PNG" width = "600px"/>
+</p>
+
+<p align = "center">
+<img src ="/data/images/2018-04-16/10.PNG" width = "600px"/>
+</p>
+
+<p align = "center">
+<img src ="/data/images/2018-04-16/11.PNG" width = "600px"/>
+</p>
+
+## 7. Get the file
+
+Get the file using the Google Drive file ID that we created with JavaScript console in step 3.
+
+```python
+downloaded = drive.CreateFile({'id':"your_file_ID"})   # replace the id with id of file you want to access
+downloaded.GetContentFile('your_file_name.csv')        # replace the file name with your file
+```
+
+## 8. Read data
+
+Now using ```Pandas```, you can read data and save as ```DataFrame```. As my file is in ```csv``` format, I have used ```read_csv()``` function, but you can replace it with ```read_excel()``` if it is in ```xlsx``` format.
+
+```python
+import pandas as pd
+data = pd.read_csv('your_file_name.csv') 
+```
+
+## 9. Check & Finish
+
+Check if your file is uploaded well, and start your journey with data imported!
+
+<p align = "center">
+<img src ="/data/images/2018-04-16/12.PNG" width = "600px"/>
 </p>
