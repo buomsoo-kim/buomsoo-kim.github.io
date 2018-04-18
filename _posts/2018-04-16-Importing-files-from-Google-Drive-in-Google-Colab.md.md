@@ -1,6 +1,6 @@
 ---
 layout: post
-title: \[Colab\] Importing files from Google Drive in Google Colab
+title: <Colab> Importing files from Google Drive in Google Colab
 category: Python
 tags: [Python, Colab, Colaboratory]
 ---
@@ -124,3 +124,9 @@ Check if your file is uploaded well, and start your journey with data imported!
 <p align = "center">
 <img src ="/data/images/2018-04-16/12.PNG" width = "600px"/>
 </p>
+
+
+# Code
+
+Code in this post can be exhibited by below link. \
+* [link](https://drive.google.com/file/d/150f5uQ-Yr1ScbMOyLe4-9pOFJWaDNZdi/view?usp=sharing)
