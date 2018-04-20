@@ -48,7 +48,7 @@ Objective: 케라스로 다층 퍼셉트론 모델을 만들고, 이를 회귀(r
 - 손실 함수(loss function)과 평가 지표(evaluation metric)을 위해서는 예측치와 실제 값을 뺀 후에 제곱하여 평균한 평균 제곱 오차(MSE; Mean Squared Error)가 흔히 활용된다.
 
 <p align = "center">
-<img src ="https://stackoverflow.com/questions/44038581/mse-cost-function-for-training-neural-network" width = "400px"/>
+<img src ="https://i.stack.imgur.com/iSWyZ.png" width = "400px"/>
 </p>
 
 <br>
