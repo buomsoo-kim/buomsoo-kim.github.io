@@ -45,12 +45,13 @@ Objective: 케라스로 다층 퍼셉트론 모델을 만들고, 이를 회귀(r
 <img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Linear_regression.svg/1200px-Linear_regression.svg.png" width = "700px"/>
 </p>
 
-- 손실 함수(loss function)과 평가 지표(evaluation metric)을 위해서는 평균 제곱 오차(MSE; Mean Squared Error)가 흔히 활용된다.
+- 손실 함수(loss function)과 평가 지표(evaluation metric)을 위해서는 예측치와 실제 값을 뺀 후에 제곱하여 평균한 평균 제곱 오차(MSE; Mean Squared Error)가 흔히 활용된다.
 
 <p align = "center">
-<img src ="https://www.researchgate.net/figure/Mean-Squared-Error-formula-used-to-evaluate-the-user-model_fig1_221515860" width = "400px"/>
+<img src ="https://stackoverflow.com/questions/44038581/mse-cost-function-for-training-neural-network" width = "400px"/>
 </p>
 
+<br>
 ### Boston housing 데이터 셋 가져오기
 
 - 총 506개의 데이터 인스턴스(학습 데이터 404개, 검증 데이터 102개)를 포함
