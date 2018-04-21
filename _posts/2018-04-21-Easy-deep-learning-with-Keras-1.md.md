@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 케라스 기초 - 다층 퍼셉트론 1 (Regression with MLP)
+title: 케라스와 함께하는 쉬운 딥러닝 (1) - 다층 퍼셉트론 1 (Regression with MLP)
 category: Keras
 tags: [Python, Keras, Deep Learning, 케라스]
 ---
