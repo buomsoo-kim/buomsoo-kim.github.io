@@ -38,7 +38,7 @@ Objective: 케라스로 다층 퍼셉트론 모델을 만들고, 이를 분류(c
 
 - 총 569개의 데이터 인스턴스(양성 357개, 악성 212개)를 포함
 - 30개의 피쳐(feature)를 통해 각 데이터 인스턴스가 양성(benign)인지 악성(malign)인지를 "분류(classify)"한다.
-- documentation: http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_breast_cancer.html#sklearn.datasets.load_breast_cancer
+- [documentation](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_breast_cancer.html#sklearn.datasets.load_breast_cancer)
 
 ```python
 from sklearn.datasets import load_breast_cancer
@@ -62,7 +62,7 @@ print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
 
 - 회귀 과업 때와 동일하다. Sequential Model API를 통해 레이어가 하나하나 순서대로 추가되는 모델을 만들 수 있다
 - ```Sequential()```로 모델을 생성하며, 생성한 직후에는 아무런 레이어가 추가되지 않은 '빈 모델'이다. (```add()```함수로 레이어를 추가해야 함)
-- documentation: https://keras.io/getting-started/sequential-model-guide/
+- [documentation](https://keras.io/getting-started/sequential-model-guide/)
 
 ```python
 from keras.models import Sequential
@@ -99,8 +99,8 @@ model.add(Dense(1, activation = 'sigmoid'))
 ### 모델 컴파일
 
 - 케라스 모델은 학습 이전에 컴파일되어야 하며, 이 과정에서 손실 함수(loss function)와 최적화 방법(optimizer)가 구체화외더야 한다.
-- documentation (optmizers): https://keras.io/optimizers/
-- documentation (losses): https://keras.io/losses/
+- [documentation (optmizers)](https://keras.io/optimizers/)
+- [documentation (losses)](https://keras.io/losses/)
 
 ```python
 from keras import optimizers

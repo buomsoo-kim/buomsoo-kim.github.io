@@ -56,7 +56,7 @@ Objective: 케라스로 다층 퍼셉트론 모델을 만들고, 이를 회귀(r
 
 - 총 506개의 데이터 인스턴스(학습 데이터 404개, 검증 데이터 102개)를 포함
 - 13개의 피쳐(feature)를 통해 특정 위치에 있는 집들의 중앙값("the median values of the houses at a location")을 예측
-- documentation: https://keras.io/datasets/
+- [documentation](https://keras.io/datasets/)
 
 ```python
 from keras.datasets import boston_housing
@@ -73,7 +73,7 @@ print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
 
 - Sequential Model API를 통해 레이어가 하나하나 순서대로 추가되는 모델을 만들 수 있다
 - ```Sequential()```로 모델을 생성하며, 생성한 직후에는 아무런 레이어가 추가되지 않은 '빈 모델'이다. (```add()```함수로 레이어를 추가해야 함)
-- documentation: https://keras.io/getting-started/sequential-model-guide/
+- [documentation](https://keras.io/getting-started/sequential-model-guide/)
 
 ```python
 from keras.models import Sequential
@@ -108,8 +108,8 @@ model.add(Dense(1))
 ### 모델 컴파일
 
 - 케라스 모델은 학습 이전에 컴파일되어야 하며, 이 과정에서 손실 함수(loss function)와 최적화 방법(optimizer)가 구체화외더야 한다.
-- documentation (optmizers): https://keras.io/optimizers/
-- documentation (losses): https://keras.io/losses/
+- [documentation (optmizers)](https://keras.io/optimizers/)
+- [documentation (losses)](https://keras.io/losses/)
 
 ```python
 from keras import optimizers
