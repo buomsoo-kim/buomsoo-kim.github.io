@@ -185,4 +185,4 @@ mse:  81.9001105813
 
 # 전체 코드
 
-본 실습의 전체 코드는 [여기](Easy-deep-learning-with-Keras/1. MLP/1-Basics-of-MLP/1-Basics-of-MLP.ipynb)에서 열람하실 수 있습니다!
+본 실습의 전체 코드는 [여기](https://github.com/buomsoo-kim/Easy-deep-learning-with-Keras/blob/master/1.%20MLP/1-Basics-of-MLP/1-Basics-of-MLP.ipynb)에서 열람하실 수 있습니다!
