@@ -43,6 +43,7 @@ Then, type in below JavaScript code to obtain file ID.
 ```javascript
 var url = "your_shareable_link_to_file"
 function getIdFromUrl(url) { return url.match(/[-\w]{25,}/); }
+getIdFromUrl(url)
 ```
 
 Now, remember the string that comes first in resulting list. This is the file ID that you are going to use when importing file in Colab.
@@ -114,7 +115,7 @@ Now using ```Pandas```, you can read data and save as ```DataFrame```. As my fil
 
 ```python
 import pandas as pd
-data = pd.read_csv('your_file_name.csv') 
+data = pd.read_csv('your_file_name.csv')
 ```
 
 ## 9. Check & Finish

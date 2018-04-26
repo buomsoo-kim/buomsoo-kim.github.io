@@ -22,6 +22,11 @@ To upload file, ```files``` module under ```google.colab``` should be imported i
 Then use ```files.upload()``` function to upload CSV or TXT file.
 You could select the file by clicking the grey button and choose the file by clicking.
 
+```python
+from google.colab import files
+uploaded = files.upload()
+```
+
 <p align = "center">
 <img src ="/data/images/2018-04-15/7.PNG" width = "600px"/>
 </p>
@@ -42,6 +47,15 @@ Note that in this case, each line is separated by ```\r\n```.
 
 One way is to directly decode the contents using ```decode()``` function and separate each sentence using ```split()``` function. Result is a list with each element as contents in each line of the dataset.
 
+```python
+file_name = "data.txt"
+uploaded[file_name].decode("utf-8")
+```
+
+```python
+uploaded[file_name].decode("utf-8").split("\r\n")
+```
+
 <p align = "center">
 <img src ="/data/images/2018-04-15/10.PNG" width = "600px"/>
 </p>
@@ -49,6 +63,15 @@ One way is to directly decode the contents using ```decode()``` function and sep
 ## 3. Parse data
 
 We can further separate each features in line using ```split()``` function again.
+
+```python
+data = uploaded[file_name].decode("utf-8").split("\r\n")
+
+for i in range(len(data)):
+  data[i] = data[i].split(",")
+
+print(data)
+```
 
 <p align = "center">
 <img src ="/data/images/2018-04-15/11.PNG" width = "600px"/>
@@ -59,11 +82,22 @@ We can further separate each features in line using ```split()``` function again
 Another way is to use ```pandas``` and ```io``` packages. This is slightly simpler with high-level functions.
 First convert dataset into ```StringIO``` object.
 
+```python
+import pandas as pd
+import io
+
+io.StringIO(uploaded["data.txt"].decode("utf-8"))
+```
+
 <p align = "center">
 <img src ="/data/images/2018-04-15/12.PNG" width = "600px"/>
 </p>
 
 Then, parse the dataset using ```read_csv()``` function. Note that result is ```pandas dataframe```, instead of 2-D list like above method.
+
+```python
+pd.read_csv(io.StringIO(uploaded["data.txt"].decode("utf-8")))
+```
 
 <p align = "center">
 <img src ="/data/images/2018-04-15/13.PNG" width = "600px"/>
@@ -78,6 +112,12 @@ When importing JSON files in Python, we fall back on ```json``` library.
 
 ## 1. Upload data
 
+```python
+import json
+from google.colab import files
+uploaded = files.upload()
+```
+
 <p align = "center">
 <img src ="/data/images/2018-04-15/14.PNG" width = "600px"/>
 </p>
@@ -85,6 +125,11 @@ When importing JSON files in Python, we fall back on ```json``` library.
 ## 2. Decode file
 
 Decode and create ```StringIO``` object.
+
+```python
+file_name = "data.json"
+io.StringIO[file_name].decode("utf-8")
+```
 
 <p align = "center">
 <img src ="/data/images/2018-04-15/15.PNG" width = "600px"/>
@@ -94,6 +139,10 @@ Decode and create ```StringIO``` object.
 
 JSON file can be easily parsed using ```json.loads()``` function.
 Result is Python dictionary, which is pretty similar data structure to JavaScript Object.
+
+```python
+json.loads(uploaded[file_name].decode("utf-8"))
+```
 
 <p align = "center">
 <img src ="/data/images/2018-04-15/16.PNG" width = "600px"/>
