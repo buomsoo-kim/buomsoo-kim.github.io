@@ -31,12 +31,16 @@ CNN은 MLP에 합성곱 레이어(convolution layer)와 풀링 레이어(pooling
 - 풀링 레이어: 특정 영역에서 최대값만 추출하거나, 평균값을 추출하여 차원을 축소하는 역할을 한다.
 
 <p align = "center"><br>
-<img src ="/data/images/2018-04-26/cnn.png" width = "600px"/>
+<img src ="/data/images/2018-04-26/cnn.jpeg" width = "600px"/>
 </p>
 
 CNN은 MLP나 뒤에서 나올 순환형 신경망(RNN)에 비해 학습해야 할 파라미터의 개수가 상대적으로 적어 학습이 빠르다는 장점이 있다.
 
 2013년에 [AlexNet](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)이 제안되어 ImageNet 대회에서 획기적인 성적을 낸 이후로 CNN에 대한 연구가 활발히 되어 이제는 이미지 인식 뿐 아니라 [자연어처리](http://www.aclweb.org/anthology/D14-1181)에도 흔히 쓰이며, [CNN의 학습 과정을 해석]((https://arxiv.org/abs/1311.2901))하고 [시각화](https://distill.pub/2017/feature-visualization/)하려는 시도도 자주 등장하고 있다.
+
+p align = "center"><br>
+<img src ="/data/images/2018-04-26/convnet.jpeg" width = "600px"/>
+</p>
 
 ### Digits 데이터 셋 불러오기
 
@@ -45,7 +49,6 @@ CNN은 MLP나 뒤에서 나올 순환형 신경망(RNN)에 비해 학습해야 �
 - [Doc](http://scikit-learn.org/stable/auto_examples/datasets/plot_digits_last_image.html)
 
 ```python
-#
 import numpy as np
 import matplotlib.pyplot as plt
 
