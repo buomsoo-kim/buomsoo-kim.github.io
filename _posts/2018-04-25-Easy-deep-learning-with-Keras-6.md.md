@@ -1,17 +1,15 @@
 ---
 layout: post
-title: 케라스와 함께하는 쉬운 딥러닝 (6) - 뉴럴 네트워크의 학습 과정 개선하기
+title: 케라스와 함께하는 쉬운 딥러닝 (8) - 간단한 합성곱 신경망(CNN) 모델 만들기
 category: Keras
 tags: [Python, Keras, Deep Learning, 케라스]
 ---
 
-# 다층 퍼셉트론 6 (Improving techniques for training neural networks 3)
+# 간단한 합성곱 신경망(CNN) 모델 만들기 (Basic CNN)
 
-Objective: 인공신경망 모델을 효율적으로 학습시키기 위한 개선 방법들에 대해 학습한다.
+Objective: 케라스로 간단한 합성곱 신경망 모델을 만들어 본다.
 
-
-
-[지지난 포스팅](https://buomsoo-kim.github.io/keras/2018/04/22/Easy-deep-learning-with-Keras-4.md/)과 [지난 포스팅](https://buomsoo-kim.github.io/keras/2018/04/22/Easy-deep-learning-with-Keras-4.md/)에서 뉴럴 네트워크의 학습 과정을 개선하기 위한 아래의 여섯 가지 방법에 대해서 알아보았다.
+[지난 포스팅](https://buomsoo-kim.github.io/keras/2018/04/25/Easy-deep-learning-with-Keras-6.md/)에서 뉴럴 네트워크의 학습 과정을 개선하기 위한 7가지 방법을 모두 적용한 MLP 모델을 생성해 보았다. 그 7가지 방법은 아래와 같다.
 
 - 가중치 초기화(Weight Initialization)
 - 활성함수(Activation Function)
@@ -19,137 +17,205 @@ Objective: 인공신경망 모델을 효율적으로 학습시키기 위한 개�
 - 배치 정규화(Batch Normalization)
 - 드랍아웃(Dropout)
 - 앙상블(Model Ensemble)
+- 학습 데이터 추가(More training data)
 
-여기에 덧붙여, 지난번 포스팅에서는 학습 시간을 단축시키기 위하여 1/3의 학습 데이터만 가지고 학습을 시켰는데, 이번 포스팅에서는 전체 학습데이터를 가지고 신경망 모델을 학습 후 검증해 보자.
+최종적으로 개선된 MLP 모델은 MNIST 데이터셋에서 98%가 넘는 정확도를 보여주었다.
 
-### MNIST 데이터 셋 불러오기
+이번 포스팅부터는 이미지 데이터를 인식하는데 흔히 쓰이는 합성곱 신경망(CNN) 모델에 대해서 알아보자.
+
+## 합성곱 신경망
+
+CNN은 MLP에 합성곱 레이어(convolution layer)와 풀링 레이어(pooling layer)라는 고유의 구조를 더한 뉴럴 네트워크라고 할 수 있다.
+
+- 합성곱 레이어: 필터(filter), 혹은 커널(kernel)이라고 하는 작은 수용 영역(receptive field)을 통해 데이터를 인식한다.
+- 풀링 레이어: 특정 영역에서 최대값만 추출하거나, 평균값을 추출하여 차원을 축소하는 역할을 한다.
+
+<p align = "center"><br>
+<img src ="/data/images/2018-04-26/cnn.png" width = "600px"/>
+</p>
+
+CNN은 MLP나 뒤에서 나올 순환형 신경망(RNN)에 비해 학습해야 할 파라미터의 개수가 상대적으로 적어 학습이 빠르다는 장점이 있다.
+
+2013년에 [AlexNet](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)이 제안되어 ImageNet 대회에서 획기적인 성적을 낸 이후로 CNN에 대한 연구가 활발히 되어 이제는 이미지 인식 뿐 아니라 [자연어처리](http://www.aclweb.org/anthology/D14-1181)에도 흔히 쓰이며, [CNN의 학습 과정을 해석]((https://arxiv.org/abs/1311.2901))하고 [시각화](https://distill.pub/2017/feature-visualization/)하려는 시도도 자주 등장하고 있다.
+
+### Digits 데이터 셋 불러오기
+
+이번에는 MNIST와 비슷한 형태지만 데이터셋의 크기가 작은 ```scikit-learn```의 digits 데이터 셋을 활용해 보자.
+
+- [Doc](http://scikit-learn.org/stable/auto_examples/datasets/plot_digits_last_image.html)
 
 ```python
-# 케라스에 내장된 mnist 데이터 셋을 함수로 불러와 바로 활용 가능하다
-from keras.datasets import mnist
+#
+import numpy as np
 import matplotlib.pyplot as plt
 
-(X_train, y_train), (X_test, y_test) = mnist.load_data()
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+from keras.utils.np_utils import to_categorical
 ```
 
 ```python
-plt.imshow(X_train[0])    # show first number in the dataset
+data = datasets.load_digits()
+plt.imshow(data.images[0])    # show first number in the dataset
 plt.show()
-print('Label: ', y_train[0])
+print('label: ', data.target[0])    
 ```
+
 <p align = "center"><br>
-<img src ="/data/images/2018-04-22/2.png" width = "400px"/>
+<img src ="/data/images/2018-04-26/1.png" width = "400px"/>
 </p>
 
 ```python
-plt.imshow(X_test[0])    # show first number in the dataset
-plt.show()
-print('Label: ', y_test[0])
+label:  0   # 첫 번째 데이터 인스턴스의 라벨(클래스)는 0이다
 ```
 
-<p align = "center"><br>
-<img src ="/data/images/2018-04-22/3.png" width = "400px"/>
-</p>
+Digits 데이터 인스턴스의 개수는 총 1797 개이며, 데이터의 모양은 8 X 8이다.
+
+```python
+# shape of data
+print(X_data.shape)    # (8 X 8) format
+print(y_data.shape)
+```
+
+```python
+(1797, 8, 8)
+(1797,)
+```
 
 ### 데이터 셋 전처리
 
-앞서 언급했다시피, MNIST 데이터는 흑백 이미지 형태로, 2차원 행렬(28 X 28)과 같은 형태라고 할 수 있다.
+데이터의 모양을 바꾼다. X 데이터는 (3차원으로 바꿔) 차원을 하나 늘리고, Y 데이터는 one-hot 인코딩을 해준다.
+
+```python
+# reshape X_data into 3-D format
+# note that this follows image format of Tensorflow backend
+X_data = X_data.reshape((X_data.shape[0], X_data.shape[1], X_data.shape[2], 1))
+
+# one-hot encoding of y_data
+y_data = to_categorical(y_data)
+```
+
+전체 데이터를 학습/검증 데이터 셋으로 나눈다
+
+```python
+# partition data into train/test sets
+X_train, X_test, y_train, y_test = train_test_split(X_data, y_data, test_size = 0.3, random_state = 777)
+
+print(X_train.shape)
+print(X_test.shape)
+print(y_train.shape)
+print(y_test.shape)
+```
+
+```python
+(1257, 8, 8, 1)
+(540, 8, 8, 1)
+(1257, 10)
+(540, 10)
+```
+
+1257개의 학습 데이터를 가지고 모델을 학습시키고, 540개의 검증 데이터로 이를 평가해본다.
+
+### 모델 생성하기
+
+MLP 모델을 생성하는데 사용하였던 ```Sequential()```로 모델을 생성한다.
+
+```python
+from keras.models import Sequential
+from keras import optimizers
+from keras.layers import Dense, Activation, Flatten, Conv2D, MaxPooling2D
+
+model = Sequential()
+```
+
+### 합성곱 레이어
+
+이미지 처리를 위해서는 일반적으로 2D convolution layer (```Conv2D```)를 사용한다. 사용자가 지정해주어야 하는 ```Conv2D```의 주요 파라미터는 아래와 같다.
+
+- 필터의 사이즈(```kernel_size```): 합성곱 연산을 진행할 필터(커널)의 사이즈를 의미한다. 구체적으로, 수용 영역의 너비(width)와 높이(height)를 설정해 준다.
+- 필터의 개수(```filters```): 서로 다른 합성곱 연산을 수행하는 필터의 개수를 의미한다. 필터의 개수는 다음 레이어의 깊이(depth)를 결정한다.
+- 스텝 사이즈(```strides```): 필터가 이미지 위를 움직이며 합성곱 연산을 수행하는데, 한 번에 움직이는 정도(가로, 세로)를 의미한다.
+- 패딩(```padding```): 이미지 크기가 작은 경우 이미지 주위에 0으로 이루어진 패딩을 추가해 차원을 유지할 수 있다.
 
 <p align = "center"><br>
-<img src ="https://www.tensorflow.org/versions/r1.1/images/MNIST-Matrix.png" width = "600px"/>
+<img src ="/data/images/2018-04-26/1.jpg" width = "400px"/>
 </p>
 
-하지만 이와 같은 이미지 형태는 우리가 지금 활용하고자 하는 다층 퍼셉트론 모델에는 적합하지 않다. 다층 퍼셉트론은 죽 늘어놓은 1차원 벡터와 같은 형태의 데이터만 받아들일 수 있기 때문이다. 그러므로 우리는 28 X 28의 행렬 형태의 데이터를 재배열(reshape)해 784 차원의 벡터로 바꾼다.
 
 ```python
-from keras.utils.np_utils import to_categorical
-from sklearn.model_selection import train_test_split
-
-# reshaping X data: (n, 28, 28) => (n, 784)
-X_train = X_train.reshape((X_train.shape[0], -1))
-X_test = X_test.reshape((X_test.shape[0], -1))
-
-
-# 타겟 변수를 one-hot encoding 한다
-y_train = to_categorical(y_train)
-y_test = to_categorical(y_test)
-
-print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
+model.add(Conv2D(input_shape = (X_data.shape[1], X_data.shape[2], X_data.shape[3]), filters = 10, kernel_size = (3,3), strides = (1,1), padding = 'valid'))
 ```
 
-아래에 보다시피 이번에는 6만개의 학습 데이터를 가지고 모델을 학습시키고, 1만개의 데이터를 가지고 학습 결과를 검증해 본다.
+### 활성함수
+
+MLP와 동일하게 ReLU 활성함수를 사용한다
 
 ```python
-(60000, 784), (10000, 784), (60000,), (10000,)
+model.add(Activation('relu'))
 ```
 
-### 모델 생성 및 학습
+### 풀링 레이어
 
-우리가 처음 생성해 보았던 [Vanilla MLP](https://buomsoo-kim.github.io/keras/2018/04/22/Easy-deep-learning-with-Keras-3.md/)와 어떻게 다른지 한번 비교해 보자.
+일반적으로 이미지 인식을 위해서는 맥스 풀링(max pooling), 혹은 애버리지 풀링(average pooling)이 사용되며 특정 영역을 묘사하는 대표값을 뽑아 파라미터의 수를 줄여주는 역할을 한다
+
+<p align = "center"><br>
+<img src ="/data/images/2018-04-26/2.jpg" width = "400px"/>
+</p>
 
 ```python
-def mlp_model():
-    model = Sequential()
-
-    model.add(Dense(50, input_shape = (784, ), kernel_initializer='he_normal'))   # 가중치 초기화 방식 변경
-    model.add(BatchNormalization())     # 배치 정규화 레이어 추가
-    model.add(Activation('relu'))       # 활성함수로 Relu 사용
-    model.add(Dropout(0.2))             # 드랍아웃 레이어 추가
-    model.add(Dense(50, kernel_initializer='he_normal'))
-    model.add(BatchNormalization())
-    model.add(Activation('relu'))    
-    model.add(Dropout(0.2))
-    model.add(Dense(50, kernel_initializer='he_normal'))
-    model.add(BatchNormalization())
-    model.add(Activation('relu'))
-    model.add(Dropout(0.2))
-    model.add(Dense(50, kernel_initializer='he_normal'))
-    model.add(BatchNormalization())
-    model.add(Activation('relu'))
-    model.add(Dropout(0.2))
-    model.add(Dense(10, kernel_initializer='he_normal'))
-    model.add(Activation('softmax'))
-
-    adam = optimizers.Adam(lr = 0.001)    # Adam optimizer 사용
-    model.compile(optimizer = adam, loss = 'categorical_crossentropy', metrics = ['accuracy'])
-
-    return model
+model.add(MaxPooling2D(pool_size = (2,2)))
 ```
 
-앙상블 할 때 모델의 개수도 5개로 늘려본다.
+### 완전 연결 레이어(Dense 혹은 fully-connected layer)
+
+CNN의 마지막 단에 MLP와 동일한 완전 연결 레이어를 넣을 수도 있고, 넣지 않을 수도 있다.
+
+MLP로 연결하기 전에 3차원의 데이터의 차원을 줄이기 위해 ```Flatten()``` 을 추가해 주는것에 유의하자.
 
 ```python
-# create 5 models to ensemble
-model1 = KerasClassifier(build_fn = mlp_model, epochs = 100)
-model2 = KerasClassifier(build_fn = mlp_model, epochs = 100)
-model3 = KerasClassifier(build_fn = mlp_model, epochs = 100)
-model4 = KerasClassifier(build_fn = mlp_model, epochs = 100)
-model5 = KerasClassifier(build_fn = mlp_model, epochs = 100)
-
-:
-ensemble_clf = VotingClassifier(estimators = [('model1', model1), ('model2', model2), ('model3', model3), ('model4', model4), ('model5', model5)], voting = 'soft')
-ensemble_clf.fit(X_train, y_train)
+model.add(Flatten())
+model.add(Dense(50, activation = 'relu'))
+model.add(Dense(10, activation = 'softmax'))     ### 이미지를 분류하기 위한 마지막 레이어
 ```
+
+### 모델 컴파일 및 학습
+
+모델을 컴파일하고 학습을 진행시킨다.
+
+```python
+adam = optimizers.Adam(lr = 0.001)
+model.compile(loss = 'categorical_crossentropy', optimizer = adam, metrics = ['accuracy'])
+history = model.fit(X_train, y_train, batch_size = 50, validation_split = 0.2, epochs = 100, verbose = 0)
+```
+
+모델 학습 과정을 시각화해본다. 빠르게 정확도가 올라가는 것으로 보아 학습이 잘 되는 것 같다.
+
+```python
+plt.plot(history.history['acc'])
+plt.plot(history.history['val_acc'])
+plt.legend(['training', 'validation'], loc = 'upper left')
+plt.show()
+```
+
+<p align = "center"><br>
+<img src ="/data/images/2018-04-26/2.png" width = "300px"/>
+</p>
 
 ### 모델 평가
 
-기본 모델에 배치정규화만 적용했음에도 불구하고 91.54%의 높은 정확도를 보인다. 앞으로 네트워크를 만들 때 배치 정규화는 웬만하면 적용해 주는 것이 좋다([논문](https://arxiv.org/abs/1502.03167)에 따르면 뒤에서 나올 regularization의 효과도 있어 배치 정규화를 적용하면 드랍아웃을 적용하지 않아도 된다고 한다).
+검증 데이터로 모델을 평가해본다
 
 ```python
-y_pred = ensemble_clf.predict(X_test)
-print('Acc: ', accuracy_score(y_pred, y_test))
+results = model.evaluate(X_test, y_test)
+print('Test accuracy: ', results[1])
 ```
 
 ```python
-Acc:  0.9801
+Test accuracy:  0.972222222222
 ```
 
-최종 결과로 98%가 넘는 높은 정확도를 기록하였다. 모델 구조(복잡도나 크기)는 바꾸지 않았음에도 불구하고 아무런 개선 사항도 적용하지 않은 [Vanilla MLP](https://buomsoo-kim.github.io/keras/2018/04/22/Easy-deep-learning-with-Keras-3.md/)가 20% 정도의 정확도를 기록했던 것과 비교하면 괄목할 만한 성과이다.
-
-일반적으로 뉴럴 네트워크를 학습시킬 때에는 여기서 나온 <strong>7가지 학습 개선 방법(가중치 초기화, 활성함수, 최적화, 배치 정규화, 드랍아웃, 앙상블, 학습 데이터 추가)</strong>을 모두 총동원하여 정확도(혹은 정밀도, 재현율, ROC 등)를 조금이라도 높이기 위해서 노력한다. 즉, 최소한 현업에 적용할 만한 뉴럴 네트워크를 만들 때 여기서 나온 방법은 모두 활용을 해볼만한 가치가 있다는 얘기다. 물론 어떤 상황에 어떤 방식이 유효할지는 그때그때 다르기 때문에 최적화된 결과를 위해서는 삽질을 통해 실험을 많이 해봐야 한다... (*데이터 사이언스의 8할은 노가다이다*)
-
-이제 다음 포스팅에서는 이미지 데이터를 학습하는 데 최적화된 모델로 알려져 있는 합성곱 신경망(CNN; Convolutional Neural Networks)에 대해서 알아 보자!
+최종 결과로 97%가 넘는 높은 정확도를 기록하였다. 가장 간단한 형태의 CNN을 구현했음에도 불구하고 상당히 정확히 숫자를 분류해내는 것을 알 수 있다. 이제 다음 포스팅부터는 CNN에 대해서 더 자세히 알아보자.
 
 # 전체 코드
 
-본 실습의 전체 코드는 [여기](https://github.com/buomsoo-kim/Easy-deep-learning-with-Keras/blob/master/1.%20MLP/3-Advanced-MLP-2/2-Advanced-MLP-2.ipynb)에서 열람하실 수 있습니다!
+본 실습의 전체 코드는 [여기](https://github.com/buomsoo-kim/Easy-deep-learning-with-Keras/blob/master/2.%20CNN/1-Basic-CNN/1-basic-cnn.ipynb)에서 열람하실 수 있습니다!
