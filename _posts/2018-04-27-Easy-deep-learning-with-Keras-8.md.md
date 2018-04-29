@@ -5,7 +5,7 @@ category: Keras
 tags: [Python, Keras, Deep Learning, 케라스]
 ---
 
-# 간단한 합성곱 신경망(CNN) 모델 만들기 (Basic CNN)
+# 합성곱 신경망 2 - 간단한 합성곱 신경망(CNN) 모델 만들기 (Basic CNN)
 
 Objective: 케라스로 간단한 합성곱 신경망 모델을 만들어 본다.
 
