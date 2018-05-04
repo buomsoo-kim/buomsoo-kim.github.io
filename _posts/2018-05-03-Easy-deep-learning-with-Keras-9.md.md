@@ -1,27 +1,17 @@
 ---
 layout: post
-title: 케라스와 함께하는 쉬운 딥러닝 (8) - 간단한 합성곱 신경망(CNN) 모델 만들기
+title: 케라스와 함께하는 쉬운 딥러닝 (9) - 간단한 합성곱 신경망(CNN) 모델 만들기
 category: Keras
 tags: [Python, Keras, Deep Learning, 케라스]
 ---
 
-# 합성곱 신경망 2 - 간단한 합성곱 신경망(CNN) 모델 만들기 (Basic CNN)
+# 합성곱 신경망 3 - 간단한 합성곱 신경망(CNN) 모델 만들기 (Basic CNN)
 
 Objective: 케라스로 간단한 합성곱 신경망 모델을 만들어 본다.
 
-[지난 포스팅](https://buomsoo-kim.github.io/keras/2018/04/25/Easy-deep-learning-with-Keras-6.md/)에서 뉴럴 네트워크의 학습 과정을 개선하기 위한 7가지 방법을 모두 적용한 MLP 모델을 생성해 보았다. 그 7가지 방법은 아래와 같다.
+[지지난 포스팅](https://buomsoo-kim.github.io/keras/2018/04/28/Easy-deep-learning-with-Keras-7.md/) 과 [지난 포스팅](https://buomsoo-kim.github.io/keras/2018/05/02/Easy-deep-learning-with-Keras-8.md/)에서 cnn 구조를 이해하기 위해 이미지 데이터, 풀링/합성곱 연산, 패딩, 필터 등에 대해서 알아보았다.
 
-- 가중치 초기화(Weight Initialization)
-- 활성함수(Activation Function)
-- 최적화(Optimization)
-- 배치 정규화(Batch Normalization)
-- 드랍아웃(Dropout)
-- 앙상블(Model Ensemble)
-- 학습 데이터 추가(More training data)
-
-최종적으로 개선된 MLP 모델은 MNIST 데이터셋에서 98%가 넘는 정확도를 보여주었다.
-
-이번 포스팅부터는 이미지 데이터를 인식하는데 흔히 쓰이는 합성곱 신경망(CNN) 모델에 대해서 알아보자.
+이번 포스팅부터는 합성곱 신경망(CNN) 모델을 실제로 구현해 보면서 익혀보자.
 
 ## 합성곱 신경망
 
