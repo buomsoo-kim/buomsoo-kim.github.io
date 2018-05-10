@@ -5,6 +5,8 @@ category: Teaching
 tags: [Python, Web Crawling, Text Mining]
 ---
 
+### Files in Google Colab ver: http://bit.ly/2I4XZBx
+
 # Web Crawling and Text Mining with Python in Korean (파이썬 웹 크롤링 & 한국어 텍스트 분석)
 
 * Lecture materials for SNU Big Data Academy / Urban Data Science Lab (UDSL) / etc
