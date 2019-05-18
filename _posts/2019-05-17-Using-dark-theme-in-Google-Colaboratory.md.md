@@ -1,7 +1,7 @@
 ---
 layout: post
 title: <Colab> Using Dark Theme in Google Colaboratory
-category: Python, Colab
+category: Colab
 tags: [Python, Colab, Colaboratory]
 ---
 

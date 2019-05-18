@@ -1,7 +1,7 @@
 ---
 layout: post
 title: <Colab> Importing files from Google Drive in Google Colab
-category: Python
+category: Colab
 tags: [Python, Colab, Colaboratory]
 ---
 

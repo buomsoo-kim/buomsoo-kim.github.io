@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using external fonts in Google Colaboratory (Google colab에서 한글 폰트 사용하기)
-category: Python
+category: Colab
 tags: [Python, Colab, Colaboratory]
 ---
 

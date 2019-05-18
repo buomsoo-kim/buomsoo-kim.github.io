@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Importing local files in Google Colab
-category: Python
+category: Colab
 tags: [Python, Colab, Colaboratory]
 ---
 
