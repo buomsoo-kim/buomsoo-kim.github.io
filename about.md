@@ -3,19 +3,22 @@ layout: page
 title: About
 ---
 <p align = "center">
-<img src ="/public/img/profile.jpg" width = "600px"/>
+<img src ="/public/img/profile.jpg" width = "300px"/>
 </p>
 
-# About
+# Buomsoo (Raymond) Kim
 
-Hello! my name is Buomsoo (Conor) Kim.
-I am Research Associate / Ph.D. student at <a href = "https://www.insiteua.org" target="_blank"> INSITE: Center for Business Intelligence and Analytics </a> at Eller College of Management, University of Arizona. I have received BS at College of Business Administration, Seoul National University and MS at Graduate School of Business, Seoul National University.
+I am Research Associate / Ph.D. student at <a href = "https://www.insiteua.org" target="_blank"> INSITE: Center for Business Intelligence and Analytics </a> at Eller College of Management, University of Arizona. 
 
 My interests include, but are not limited to:
-* ```Deep Learning```
-* ```Reinforcement Learning```
+* ```Deep Learning, Statistical Machine Learning```
+* ```Machine Learning Interpretability```
 * ```Data Visualization```
 * ```Text Analytics```
-* ```Web```
+* ```Web Analytics```
+* ```Network Science```
 
-The aim of this web page is to organize and share my works from research, lectures, and projects. <strong>Anyone is welcome to use and contribute to materials exhibited in this page. </strong>
+The aim of this web page is to organize and share my works from research, lectures, and projects.Anyone is welcome to use and contribute to materials exhibited in this page.
+
+* <a href = "https://github.com/buomsoo-kim" target="_blank"> Github </a>
+* Curriculum Vitae
