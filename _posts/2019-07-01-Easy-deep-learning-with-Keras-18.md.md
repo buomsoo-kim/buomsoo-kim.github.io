@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 케라스와 함께하는 쉬운 딥러닝 (18) - 순환형 신경망(RNN) 모델 만들기
+title: 케라스와 함께하는 쉬운 딥러닝 (18) - 순환형 신경망(RNN) 모델 만들기 1
 category: Keras
 tags: [Python, Keras, Deep Learning, 케라스]
 ---
