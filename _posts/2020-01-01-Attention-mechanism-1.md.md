@@ -2,7 +2,7 @@
 layout: post
 title: Attention in Neural Networks - 1. Introduction to attention mechanism
 category: Attention
-tags: [Python, Attention, Deep learning, Pytorch]
+tags: [Attention mechanism, Deep learning, Pytorch]
 ---
 
 # Attention Mechanism in Neural Networks - 1. Introduction
@@ -10,7 +10,7 @@ tags: [Python, Attention, Deep learning, Pytorch]
 Attention is arguably one of the most powerful concepts in the deep learning field nowadays. It is based on a common-sensical intuition that we "attend to" a certain part when processing a large amount of information. 
 
 <p align = "center">
-<img src ="/data/images/2020-01-01/1.jpg" width = "400px"/>
+<img src ="/data/images/2020-01-01/1.jpeg" width = "400px"/>
 [Photo by Romain Vignes on Unsplash]
 </p>
 
