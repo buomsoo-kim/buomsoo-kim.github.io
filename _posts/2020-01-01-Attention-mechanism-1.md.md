@@ -10,7 +10,7 @@ tags: [Python, Attention, Deep learning, Pytorch]
 Attention is arguably one of the most powerful concepts in the deep learning field nowadays. It is based on a common-sensical intuition that we "attend to" a certain part when processing a large amount of information. 
 
 <p align = "center">
-<img src ="/data/images/2020-01-01/1.JPEG" width = "400px"/>
+<img src ="/data/images/2020-01-01/1.jpg" width = "400px"/>
 [Photo by Romain Vignes on Unsplash]
 </p>
 
@@ -60,7 +60,7 @@ Therefore, [Bahdanau et al. (2015)](https://arxiv.org/pdf/1409.0473.pdf) propose
 [Xu et al. (2015)](http://proceedings.mlr.press/v37/xuc15.pdf) proposed an attention framework that extends beyond the conventional Seq2Seq architecture. Their framework attempts to align the input image and output word, tackling the image captioning problem. 
 
 <p align = "center">
-<img src ="/data/images/2020-01-01/5.png" width = "200px"/>
+<img src ="/data/images/2020-01-01/5.png" width = "400px"/>
 [Image source: Xu et al. (2015)]
 </p>
 
