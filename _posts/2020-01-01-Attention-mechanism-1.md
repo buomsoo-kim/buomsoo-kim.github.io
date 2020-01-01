@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Attention Mechanism series - 1. Introduction to attention mechanism
+title: Attention in Neural Networks - 1. Introduction to attention mechanism
 category: Attention
 tags: [Python, Attention, Deep learning, Pytorch]
 ---
