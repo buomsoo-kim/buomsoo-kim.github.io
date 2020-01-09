@@ -20,14 +20,15 @@ In previous posting, I introduced the attention mechanism and outlined its (not 
 Deep neural networks are highly effective tools to model non-linear data for various tasks. It has been proven to be effective in various tasks, e.g., image classification and sentence classification. However, conventional architectures such as multilayer perceptrons  are less effective in modeling sequences such as signals and natural language. Therefore, Seq2Seq was proposed to map sequence inputs to sequence outputs. Seq2Seq can process variable-length vectors, mapping them to variable-length vectors. 
 
 <p align = "center">
-<img src ="/data/images/2020-01-09/bret-kavanaugh-_af0_qAh4K4-unsplash.jpg" width = "600px"/>
-</p>
+<img src ="/data/images/2020-01-09/bret-kavanaugh-_af0_qAh4K4-unsplash.jpg" width = "400px"/>
 [Photo by Bret Kavanaugh on Unsplash]
+</p>
+
 
 Consider the classical application of Seq2Seq to the machine translation task, i.e., translating French sentences (source) to English ones (target). Notice that source sentences have different lengths in terms of words (or characters). The first French sentence "On y va," which is translated into "Let's go" in English, has three words or the second, third, and fourth sentences have four, five, and six, respectively. Also, the number of target words are not fixed as well - it can be two to six words in this example. 
 
 <p align = "center">
-<img src ="/data/images/2020-01-09/Picture1.png" width = "400px"/>
+<img src ="/data/images/2020-01-09/Picture1.png" width = "600px"/>
 </p>
 
 Another potential problem of machine translation is that source (and target) words are often dependent on each other. For instance, when we see the word "I" at the start of the sentence, we are more likely to see "am" as the second word than "are." Conversely, if we see "You," we are likely to see "are" than "am." Thus, it is important to model temporal dependencies among different words (and characters) in a sentence. 
@@ -51,7 +52,7 @@ Both encoder and decoder comprise multiple recurrent neural network (RNN) cells 
 [Image source: [Understanding LSTM Networks](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)]
 </p>
 
-The final hidden state of the encoder, **c**, functions as a summary of the inputs to the encoder, i.e., the source sentence. In other words, information from the source sentence is distilled in a vector with a fixed dimensionality. In the decoder , **c** is an input to RNN cells, along with previous hidden state and target word. Therefore, the hidden state at level *t* is calculated as below (*f* is the RNN operation).
+The final hidden state of the encoder, **c**, functions as a summary of the inputs to the encoder, i.e., the source sentence. In other words, information from the source sentence is distilled in a vector with a fixed dimensionality. In the decoder , **c** is an input to RNN cells, along with previous hidden state and target word. Therefore, the hidden state at level *t* is calculated as below (*f* is the RNN operation in this context).
 
 \begin{equation}
 h_t = f(h_{t-1}, y_{t-1}, c)
@@ -70,7 +71,7 @@ Then, the calculated probabilities are softmaxed to find the word with the highe
 [Image source: Sutskever et al. (2014)]
 </p>
 
-[Sutskever et al. (2014)](https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf) proposed a similar deep learning architecture to RNN Encoder-Decoder with LSTM. Hence, we call variants of models mapping sequences to sequences *Seq2Seq*.
+Following Cho et al. (2014), many studies such as [Sutskever et al. (2014)](https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf) proposed similar deep learning architectures to RNN Encoder-Decoder with LSTM. Hence, we call variants of RNN models mapping sequences to sequences with the encoder and decoder *Seq2Seq*.
 
 
 In this posting, I introduced Seq2Seq and its overall architecture. In the next posting, I will explain the Seq2Seq architecture in detail, while implementing it with Pytorch. Thank you for reading.
