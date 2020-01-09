@@ -49,7 +49,7 @@ Both encoder and decoder comprise multiple recurrent neural network (RNN) cells 
 
 <p align = "center">
 <img src ="https://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-chain.png" width = "500px"/>
-[Image source: [Understanding LSTM Networks](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)]
+[Image source: https://colah.github.io/posts/2015-08-Understanding-LSTMs/]
 </p>
 
 The final hidden state of the encoder, **c**, functions as a summary of the inputs to the encoder, i.e., the source sentence. In other words, information from the source sentence is distilled in a vector with a fixed dimensionality. In the decoder , **c** is an input to RNN cells, along with previous hidden state and target word. Therefore, the hidden state at level *t* is calculated as below (*f* is the RNN operation in this context).
