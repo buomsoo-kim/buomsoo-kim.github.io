@@ -64,6 +64,63 @@ EMBEDDING_DIM = 30
 DEVICE = torch.device('cuda') 
 ```
 
+## RNN in Pytorch
+
+Prior to implemeting the encoder and decoder, let's briefly review the inner workings of RNNr and how they are implemented in Pytorch. We will implement the [Long Short-Term Memory (LSTM)](https://www.bioinf.jku.at/publications/older/2604.pdf), which is a popular variant of RNN.
+
+
+<p align = "center">
+<img src ="https://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-shorttermdepdencies.png" width = "600px"/>
+</p>
+[source: Understanding LSTM Networks]
+
+RNNs in general are used for modeling temporal dependencies among inputs in consecutive timesteps. Unlike feed-forward neural networks, they have "loops" in the network, letting the information flow between timesteps. Such information is stored and passed onto as "hidden states." For each input ($$x_i$$), there is a corresponding hidden state ($$h_i$$) that preserves information at that time step $$i$$. And that hidden state is also an input at the next time step with $$x_{i+1}$$. At the first timestemp (0), they are randomly initialized.
+
+In addition to the hidden state, there is additional information that is passed onto the next state, namely the cell state ($$c_i$$). The math behind it is complicated but I won't be going into detail . For the sake of simplicity, we can regard it as another type of hidden state in this posting. For more information, please refer to [Hochreiter et al. (1997)](https://www.bioinf.jku.at/publications/older/2604.pdf).
+
+Once we understand the inner workings of RNN, it is fairly straightforward to implement it with Pytorch. 
+
+```python
+import torch.nn as nn
+lstm = nn.LSTM(input_size = 10, 
+             hidden_size = 5, 
+             num_layers = 1)
+```
+
+- Create LSTM layer: there are a few parameters to be determined. Some of the essential ones are ```input_size```, ```hidden_size```, and ```num_layers```. ```input_size``` can be regarded as a number of features. Each input in each timestemp is an *n*-dimensional vector with *n* = ```input_size```. ```hidden_size``` is the dimensionality of the hidden state. Each hidden state is an *m*-dimensional vector with *m* = ```hidden_size```. Finally ```num_layers``` determines the number of layers in the LSTM layer. Setting it over 3 makes it a deep LSTM.
+
+```python
+## inputs to LSTM
+# input data (seq_len, batch_size, input_size)
+x0 = torch.from_numpy(np.random.randn(1, 64, 10)).float()     
+```
+
+- Determine input size: The shape of inputs to the LSTM layer is ```(seq_len, batch_size, input_size)```. ```seq_len``` determines the length of the sequence, or the number of timesteps. In the machine translation task, this should be the number of source (or target) words in the instance. ```input_size``` should be the same as one defined when creating the LSTM layer.
+
+```python
+h0, c0 = torch.from_numpy(np.zeros((1, 64, 5))).float(), torch.from_numpy(np.zeros((1, 64, 5))).float()
+```
+
+- Initialize hidden & cell states: hidden and cell states have the same shape ```(num_layers, batch_size, hidden_size)``` in general. Note that we need not consider ```seq_len``` since hidden and cell states are refreshed at each time step.
+
+```python
+xn, (hn, cn) = lstm(x0, (h0, c0))
+
+print(xn.shape)               # (seq_len, batch_size, hidden_size)
+print(hn.shape, cn.shape)     # (num_layers, batch_size, hidden_size)
+```
+
+```python
+torch.Size([1, 64, 5])
+torch.Size([1, 64, 5]) torch.Size([1, 64, 5])
+```
+
+- Pass the input and hidden/cell states to LSTM: Now we just need to pass the input and states to the LSTM layer. Note that the hidden and cell states are provided in a single tuple (```h0, c0```). The output sizes are identical to the inputs.
+
+
+If you want to learn more about RNNs in Pytorch, please refer to [Pytorch Tutorial on RNN](https://github.com/buomsoo-kim/PyTorch-learners-tutorial/blob/master/PyTorch%20Basics/pytorch-model-basics-4%20%5BRNN%5D.ipynb).
+
+
 ## Encoder 
 
 Now, we have to construct the neural network architecture for Seq2Seq. Here, we construct the encoder and decoder network separately since it can be better understood that way. 
@@ -115,8 +172,10 @@ As we defined classes to generate the encoder and decoder, we now just have to c
 
 ### References
 
-- [NLP FROM SCRATCH: TRANSLATION WITH A SEQUENCE TO SEQUENCE NETWORK AND ATTENTION](https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html)
 - [Cho et al. (2014)](http://emnlp2014.org/papers/pdf/EMNLP2014179.pdf)
+- [Hochreiter et al. (1997)](https://www.bioinf.jku.at/publications/older/2604.pdf)
+- [NLP FROM SCRATCH: TRANSLATION WITH A SEQUENCE TO SEQUENCE NETWORK AND ATTENTION](https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html)
+- [Understanding LSTM Networks](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 
 In this posting, we implemented the Seq2Seq model with Pytorch. In the next posting, let's look into how we can train and evaluate them with the prepared data. Thank you for reading.
 

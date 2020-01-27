@@ -21,7 +21,7 @@ Therefore, in this posting series, I will illustrate the development of the atte
 
 Final disclaimer is that I am **not** an expert or authority on attention. The primary purpose of this posting series is for my own education and organization. However, I am sharing my learning process here to help anyone who is eager to learn new things, just like myself. Please do not heistate leave a comment if you detect any mistakes or errors that I make, or you have any other (great) ideas and suggestions. Thank you for reading my article.
 
-### Development of attention mechanism (in NLP)
+## Development of attention mechanism (in NLP)
 
 <p align = "center">
 <img src ="/data/images/2020-01-01/2.png" width = "600px"/>
@@ -29,7 +29,7 @@ Final disclaimer is that I am **not** an expert or authority on attention. The p
 
 Attention mechanism was first proposed in the NLP field and still actively researched in the field. Above is the key designs and seminal papers that led to major developments. Here, I will briefly review them one by one. 
 
-### Sequence to sequence (Seq2Seq) architecture for machine translation
+## Sequence to sequence (Seq2Seq) architecture for machine translation
 
 Many text information is in a sequence format, e.g., words, sentences, and documents. Seq2Seq is a two-part deep learning architecture to map sequence inputs into sequence outputs. It was initially proposed for the machine translation task, but can be applied for other sequence-to-sequence mapping tasks such as captioning and question retrieval.
 
@@ -43,7 +43,7 @@ Many text information is in a sequence format, e.g., words, sentences, and docum
 The encoder reads a sequence input with variable lengths, e.g., English words, and the decoder produces a sequence output, e.g., corresponding French words, considering the hidden state from the encoder. The hidden state sends source information from the encoder to the decoder, linking the two. Both the encoder and decoder consist of RNN cells or its variants such as LSTM and GRU. 
 
 
-### Align & Translate
+## Align & Translate
 
 A potential problem of the initial Seq2Seq architecture is that some information might not be captured by a fixed-length vector, i.e., the final hidden state from the encoder. This can be especially problematic in the case of long sentences where RNN is unable to send adequate information to the end of the sentences. 
 
@@ -55,7 +55,7 @@ A potential problem of the initial Seq2Seq architecture is that some information
 Therefore, [Bahdanau et al. (2015)](https://arxiv.org/pdf/1409.0473.pdf) proposed utilizing a context vector to align the source and target inputs. The context vector preserves information from all hidden states from encoder cells and aligns them with the current target output. By doing so, the model is able to "attend to" a certain part of the source inputs and learn the complex relationship between the source and target better. [Luong et al. (2015)](https://arxiv.org/pdf/1508.04025.pdf) outlines various types of attention models to align the source and target.
 
 
-### Visual attention
+## Visual attention
 
 [Xu et al. (2015)](http://proceedings.mlr.press/v37/xuc15.pdf) proposed an attention framework that extends beyond the conventional Seq2Seq architecture. Their framework attempts to align the input image and output word, tackling the image captioning problem. 
 
@@ -72,7 +72,7 @@ Accordingly, they utilized a convolutional layer to extract features from the im
 </p>
 
 
-### Hierarchical attention
+## Hierarchical attention
 
 [Yang et al. 2016](https://www.aclweb.org/anthology/N16-1174.pdf) demonstrated with their hierarchical attention network (HAN) that attention can be effectively used on various levels. Also, they showed that attention mechanism applicable to the classification problem, not just sequence generation.
 
@@ -89,7 +89,7 @@ HAN comprises two encoder networks - i.e., word and sentence encoders. The word 
 </p>
 
  
-### Self attention and BERT
+## Transformer and BERT
 
 <p align = "center">
 <img src ="/data/images/2020-01-01/9.png" width = "400px"/>
@@ -113,7 +113,7 @@ Therefore, the Transformer architecture discards the convolution and recursive o
 The intuition behind Transformer inspired a number of researchers, leading to the development of self-attention-based models such as Bidirectional Encoder Representations from Transformers (BERT). BERT pretrains bidirectional representations with the improve Transformer architecture. BERT shows state-of-the-art performance in various NLP tasks as of 2019.
 
 
-### Other applications
+## Other applications
 
 I have outlined major developments in attention with emphasis on NLP in this posting. However, attention mechanism is now widely used in a number of applications as mentioned. Below are some examples of successful applications of attention in other domains. However, attention mechanism is very actively researched nowadays and it is expected that there will be (is) more and more domains welcoming the application of attentional models. 
 
