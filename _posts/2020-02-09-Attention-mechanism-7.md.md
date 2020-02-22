@@ -164,9 +164,9 @@ train_loader = torch.utils.data.DataLoader(dataset, batch_size = BATCH_SIZE, sam
 test_loader = torch.utils.data.DataLoader(dataset, batch_size = BATCH_SIZE, sampler = test_sampler)
 ```
 
-## Encoder and Decoder
+## Encoder 
 
-The encoder and decoder are similary defined as previous postings. However, we also define the Seq2Seq class that comprises both encoder and decoder. The Seq2Seq class basically contains both models and carries out mini-batch operation.
+The encoder is similary defined as previous postings. As we will be only needing the hidden state of the last GRU cell in the encoder, we reserve only the last ```h0``` here. Also, note that the hidden state has size of ```(1, BATCH_SIZE, HIDDEN_SIZE)``` to incorporate batch learning.
 
 
 ```python
@@ -182,13 +182,22 @@ class Encoder(nn.Module):
     self.gru = nn.GRU(embedding_dim, hidden_size)
 
   def forward(self, x, h0):
+    # x = (BATCH_SIZE, MAX_SENT_LEN) = (128, 10)
     x = self.embedding(x)
+    x = x.permute(1, 0, 2)
+    # x = (MAX_SENT_LEN, BATCH_SIZE, EMBEDDING_DIM) = (10, 128, 30)
     out, h0 = self.gru(x, h0)
+    print(out.shape)
+    # out = (MAX_SENT_LEN, BATCH_SIZE, HIDDEN_SIZE) = (128, 10, 16)
+    # h0 = (1, BATCH_SIZE, HIDDEN_SIZE) = (1, 128, 16)
     return out, h0
-  
-  def initialize_hidden(self, x):
-    return torch.zeros(1, x.size(1), self.hidden_size).to(self.device)
+```
 
+## Decoder
+
+The decoder is similarly trained but with a subtle difference of learning each step at a time. By doing so, we can save the output (```x```) and hidden state (```h0```) at every step.
+
+```python
 class Decoder(nn.Module):
   def __init__(self, vocab_size, hidden_size, embedding_dim):
     super(Decoder, self).__init__()
@@ -201,11 +210,26 @@ class Decoder(nn.Module):
     self.softmax = nn.LogSoftmax(dim = 1)
   
   def forward(self, x, h0):
+    # x = (BATCH_SIZE) = (128)
     x = self.embedding(x).unsqueeze(0)
+    # x = (1, BATCH_SIZE, EMBEDDING_DIM) = (1, 128, 30)
     x, h0 = self.gru(x, h0)
     x = self.dense(x.squeeze(0))
     x = self.softmax(x)
     return x, h0
+```
+
+## Seq2Seq model
+
+Here, we define the Seq2Seq model in a separate Python class. The first input to the Seq2Seq model is the token at the first timestep, i.e., "<sos>". We can designate this by slicing the ```target``` variable.
+
+```python
+dec_input = target[:, 0]
+```
+
+The resulting ```dec_input``` variable will have the shape of ```BATCH_SIZE```. Then in each timestep, the decoder calculates the output from the current input (```dec_input```) and previous hidden state (```h0```). We also implement teacher forcing, in which we set the input to the next state as the actual target, not the predicted target. The probability of setting teacher forcing can be manipulated with the parameter ```tf_ratio```. The default probability is 0.5.
+
+```python
 
 class Seq2Seq(nn.Module):
   def __init__(self, encoder, decoder, device):
@@ -215,25 +239,30 @@ class Seq2Seq(nn.Module):
     self.device = device
 
   def forward(self, source, target, tf_ratio = .5):
+    # target = (BATCH_SIZE, MAX_SENT_LEN) = (128, 10)
+    # source = (BATCH_SIZE, MAX_SENT_LEN) = (128, 10)
     dec_outputs = torch.zeros(target.size(0), target.size(1), self.decoder.vocab_size).to(self.device)
+    h0 = torch.zeros(1, source.size(0), self.encoder.hidden_size).to(self.device)
     
-    h0 = self.encoder.initialize_hidden(source)
     _, h0 = self.encoder(source, h0)
-    dec_input = target[0, :]
+    # dec_input = (BATCH_SIZE) = (128)
+    dec_input = target[:, 0]
     
-    for k in range(target.size(0)):
+    for k in range(target.size(1)):
+      # out = (BATCH_SIZE, VOCAB_SIZE) = (128, XXX)
+      # h0 = (1, BATCH_SIZE, HIDDEN_SIZE) = (1, 128, 16)
       out, h0 = self.decoder(dec_input, h0)
-      dec_outputs[k] = out
-
-      max_idx = out.argmax(1)
-      dec_input = target[k]
+      dec_outputs[:, k, :] = out
+      dec_input = target[:, k]
       if np.random.choice([True, False], p = [tf_ratio, 1-tf_ratio]):
-        dec_input = target[k]
+        dec_input = target[:, k]
       else:
-        dec_input = max_idx.detach()
+        dec_input = out.argmax(1).detach()
 
     return dec_outputs
 ```
+
+## Defining the model
 
 As we defined the Seq2Seq model, we only need to generate the optimizer for the whole model. No need to create separate optimizers for both encoder and decoder.
 
