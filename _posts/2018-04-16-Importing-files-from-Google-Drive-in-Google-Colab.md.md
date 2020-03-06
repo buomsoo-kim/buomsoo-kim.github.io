@@ -52,6 +52,14 @@ Now, remember the string that comes first in resulting list. This is the file ID
 <img src ="/data/images/2018-04-16/8.PNG" width = "600px"/>
 </p>
 
+### Update (March 2020)
+
+Alternatively, the file ID can be also obtained from the link. The file ID is alphanumeric characters between **/d/** and **/view?usp=sharing**. For instance, let's assume the shareable like to the file we want to import is as below.
+
+> https://drive.google.com/file/d/1HbEfAPN7nQVCXbvspwWayOSU7oPr/view?usp=sharing
+
+Then, the file ID should be **1HbEfAPN7nQVCXbvspwWayOSU7oPr**. I find this a more convenient way to get the file ID than the method above noawdays.
+
 
 ## 4. Install PyDrive
 
