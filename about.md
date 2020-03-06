@@ -21,4 +21,4 @@ My interests include, but are not limited to:
 The aim of this web page is to organize and share my works from research, lectures, and projects.Anyone is welcome to use and contribute to materials exhibited in this page.
 
 * <a href = "https://github.com/buomsoo-kim" target="_blank"> Github </a>
-* Curriculum Vitae
+* [Curriculum Vitae](https://drive.google.com/file/d/1YzMaXy88UM4cXoxVewYkGirnb1R_gLHo/view?usp=sharing)
