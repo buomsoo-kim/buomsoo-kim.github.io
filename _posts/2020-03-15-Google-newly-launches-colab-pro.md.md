@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Google newly launches Colab pro - comparison of Colab and Colab pro!
+title: Google newly launches Colab Pro! - comparison of Colab and Colab pro
 category: Colab
 tags: [Python, Colab, Colaboratory]
 ---
@@ -8,7 +8,7 @@ tags: [Python, Colab, Colaboratory]
 # Google Colab Pro
 
 <p align = "center">
-<img src ="/data/images/2020-03-15/0.PNG" width = "600px"/>
+<img src ="/data/images/2020-03-15/0.png" width = "600px"/>
 </p>
 
 Google recently introduced [*Colab Pro*](https://colab.research.google.com/signup), which provides faster GPUs, longer runtimes, and more memory. I have been using Colab since its inception and very satisfied with it overall. However, I recently experienced some limitations when I was running some deep learning code for my research project. Since it was a deep model with a huge amount of data, it took longer to train with Colab's GPU. And it sometimes reached the maximum runtimes and disconnected from the server. Many of you would recognize that training a deep model again from a scratch because of a hardware failure is a nightmare for developers. I had to instead rely on high-performance computing services provided by my University and cloud computing services from my client.
@@ -18,7 +18,7 @@ Now, Colab Pro is here to prevent such nightmares. It enables faster training wi
 # Pricing
 
 <p align = "center">
-<img src ="/data/images/2020-03-15/1.PNG" width = "400px"/>
+<img src ="/data/images/2020-03-15/1.png" width = "400px"/>
 </p>
 
 Colab Pro is $9.99 per month - a subscription service like Netflix. Adding the tax, it sums up to $10.86 per month in Arizona, US. I think it is not a bad price if you have to use Colab occasionally. I remember I had to pay over $1,000 per month to use a cloud computing service provided by [Naver Cloud Platform](https://www.ncloud.com/) 
