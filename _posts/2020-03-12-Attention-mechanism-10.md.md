@@ -102,7 +102,7 @@ plt.show()
 Below is an example of such heatmap for saliency mapping. Note that the model is poorly trained, and not very much informative for this case. You can try further sophisticating and well training the model for better representation and evaluation.
 
 <p align = "center">
-<img src ="/data/images/2020-03-12/1.PNG" width = "400px"/>
+<img src ="/data/images/2020-03-12/1.png" width = "400px"/>
 </p>
 
 In this posting, we looked into how we can train the encoder and decoder for the Seq2Seq with alignment. In the following posting, let's see how we further improve the model for more efficient training. Thank you for reading.
