@@ -15,7 +15,7 @@ In a few recent postings, we looked into the attention mechanism for aligning so
 First, Luong et al. distinguishes global and local attention. Both have a common goal of estimating the context vector $c_t$ and the probability of the target word $p(y_t)$ at each timestep of $t$. However, two differs in *where* the attention is applied among timesteps in **the encoder**. Global attention is similar to what we have looked into in previous postings. It considers all hidden states of encoder ($h_t$) and aligns them with current decoder input. 
 
 <p align = "center">
-<img src ="/data/images/2020-03-18/0.png" width = "400px"/>
+<img src ="/data/images/2020-03-18/0.PNG" width = "400px"/>
 </p>
 
 In contrast, local attention focuses on a small window of context and aligns source states in such window. By doing so, it is less computationally expensive and easier to train. It is a blend of hard and soft attention proposed by [Xu et al. (2015)](http://proceedings.mlr.press/v37/xuc15.pdf)
@@ -23,7 +23,7 @@ In contrast, local attention focuses on a small window of context and aligns sou
 > "Our local attention mechanism selectively focuses on a small window of context and is differentiable. This approach has an advantage of avoiding the expensive computation incurred in the soft attention and at the same time, is easier to train than the hard attention approach."
 
 <p align = "center">
-<img src ="/data/images/2020-03-18/1.png" width = "400px"/>
+<img src ="/data/images/2020-03-18/1.PNG" width = "400px"/>
 </p>
 
 Thus, there is an additional step of alignment in local attention - i.e., searching for an aligned position $p_t$ for each target word at timestep $t$. Then, the context vector $c_t$ is similarly estimated to global attention but applied only to the context window of $[p_t - D, p_t + D]$. $D$ can be empirically selected by the developer. In other words, attention is applied to the local context of $2D+1$ timesteps.
@@ -41,13 +41,13 @@ p_t = S \cdot sigmoid(v_p^{T}tanh(W_ph_t))
 Prior to estimating the context vector $c_t$, the (local or global) alignment weights $\alpha_t$ should be learned. $\alpha_t$ at each timestep of $s$ in source sentence can be calculated as below. $\bar{h_s}$ is the source hidden state at timestep $s$.
 
 \begin{equation}
-\alpha_t(s) = align(h_t, \bar{h_s}) = \frac{exp(score(h_t, \bar{h_s}))}{\sum_{s'}exp(score(h_t, \bar{h_{s'}))}
+\alpha_t(s) = \frac{exp(score(h_t, \bar{h_s}))}{\sum_{s'}exp(score(h_t, \bar{h_{s'}))}
 \end{equation}
 
-There are a variety of scoring functions, i.e., $score()$, . Three functions that are proposed by [Luong et al. (2015)](https://arxiv.org/pdf/1508.04025.pdf) are *dot, general, and concat functions*. The intuition behind different types of scoring functions is similar to that of *cosine similarity*. In the cosine similarity function, dot product basically estimates similarity between two inputs. Similarly, scoring functions calculate similarity between the source and target hidden states.
+There are a variety of scoring functions, i.e., $score()$, . Three functions that are proposed by [Luong et al. (2015)](https://arxiv.org/pdf/1508.04025.pdf) are *dot, general*, and *concat* functions. The intuition behind different types of scoring functions is similar to that of *cosine similarity*. In the cosine similarity function, dot product basically estimates similarity between two inputs. Similarly, scoring functions calculate similarity between the source and target hidden states.
 
 <p align = "center">
-<img src ="/data/images/2020-03-18/2.png" width = "400px" class="center">
+<img src ="/data/images/2020-03-18/2.PNG" width = "400px" class="center">
 </p>
 
 
