@@ -41,7 +41,7 @@ p_t = S \cdot sigmoid(v_p^{T}tanh(W_ph_t))
 Prior to estimating the context vector $c_t$, the (local or global) alignment weights $\alpha_t$ should be learned. $\alpha_t$ at each timestep of $s$ in source sentence can be calculated as below. $\bar{h_s}$ is the source hidden state at timestep $s$.
 
 \begin{equation}
-\alpha_t(s) = \frac{exp(score(h_t, \bar{h_s}))}{\sum_{s'}exp(score(h_t, \bar{h_{s'}))}
+\alpha_t(s) 
 \end{equation}
 
 There are a variety of scoring functions, i.e., $score()$, . Three functions that are proposed by [Luong et al. (2015)](https://arxiv.org/pdf/1508.04025.pdf) are *dot, general*, and *concat* functions. The intuition behind different types of scoring functions is similar to that of *cosine similarity*. In the cosine similarity function, dot product basically estimates similarity between two inputs. Similarly, scoring functions calculate similarity between the source and target hidden states.
