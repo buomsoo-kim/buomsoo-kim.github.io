@@ -121,6 +121,7 @@ I have outlined major developments in attention with emphasis on NLP in this pos
 * [Speech recognition](http://papers.nips.cc/paper/5847-attention-based-models-for-speech-recognition.pdf)
 * [Graph attention networks](https://arxiv.org/pdf/1710.10903.pdf)
 * [Recommender systems 1](https://dl.acm.org/doi/10.1145/3109859.3109890)/[Recommender systems 2](https://arxiv.org/pdf/1801.09251.pdf)
+* [Self-driving cars](http://openaccess.thecvf.com/content_ICCV_2017/papers/Kim_Interpretable_Learning_for_ICCV_2017_paper.pdf)
 
 
 In this posting, I gently introduced the attention mechanism and outlines major developments. From the next posting, we will look into details of key designs of seminal models. I will start out with the Seq2Seq model that motivated the development of alignment models. Thank you for reading.
