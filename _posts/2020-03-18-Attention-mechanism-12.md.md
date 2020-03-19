@@ -36,7 +36,7 @@ Two methods for estimating the aligned position are suggested by [Luong et al. (
 p_t = S \cdot sigmoid(v_p^{T}tanh(W_ph_t))
 \end{equation}
 
-## Scoring functions
+## Scoring functions - how to measure the *similarity* between inputs
 
 Prior to estimating the context vector $c_t$, the (local or global) alignment weights $\alpha_t$ should be learned. $\alpha_t$ at each timestep of $s$ in source sentence can be calculated as below. $\bar{h_s}$ is the source hidden state at timestep $s$.
 
