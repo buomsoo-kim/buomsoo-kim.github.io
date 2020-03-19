@@ -26,7 +26,7 @@ In Pytorch, it was implemented as below. Below is step-by-step procedure of the 
 - ```F.softmax()``` function normalizes scored weights.
 
 <p align = "center">
-<img src ="/data/images/2020-03-18/0.PNG" width = "600px" class="center">
+<img src ="/data/images/2020-03-19/0.PNG" width = "600px" class="center">
 </p>
 
 
