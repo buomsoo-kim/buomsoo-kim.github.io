@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 <p align = "center">
-<img src ="/public/img/profile.jpg" width = "300px"/>
+<img src ="/data/images/profile.jpg" width = "300px"/>
 </p>
 
 # Buomsoo (Raymond) Kim
