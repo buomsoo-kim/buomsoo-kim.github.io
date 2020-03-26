@@ -94,6 +94,8 @@ Though this is a personally curated list of resources, it is **A LOT**. I do not
 - [CS109: Probability for Computer Scientists](http://web.stanford.edu/class/cs109//?fbclid=IwAR1OBt4-tKwVgP5GsjHaVDdX7QdEYAlrI45vv_4tk56Se-pEpY_LLYn9Wk4) (Stanford, Dr. David Varodayan)
 - [Statistics 110: Probability](https://projects.iq.harvard.edu/stat110/home) (Harvard, Dr. Joe Blitzstein)
 - [Computational Linear Algebra for Coders](https://github.com/fastai/numerical-linear-algebra/blob/master/README.md) (fast.ai)
+- [Statistics for Applications](https://ocw.mit.edu/courses/mathematics/18-650-statistics-for-applications-fall-2016/) (MIT, Dr. Phillipe Rigollet)
+- [Introduction to Probability and Statistics](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/) (MIT)
 
 
 ## Open Datasets
