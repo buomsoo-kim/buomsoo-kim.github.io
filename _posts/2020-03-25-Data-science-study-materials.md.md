@@ -68,6 +68,7 @@ Though this is a personally curated list of resources, it is **A LOT**. I do not
 ### Books 
 
 - [Network Science](http://networksciencebook.com/) by Albert-László Barabási
+- [Networks, Crowds, and Markets: Reasoning About a Highly Connected World](https://www.cs.cornell.edu/home/kleinber/networks-book/) by David Easley and Jon Kleinberg
 
 ### Course materials/Lectures
 
