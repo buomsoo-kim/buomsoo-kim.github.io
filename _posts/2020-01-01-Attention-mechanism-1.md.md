@@ -110,18 +110,37 @@ Therefore, the Transformer architecture discards the convolution and recursive o
 [Image source: Devlin et al. (2018)]
 </p>
 
-The intuition behind Transformer inspired a number of researchers, leading to the development of self-attention-based models such as Bidirectional Encoder Representations from Transformers (BERT). BERT pretrains bidirectional representations with the improve Transformer architecture. BERT shows state-of-the-art performance in various NLP tasks as of 2019.
+The intuition behind Transformer inspired a number of researchers, leading to the development of self-attention-based models such as Bidirectional Encoder Representations from Transformers (BERT) by [Devlin et al. (2019)](https://arxiv.org/pdf/1810.04805.pdf?source=post_elevate_sequence_page---------------------------).  BERT pretrains bidirectional representations with the improve Transformer architecture. BERT shows state-of-the-art performance in various NLP tasks as of 2019. And there have a number of transformer-based language models that showed breakthrough results such as XLNet, RoBERTa, GPT-2, and ALBERT.
 
 
 ## Other applications
 
 I have outlined major developments in attention with emphasis on NLP in this posting. However, attention mechanism is now widely used in a number of applications as mentioned. Below are some examples of successful applications of attention in other domains. However, attention mechanism is very actively researched nowadays and it is expected that there will be (is) more and more domains welcoming the application of attentional models. 
 
-* [Heathcare](http://papers.nips.cc/paper/6321-retain-an-interpretable-predictive-model-for-healthcare-using-reverse-time-attention-mechanism.pdf)
-* [Speech recognition](http://papers.nips.cc/paper/5847-attention-based-models-for-speech-recognition.pdf)
-* [Graph attention networks](https://arxiv.org/pdf/1710.10903.pdf)
-* [Recommender systems 1](https://dl.acm.org/doi/10.1145/3109859.3109890)/[Recommender systems 2](https://arxiv.org/pdf/1801.09251.pdf)
-* [Self-driving cars](http://openaccess.thecvf.com/content_ICCV_2017/papers/Kim_Interpretable_Learning_for_ICCV_2017_paper.pdf)
+* Heathcare: [Choi et al. (2016)](http://papers.nips.cc/paper/6321-retain-an-interpretable-predictive-model-for-healthcare-using-reverse-time-attention-mechanism.pdf)
+* Speech recognition: [Chorowski et al. (2015)](http://papers.nips.cc/paper/5847-attention-based-models-for-speech-recognition.pdf)
+* Graph attention networks: [Velickovic´ et al. (2018)](https://arxiv.org/pdf/1710.10903.pdf)
+* Recommender systems: [Seo et al. (2017)](https://dl.acm.org/doi/10.1145/3109859.3109890) [Tay et al. (2018)](https://arxiv.org/pdf/1801.09251.pdf)
+* Self-driving cars: [Kim and Canny (2017)](http://openaccess.thecvf.com/content_ICCV_2017/papers/Kim_Interpretable_Learning_for_ICCV_2017_paper.pdf)
 
 
-In this posting, I gently introduced the attention mechanism and outlines major developments. From the next posting, we will look into details of key designs of seminal models. I will start out with the Seq2Seq model that motivated the development of alignment models. Thank you for reading.
+In this posting, I gently introduced the attention mechanism and outlines major developments. From the next posting, we will look into details of key designs of seminal models. I will start out with the Seq2Seq model that motivated the development of alignment models.
+
+
+## References
+
+- [Cho et al. (2014)](http://emnlp2014.org/papers/pdf/EMNLP2014179.pdf)
+- [Sutskever et al. (2014)](https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf) 
+- [Bahdanau et al. (2015)](https://arxiv.org/pdf/1409.0473.pdf)
+- [Luong et al. (2015)](https://arxiv.org/pdf/1508.04025.pdf)
+- [Xu et al. (2015)](http://proceedings.mlr.press/v37/xuc15.pdf)
+- [Yang et al. 2016](https://www.aclweb.org/anthology/N16-1174.pdf)
+- [Vaswani et al. (2017)](https://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf)
+- [Devlin et al. (2019)](https://arxiv.org/pdf/1810.04805.pdf?source=post_elevate_sequence_page---------------------------)
+
+## For more intuitive and in-depth explanations on attention...
+
+- [Attention and Memory in Deep Learning](https://www.youtube.com/watch?v=Q57rzaHHO0k) (DeepMind)
+- [Neural Machine Translation and Models with Attention](https://www.youtube.com/watch?v=IxQtK2SjWWM)
+ (Chris Manning)
+- [Attention Model](https://www.youtube.com/watch?v=quoGRI-1l0A&t=130s) (Andrew Ng)
