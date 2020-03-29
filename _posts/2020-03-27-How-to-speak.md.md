@@ -14,9 +14,9 @@ This is a fantastic lecture by [Professor Patrick Wilson](https://www.memoriesof
 Professor Patrick Wilson was a computer scientist at the Massachussettes Institute of Technology (MIT). He was director of the MIT Artificial Intelligence Lab from 1972-1997. His doctoral advisor was [Marvin Minsky](https://en.wikipedia.org/wiki/Marvin_Minsky), one of the fathers of modern AI.
 
 
-# Summary
+Below is the summarization of his talk on the art of speaking.
 
-## Success factors in life
+# Success factors in life
 
 Success in one's life will be determined by below three factors, ordered by importance.
 
@@ -24,7 +24,7 @@ Success in one's life will be determined by below three factors, ordered by impo
 2. Ability to write
 3. Quality of ideas
 
-## Quality of your speech
+# Quality of your speech
 
 Quality of your speech is contingent upon three major factors.
 
@@ -36,46 +36,46 @@ Quality of your speech is contingent upon three major factors.
 - $P$: practice
 - $T$: inherent talent (*very small*)
 
-## How to start
+# How to start
 
-### No Jokes
+## No Jokes
 
 Starting with jokes is not a good idea because the audience is not ready for a joke.
 
-### Empowerment Promise
+## Empowerment Promise
 
 Instead, tell people what they are going to learn that they didn't know at the beginning of the hour.
 
 
-## Samples for the speech "armamentarium"
+# Samples for the speech "armamentarium"
 
-### Cycle
+## Cycle
 
 Repeatedly emphasize your idea (three times) so that people can remember
 
-### Build fence
+## Build fence
 
 Build a fence around your idea so that the audience doesn't confuse it with somebody else's idea
 
-### Verbal punctuation
+## Verbal punctuation
 
 Provide landmarks where you let the audience to know that it is a good time to *"get back on"* to the talk
 
-### Questions
+## Questions
 
 Ask a question (and wait 7 seconds for an answer) that is neither too hard nor easy.
 
 
-## Time & Place
+# Time & Place
 
 Ideally, speak at 11 AM, where it is well lit, cased, and reasonably populated.
 
 
-## Tools
+# Tools
 
 - "Empathetic mirroring": movements in the physical world are mirrored in the brain.
 
-### Boards
+## Boards
 
 Boards are useful when informing, teaching, and lecturing.
 
@@ -83,12 +83,12 @@ Boards are useful when informing, teaching, and lecturing.
 - Speed
 - Target: where to place the hands. Putting hands in your back or pockets can be inappropriate.
 
-### Props
+## Props
 
 Helps the audience remember the details. 
 
 
-### Slides
+## Slides
 
 Slides are good when your purpose is exposing, e.g., job talks and conference presentations.
 
@@ -146,35 +146,35 @@ With 3 or 4 slides having text, let the audience read them with time.
 </p>
 
 
-## Informing
+# Informing
 
-### Promise
+## Promise
 
 Provide promise upfront with something that the audience can learn from the talk.
 
-### Inspiration
+## Inspiration
 
 Be someone who show *passion* in what you are doing.
 
-### How to think
+## How to think
 
 Teach people how to think
 
 
-## Persuading
+# Persuading
 
-### Job talks
+## Job talks
 
 Someone who is familiar with the talk is not good judge of a good presentation.
 
 - Vision: problem & approach
 - Done something: steps that need to solve the problem
 
-=> only five minutes to show the two
+__*You have only five minutes to show the two!*__
 
 - Contributions
 
-### Getting famous: being recognized for what you did
+## Getting famous: being recognized for what you did
 
 - **Why care?** You get used to being famous, but do not get used to not being recognized for what you have done
 
@@ -186,14 +186,14 @@ Someone who is familiar with the talk is not good judge of a good presentation.
 4. Salient idea: near miss
 5. Story" how you did it, how it works, and why it is important
 
-### How to stop
+## How to stop
 
 - Final slides
 
 *Uncool* ways to end a presentation
 
 <p align = "center">
-<img src ="/data/images/2020-03-27/8.PNG" width = "600px" class = "center">
+<img src ="/data/images/2020-03-27/8.png" width = "600px" class = "center">
 </p>
 
 Finish while summarizing the key contributions
