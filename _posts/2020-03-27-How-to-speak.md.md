@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [MIT OCW] How to speak by Patrick Wilson
+title: MIT OCW - How to speak by Patrick Wilson
 category: Study
 tags: [MIT OCW, communication, speaking]
 ---
@@ -31,10 +31,6 @@ Quality of your speech is contingent upon three major factors.
 <p align = "center">
 <img src ="/data/images/2020-03-27/0.PNG" width = "500px" class = "center">
 </p>
-
-\begin{equation}
-Quality = f(K, P, T)
-\end{equation}
 
 - $K$: knowledge 
 - $P$: practice
