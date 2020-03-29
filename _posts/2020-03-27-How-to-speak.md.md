@@ -29,7 +29,7 @@ Success in one's life will be determined by below three factors, ordered by impo
 Quality of your speech is contingent upon three major factors.
 
 <p align = "center">
-<img src ="/data/images/2020-03-27/0.PNG" width = "500px"/ class = "center">
+<img src ="/data/images/2020-03-27/0.PNG" width = "500px" class = "center">
 </p>
 
 \begin{equation}
@@ -101,7 +101,7 @@ Slides are good when your purpose is exposing, e.g., job talks and conference pr
 Use slides as condiments, not the main part of talk. Do not use small fonts.
 
 <p align = "center">
-<img src ="/data/images/2020-03-27/1.PNG" width = "500px"/ class = "center">
+<img src ="/data/images/2020-03-27/1.PNG" width = "500px" class = "center">
 </p>
 
 - Important rules
@@ -112,7 +112,7 @@ Use slides as condiments, not the main part of talk. Do not use small fonts.
 4. Eliminate clutter
 
 <p align = "center">
-<img src ="/data/images/2020-03-27/2.PNG" width = "500px"/ class = "center">
+<img src ="/data/images/2020-03-27/2.PNG" width = "500px" class = "center">
 </p>
 
 - Common crimes
@@ -120,7 +120,7 @@ Use slides as condiments, not the main part of talk. Do not use small fonts.
 1. Small font size
 
 <p align = "center">
-<img src ="/data/images/2020-03-27/4.PNG" width = "400px"/ class = "center">
+<img src ="/data/images/2020-03-27/4.PNG" width = "400px" class = "center">
 </p>
 
 2. Laser pointers: not recommended
@@ -128,25 +128,25 @@ Use slides as condiments, not the main part of talk. Do not use small fonts.
 The speaker gets no eye contact, no engagement with the audience.
 
 <p align = "center">
-<img src ="/data/images/2020-03-27/3.PNG" width = "400px"/ class = "center">
+<img src ="/data/images/2020-03-27/3.PNG" width = "400px" class = "center">
 </p>
 
 Rather, put a little arrow on the slide to point out something.
 
 <p align = "center">
-<img src ="/data/images/2020-03-27/5.PNG" width = "400px"/ class = "center">
+<img src ="/data/images/2020-03-27/5.PNG" width = "400px" class = "center">
 </p>
 
 3. The too heavy crime
 
 <p align = "center">
-<img src ="/data/images/2020-03-27/6.PNG" width = "400px"/ class = "center">
+<img src ="/data/images/2020-03-27/6.PNG" width = "400px" class = "center">
 </p>
 
 With 3 or 4 slides having text, let the audience read them with time.
 
 <p align = "center">
-<img src ="/data/images/2020-03-27/7.PNG" width = "400px"/ class = "center">
+<img src ="/data/images/2020-03-27/7.PNG" width = "400px" class = "center">
 </p>
 
 
@@ -197,13 +197,13 @@ Someone who is familiar with the talk is not good judge of a good presentation.
 *Uncool* ways to end a presentation
 
 <p align = "center">
-<img src ="/data/images/2020-03-27/8.PNG" width = "600px"/ class = "center">
+<img src ="/data/images/2020-03-27/8.PNG" width = "600px" class = "center">
 </p>
 
 Finish while summarizing the key contributions
 
 <p align = "center">
-<img src ="/data/images/2020-03-27/9.PNG" width = "500px"/ class = "center">
+<img src ="/data/images/2020-03-27/9.PNG" width = "500px" class = "center">
 </p>
 
 - Final words 
