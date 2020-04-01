@@ -7,7 +7,7 @@ tags: [MIT OCW, communication, speaking]
 
 This is a fantastic lecture by [Professor Patrick Wilson](https://www.memoriesofpatrickwinston.com/) at MIT on how to speak. Communication skills are arguably one of the most critical facets in life. Especially, how to properly speak in front of others is extremely important for professional success - job interviews, conference presentations, project meetings, and so on. In this video, Professor Wilson clearly outlines what are the fundamental building blocks of good speech and how to put them together to clearly communicate with the audience.
 
-- [YouTube Link](https://www.youtube.com/watch?v=Unzc731iCUY&list=WL&index=16&t=6s) to the lecture video
+- [YouTube Link](https://youtu.be/Unzc731iCUY) to the lecture video
 
 # About the speaker
 
