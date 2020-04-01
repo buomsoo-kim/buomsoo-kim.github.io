@@ -32,9 +32,8 @@ Do not think of *rules* when writing. *Think about readers* if you are an expert
 
 As a result, the writing process interferes with the reading process of readers.
 
-<p align = "center">
 <img src ="/data/images/2020-03-30/1.PNG" width = "500px" class = "center">
-</p>
+
 
 ## When readers are interfered,
 
