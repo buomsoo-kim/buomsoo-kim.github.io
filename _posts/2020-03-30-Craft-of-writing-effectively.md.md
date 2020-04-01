@@ -23,7 +23,7 @@ This is the gist of this talk.
 Do not think of *rules* when writing. *Think about readers* if you are an expert caring about the value of your writing.
 
 
-# (In many cases) Reading and writing processes are orthogonal
+# Orthogonal processes of reading and writing
 
 ## Horizontal process of writing interferes vertical process of reading
 
@@ -53,12 +53,12 @@ They are paid to read and grade your text, not to change the way they see the wo
 <img src ="/data/images/2020-03-30/2.PNG" width = "500px" class = "center">
 </p>
 
-Nevertheless, in the world beyond school, people are not paid to care about you. They read because the material has __*VALUE*__ to them.
+Nevertheless, in the world beyond school, people are not paid to care about you. They read because the material has __VALUE__ to them.
 
 
 # Your writing has to be VALUABLE
 
-## Desiderata of professional text
+## Common desiderata of professional text
 
 - Clear
 - Organized
