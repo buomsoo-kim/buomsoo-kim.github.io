@@ -1,13 +1,13 @@
 ---
 layout: post
-title: MIT OCW - How to speak by Patrick Wilson
-category: Study
+title: How to speak by Patrick Wilson (MIT OpenCourseWare)
+category: Learning
 tags: [MIT OCW, communication, speaking]
 ---
 
 This is a fantastic lecture by [Professor Patrick Wilson](https://www.memoriesofpatrickwinston.com/) at MIT on how to speak. Communication skills are arguably one of the most critical facets in life. Especially, how to properly speak in front of others is extremely important for professional success - job interviews, conference presentations, project meetings, and so on. In this video, Professor Wilson clearly outlines what are the fundamental building blocks of good speech and how to put them together to clearly communicate with the audience.
 
-- [YouTube Link](https://www.youtube.com/watch?v=Unzc731iCUY&list=WL&index=16&t=6s)
+- [YouTube Link](https://youtu.be/Unzc731iCUY) to the lecture video
 
 # About the speaker
 
@@ -32,7 +32,7 @@ Quality of your speech is contingent upon three major factors.
 <img src ="/data/images/2020-03-27/0.PNG" width = "500px" class = "center">
 </p>
 
-- $K$: knowledge 
+- $K$: knowledge
 - $P$: practice
 - $T$: inherent talent (*very small*)
 
@@ -85,7 +85,7 @@ Boards are useful when informing, teaching, and lecturing.
 
 ## Props
 
-Helps the audience remember the details. 
+Helps the audience remember the details.
 
 
 ## Slides
@@ -202,7 +202,7 @@ Finish while summarizing the key contributions
 <img src ="/data/images/2020-03-27/9.PNG" width = "500px" class = "center">
 </p>
 
-- Final words 
+- Final words
 
 1. Telling a joke is okay
 2. Do not thank the audience. It is a weak move.

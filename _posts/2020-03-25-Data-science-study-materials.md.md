@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Best self-study materials for Machine Learning/Deep Learning/Natural Language Processing - Free online data science study resources
-category: Study
+category: Learning
 tags: [Data Science, Machine Learning, Deep Learning]
 ---
 
@@ -52,7 +52,7 @@ Though this is a personally curated list of resources, it is **A LOT**. I do not
 
 ## Natural language processing
 
-### Books 
+### Books
 
 - [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp3/) by Dan Jufrasky and James Martin
 
@@ -65,7 +65,7 @@ Though this is a personally curated list of resources, it is **A LOT**. I do not
 
 ## Network analysis
 
-### Books 
+### Books
 
 - [Network Science](http://networksciencebook.com/) by Albert-László Barabási
 - [Networks, Crowds, and Markets: Reasoning About a Highly Connected World](https://www.cs.cornell.edu/home/kleinber/networks-book/) by David Easley and Jon Kleinberg
@@ -77,7 +77,7 @@ Though this is a personally curated list of resources, it is **A LOT**. I do not
 
 ## Reinforcement learning
 
-### Books 
+### Books
 
 - [Reinforcement Learning: An Introduction](http://incompleteideas.net/book/the-book-2nd.html) by Richard Sutton & Andrew Barto
 
