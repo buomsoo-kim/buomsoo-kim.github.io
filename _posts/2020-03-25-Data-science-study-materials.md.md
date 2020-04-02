@@ -6,7 +6,7 @@ tags: [Data Science, Machine Learning, Deep Learning]
 ---
 
 # Data science study resources
-*Updated March 27 2020*
+*Updated Apr 1 2020*
 
 As the field matures, there is an abundance of resources to study data science nowadays. At the same time, it is getting more difficult to search and locate high-quality study material with an increasing level of information overload. Therefore, I started gathering and organizing study resources for contemporary data science. Here, I present study materials that I highly recommend. Most materials are either (1) ones that I have personally studied and reviewed or (2) ones repeated recommended by my colleagues and friends. Hence, this is not a comprehensive set of resources for studying data science for anyone, but rather a curated set of materials from my (biased) point of view. Also, I will update and refresh the resources from time to time, so stay tuned!
 
@@ -103,6 +103,7 @@ Though this is a personally curated list of resources, it is **A LOT**. I do not
 
 - [Awesome public datasets](https://github.com/awesomedata/awesome-public-datasets)
 - [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets.php)
+- [Google Dataset Search](https://datasetsearch.research.google.com/)
 
 
 ## Podcasts/YouTube channel/Blog
