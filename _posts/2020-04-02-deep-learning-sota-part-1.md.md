@@ -5,7 +5,7 @@ category: Learning
 tags: [deep learning, data science]
 ---
 
-This is one of talks in MIT deep learning series by Lex Fridman on state of the art developments in deep learning. In this talk, Fridman covers achievements in various application fields of deep learning (DL), from NLP to recommender systems. It is a very informative talk encompassing diverse facets of DL, not just technicalities but also issues regarding people, education, business, policy, and ethics. I encourage anyone interested in DL to watch the [video](https://youtu.be/0VH1Lim8gL8) if time avails. For those who do not have enough time or want to review the materials, I summarized the contents in this posting. Since it is a fairly long talk with a great amount of information, this posting will be about the first part of the talk, until the natural language processing (NLP) part.
+This is one of talks in MIT deep learning series by Lex Fridman on state of the art developments in deep learning. In this talk, Fridman covers achievements in various application fields of deep learning (DL), from NLP to recommender systems. It is a very informative talk encompassing diverse facets of DL, not just technicalities but also issues regarding people, education, business, policy, and ethics. I encourage anyone interested in DL to watch the [video](https://youtu.be/0VH1Lim8gL8) if time avails. For those who do not have enough time or want to review the contents, I summarized the contents in this posting and provided hyperlinks to additional materials. Since it is a fairly long talk with a great amount of information, this posting will be about the first part of the talk, until the natural language processing (NLP) part.
 
 - [YouTube Link](https://youtu.be/0VH1Lim8gL8) to the lecture video
 
@@ -49,28 +49,22 @@ Below is the summarization of his talk.
 
 ## Turing award for DL
 
+<p align = "center">
+<img src ="/data/images/2020-04-06/8.PNG" width = "600px" class = "center">
+</p>
+
 - Yann LeCun, Geoff Hinton, and Yoshua Bengio wins Turing award (2018)
 
 > "The conceptual and engineering breakthroughs that have made deep neural networks a critical component of computing"
 
 ## Early figures in DL
 
-- 1943: Walter Pitts & Warren McCulloch
-Computational model for neural nets
-
-- 1957, 1962: Frank Rosenblatt
-Perceptron (single- & multi-layer)
-
-- 1965: Alexey Ivakhnenko & V. G. Lapa
-Learning algorithm for MLP
-- 1970: Seppo Linnainmmaa
-Backpropagation and automatic differentiation
-
-- 1979: Kunihiko Fukushima
-Convolutional neural nets
-
-- 1982: John Hopfield
-Hopfield networks (recurrent neural nets)
+- 1943: Walter Pitts & Warren McCulloch (computational model for neural nets)
+- 1957, 1962: Frank Rosenblatt (perceptron with single- & multi-layer)
+- 1965: Alexey Ivakhnenko & V. G. Lapa (learning algorithm for MLP)
+- 1970: Seppo Linnainmmaa (backpropagation and automatic differentiation)
+- 1979: Kunihiko Fukushima (convolutional neural nets)
+- 1982: John Hopfield (Hopfield networks, i.e., recurrent neural nets)
 
 ## People of DL & AI
 
@@ -89,6 +83,7 @@ Hopfield networks (recurrent neural nets)
 - "By 2020, the popular press starts having stories that the era of Deep Learning is over" (Rodney Brooks)
 
 ## Growth in DL community
+
 <p align = "center">
 <img src ="/data/images/2020-04-06/0.PNG" width = "500px" class = "center">
 </p>
@@ -202,7 +197,7 @@ Amazon open-sourced the topical-chat dataset, inviting researchers to participat
 
 ### Common-sense reasoning
 
--[Rajani et al. (2019)](https://arxiv.org/pdf/1906.02361.pdf)
+- [Rajani et al. (2019)](https://arxiv.org/pdf/1906.02361.pdf)
 
 <p align = "center">
 <img src ="/data/images/2020-04-06/5.PNG" width = "400px" class = "center">
