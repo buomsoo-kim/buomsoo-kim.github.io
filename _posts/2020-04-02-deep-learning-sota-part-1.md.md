@@ -218,4 +218,4 @@ More focus on open-domain dialogue
 Ideas and successes in self-supervised learning in visual data
 
 
-So far, this is the summarization of the talk up to the NLP part. In the next posting, I will be distilling and summarizing information from the remaining part of the talk.
+So far, this is the summarization of the talk up to the NLP part. In the next few postings, I will be distilling and summarizing information from the remaining part of the talk.
