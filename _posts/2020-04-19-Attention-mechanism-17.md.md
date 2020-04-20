@@ -56,8 +56,8 @@ One of the key characteristics of the Transformer that differentiates from *RNN 
 
 <p align = "center">
 <img src ="/data/images/2020-04-19/0.PNG" width = "400px" class="center">
-</p>
 [Image source: [Cheng et al. 2016](https://arxiv.org/pdf/1601.06733.pdf)]
+</p>
 
 
 Since there is only one sequence to model, the query, key, and value are the same in self-attention networks ($Q = K = V$). Also, since there is no RNN cells in the network, they are not hidden states. Rather, they are *positional-encoded embedded sequence inputs*. We will see what *positional encoding* is in the following section, so don't worry.
@@ -107,7 +107,8 @@ Finally, we have gone through all of the key building blocks of Transformer. Now
 
 <p align = "center">
 <img src ="/data/images/2020-04-19/1.PNG" width = "300px" class="center">
-</p>
 [Image source: Vaswani et al. 2017]
+</p>
+
 
 In the next posting, let's try implementing the Transformer with Pytorch. Good new is that Pytorch provides ```nn.Transformer``` and related modules that makes implemenation extremely easy. See you in the next posting!
