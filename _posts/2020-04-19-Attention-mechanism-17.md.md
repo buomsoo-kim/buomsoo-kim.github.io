@@ -103,7 +103,7 @@ head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)
 Finally, we have gone through all of the key building blocks of Transformer. Now you would be in a better position to understand the architecture of Transformer outlined in below figure by [Vaswani et al. (2017)](https://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf). It is not required to entirely understand the mathematics and details of each mechanism (at least I can't, to be honest), but good to have a general idea of how the network works.
 
 <p align = "center">
-<img src ="/data/images/2020-04-19/1.PNG" width = "300px" class="center">
+<img src ="/data/images/2020-04-19/1.PNG" width = "600px" class="center">
 <i> Image source: Vaswani et al. (2017)</i>
 </p>
 
