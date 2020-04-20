@@ -26,7 +26,7 @@ $$ V = (v_1, v_2, ..., v_m) $$
 
 $$ \alpha_{ij} = softmax(a(s_{i-1}, h_j)), j = 1, 2, ..., m $$
 
-$$c_t = \sum_{k=1}^{m} \alpha_{ik}v_k = \sum_{k=1}^{m} \alpha_{ik}h_k $$
+$$c_t = \sum_{k=1}^{m} \alpha_{tk}v_k = \sum_{k=1}^{m} \alpha_{tk}h_k $$
 
 
 ## Scaled dot-product attention
@@ -34,13 +34,13 @@ $$c_t = \sum_{k=1}^{m} \alpha_{ik}v_k = \sum_{k=1}^{m} \alpha_{ik}h_k $$
 As mentioned, there are many possible choices for scoring the weights for $V$, such as general, concat, and dot product. For details, you can refer to [Luong et al. (2015)](https://arxiv.org/pdf/1508.04025.pdf)
 
 <p align = "center">
-<img src ="/data/images/2020-03-18/2.PNG" width = "300px" class="center">
+<img src ="/data/images/2020-03-18/2.PNG" width = "500px" class="center">
 </p>
 
 The scoring function recommended by [Vaswani et al. (2017)](https://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf) is the scaled dot-product function, which is a slight variant of the dot function, which basically applies dot product on the $Q$ and $K$, or $h$ and $s$. The scaled-dot function scales the dot product between $Q$ and $K$ with square-root of the dimensionality of $V$, i.e., $\sqrt{d_k}$. Therefore,
 
 \begin{equation}
-Attention(Q, K, V) = softmax(\frac{QK^{T}}{sqrt{d_k}})V
+Attention(Q, K, V) = softmax(\frac{QK^{T}}{\sqrt{d_k}})V
 \end{equation}
 
 The reason for scaling is to prevent the cases where gradients gets extremely small by dot products growing too large.
@@ -83,7 +83,7 @@ $$PE_{pos, 2i} = sin(\frac{pos}{10000^{2i/d_{model}}}) $$
 $$ PE_{pos, 2i + 1} = cos(\frac{pos}{10000^{2i/d_{model}}})$$
 
 
-The dimension ($i$) spans through 1 to $d_model$, which is the dimensionality of the embedding space. Therefore, outputs from positional encoding have the same tensor size as the embedded sequences. They are added up and passed onto the next layer, which is *multi-head* attention.
+The dimension ($i$) spans through 1 to $d_{model}$, which is the dimensionality of the embedding space. Therefore, outputs from positional encoding have the same tensor size as the embedded sequences. They are added up and passed onto the next layer, which is *multi-head* attention.
 
 ## Multi-head attention
 
@@ -100,7 +100,7 @@ head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)
 \end{equation}
 
 
-Finally, we have gone through all of the key building blocks of Transformer. Now you would be in a better position to understand the architecture of Transformer outlined in below figure by [Vaswani et al. (2017)](https://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf). It is not required to entirely understand the mathematics and details of each mechanism (even I *cannot*), but good to have a general idea of how the network works.
+Finally, we have gone through all of the key building blocks of Transformer. Now you would be in a better position to understand the architecture of Transformer outlined in below figure by [Vaswani et al. (2017)](https://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf). It is not required to entirely understand the mathematics and details of each mechanism (at least I can't, to be honest), but good to have a general idea of how the network works.
 
 <p align = "center">
 <img src ="/data/images/2020-04-19/1.PNG" width = "300px" class="center">
