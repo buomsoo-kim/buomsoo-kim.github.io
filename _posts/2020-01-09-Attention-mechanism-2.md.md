@@ -12,6 +12,7 @@ In previous posting, I introduced the attention mechanism and outlined its (not 
 
 <p align = "center">
 <img src ="https://3.bp.blogspot.com/-3Pbj_dvt0Vo/V-qe-Nl6P5I/AAAAAAAABQc/z0_6WtVWtvARtMk0i9_AtLeyyGyV6AI4wCLcB/s1600/nmt-model-fast.gif" width = "600px"/>
+Image [source](https://www.datasciencecentral.com/profiles/blogs/seq2seq)
 </p>
 
 
@@ -28,7 +29,7 @@ Deep neural networks are highly effective tools to model non-linear data for var
 Consider the classical application of Seq2Seq to the machine translation task, i.e., translating French sentences (source) to English ones (target). Notice that source sentences have different lengths in terms of words (or characters). The first French sentence "On y va," which is translated into "Let's go" in English, has three words or the second, third, and fourth sentences have four, five, and six, respectively. Also, the number of target words are not fixed as well - it can be two to six words in this example. 
 
 <p align = "center">
-<img src ="/data/images/2020-01-09/Picture1.png" width = "600px"/>
+<img src ="/data/images/2020-01-09/Picture1.png" width = "800px"/>
 </p>
 
 Another potential problem of machine translation is that source (and target) words are often dependent on each other. For instance, when we see the word "I" at the start of the sentence, we are more likely to see "am" as the second word than "are." Conversely, if we see "You," we are likely to see "are" than "am." Thus, it is important to model temporal dependencies among different words (and characters) in a sentence. 
@@ -49,7 +50,7 @@ Both encoder and decoder comprise multiple recurrent neural network (RNN) cells 
 
 <p align = "center">
 <img src ="https://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-chain.png" width = "500px"/>
-[Image source: https://colah.github.io/posts/2015-08-Understanding-LSTMs/]
+Image [source](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 </p>
 
 The final hidden state of the encoder, **c**, functions as a summary of the inputs to the encoder, i.e., the source sentence. In other words, information from the source sentence is distilled in a vector with a fixed dimensionality. In the decoder , **c** is an input to RNN cells, along with previous hidden state and target word. Therefore, the hidden state at level *t* is calculated as below (*f* is the RNN operation in this context).
@@ -67,7 +68,7 @@ P(y_t|y_{t-1}, y_{t-2}, ..., y_1, c) = g(h_t, y_{t-1}, c)
 Then, the calculated probabilities are softmaxed to find the word with the highest predicted probability.
 
 <p align = "center">
-<img src ="/data/images/2020-01-01/3.png" width = "500px"/>
+<img src ="/data/images/2020-01-01/3.png" width = "600px"/>
 [Image source: Sutskever et al. (2014)]
 </p>
 

@@ -71,8 +71,9 @@ Prior to implemeting the encoder and decoder, let's briefly review the inner wor
 
 <p align = "center">
 <img src ="https://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-shorttermdepdencies.png" width = "600px"/>
+Image [source](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 </p>
-[source: Understanding LSTM Networks]
+
 
 RNNs in general are used for modeling temporal dependencies among inputs in consecutive timesteps. Unlike feed-forward neural networks, they have "loops" in the network, letting the information flow between timesteps. Such information is stored and passed onto as "hidden states." For each input ($$x_i$$), there is a corresponding hidden state ($$h_i$$) that preserves information at that time step $$i$$. And that hidden state is also an input at the next time step with $$x_{i+1}$$. At the first timestemp (0), they are randomly initialized.
 

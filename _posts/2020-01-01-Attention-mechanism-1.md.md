@@ -21,13 +21,19 @@ Therefore, in this posting series, I will illustrate the development of the atte
 
 Final disclaimer is that I am **not** an expert or authority on attention. The primary purpose of this posting series is for my own education and organization. However, I am sharing my learning process here to help anyone who is eager to learn new things, just like myself. Please do not heistate leave a comment if you detect any mistakes or errors that I make, or you have any other (great) ideas and suggestions. Thank you for reading my article.
 
-## Development of attention mechanism (in NLP)
+## Key developments in attention
 
 <p align = "center">
 <img src ="/data/images/2020-01-01/2.png" width = "600px"/>
 </p>
 
 Attention mechanism was first proposed in the NLP field and still actively researched in the field. Above is the key designs and seminal papers that led to major developments. Here, I will briefly review them one by one. 
+
+- Seq2Seq, or RNN Encoder-Decoder ([Cho et al. (2014)](http://emnlp2014.org/papers/pdf/EMNLP2014179.pdf), [Sutskever et al. (2014)](https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf))
+- Alignment models ([Bahdanau et al. (2015)](https://arxiv.org/pdf/1409.0473.pdf), [Luong et al. (2015)](https://arxiv.org/pdf/1508.04025.pdf))
+- Visual attention ([Xu et al. (2015)](http://proceedings.mlr.press/v37/xuc15.pdf))
+- Hierarchical attention ([Yang et al. 2016](https://www.aclweb.org/anthology/N16-1174.pdf))
+- Transformer ([Vaswani et al. (2017)](https://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf))
 
 ## Sequence to sequence (Seq2Seq) architecture for machine translation
 
@@ -74,7 +80,7 @@ Accordingly, they utilized a convolutional layer to extract features from the im
 
 ## Hierarchical attention
 
-[Yang et al. 2016](https://www.aclweb.org/anthology/N16-1174.pdf) demonstrated with their hierarchical attention network (HAN) that attention can be effectively used on various levels. Also, they showed that attention mechanism applicable to the classification problem, not just sequence generation.
+[Yang et al. (2016)](https://www.aclweb.org/anthology/N16-1174.pdf) demonstrated with their hierarchical attention network (HAN) that attention can be effectively used on various levels. Also, they showed that attention mechanism applicable to the classification problem, not just sequence generation.
 
 <p align = "center">
 <img src ="/data/images/2020-01-01/7.png" width = "300px"/>

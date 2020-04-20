@@ -12,16 +12,18 @@ So far, we looked into Seq2Seq, or the *RNN Encoder-Decoder*, proposed by [Cho e
 > "A potential issue with this encoder–decoder approach is that a neural network needs to be able to compress all the necessary information of a source sentence into a fixed-length vector. This may make it difficult for the neural network to cope with long sentences, especially those that are longer than the sentences in the training corpus" (Bahdahanu et al. 2015) 
 
 <p align = "center">
-<img src ="/data/images/2020-03-05/0.PNG" width = "300px"/>
-[Bahdahanu et al. (2015)]
+<img src ="/data/images/2020-03-05/0.PNG" width = "200px"/>
+<i>Image source: Bahdahanu et al. (2015)</i>
 </p>
 
 Such shortcoming leads to a potential loss of information, especially in case of long sentences as noted. Therefore, [Bahdahanu et al. (2015)](https://arxiv.org/pdf/1409.0473.pdf) proposed an improve sequence-to-sequence architecture that *aligns* source and target sequences. This will enable the model to *attend to* a specific part of the source sentence, minimizing information loss from long sentences. In addition, such mechanism enables explanations of mapping between the source and target as in saliency maps below.
 
+
 <p align = "center">
-<img src ="/data/images/2020-03-05/1.PNG" width = "500px"/>
-[Bahdahanu et al. (2015)]
+<img src ="/data/images/2020-03-05/1.PNG" width = "600px"/>
+<i>Image source: Bahdahanu et al. (2015)</i>
 </p>
+
 
 In this posting, let's briefly go through the alignment mechanism for input and output sequences proposed by [Bahdahanu et al. (2015)](https://arxiv.org/pdf/1409.0473.pdf).
 
@@ -52,7 +54,7 @@ e_{ij} = dense(s_{i-1}, h_j)
 
 The dense layer here is an alignment model that *aligns* the source and target.
 
-> " an alignment model which scores how well the inputs around position j and the output at position i match." (Bahdahanu et al. 2015)
+> "an alignment model which scores how well the inputs around position j and the output at position i match." (Bahdahanu et al. 2015)
 
 
 In this posting, we briefly looked into the architecture of Seq2Seq with alignment proposed by [Bahdahanu et al. (2015)](https://arxiv.org/pdf/1409.0473.pdf). From the next posting, let's try implementing it with Pytorch. Thank you for reading.

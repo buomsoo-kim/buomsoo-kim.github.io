@@ -14,9 +14,11 @@ In the [previous posting](https://buomsoo-kim.github.io/attention/2020/01/09/Att
 
 The task of machine translation is to automate the process of converting sentences in one language (e.g., French) to ones in another language (e.g., English). The sentences (words) that we want to convert are often called source sentences (words). And sentences (words) that are converted into are target sentences (words). In the diagram below demonstrating translation from French to English, the first source words are "On", "y" and "va," while target words are "Let's" and "go."
 
+
 <p align = "center">
-<img src ="/data/images/2020-01-09/Picture1.png" width = "600px"/>
+<img src ="/data/images/2020-01-09/Picture1.png" width = "800px"/>
 </p>
+
 
 Neural machine translation is a branch of machine translation that actively utilizes neural networks, such as recurrent neural networks and multilayer perceptrons, to predict the likelihood of a possible word sequence in the corpus. So far, neural machine translation has more succesfully tackled problems in machine translation that have outlined in the [previous posting](https://buomsoo-kim.github.io/attention/2020/01/09/Attention-mechanism-2.md/). 
 
@@ -24,7 +26,7 @@ Many of earlier ground-breaking studies in neural machine translation employ Seq
 
 <p align = "center">
 <img src ="/data/images/2020-01-09/Fig1.png" width = "400px"/>
-[Image source: Cho et al. (2014)]
+<i>Image source: Cho et al. (2014)</i>
 </p>
 
 ## Dataset
@@ -32,15 +34,15 @@ Many of earlier ground-breaking studies in neural machine translation employ Seq
 The dataset used in this posting is English-German sentence pairs dataset downloaded from [here](https://www.manythings.org/anki/). They provide not only German sentences corresponding to English ones, but also other languages such as French, Arabic, and Chinese. So if you want to try out translating other languages, please check out the website!
 
 <p align = "center">
-<img src ="/data/images/2020-01-13/1.png" width = "700px"/>
-[Image source: https://www.manythings.org/anki/]
+<img src ="/data/images/2020-01-13/1.png" width = "900px"/>
+<i>Image [source](https://www.manythings.org/anki/)</i>
 </p>
 
 The data are tab-separated, with each line consisting of English sentence + TAB + Another language sentence + TAB + Attribution. Therefore, we can extract (English sentence, another language sentence) from each line while splitting each line with TAB ("\t").
 
 <p align = "center">
-<img src ="/data/images/2020-01-13/2.png" width = "400px"/>
-[Image source: https://www.manythings.org/anki/]
+<img src ="/data/images/2020-01-13/2.png" width = "700px"/>
+<i>Image [source](https://www.manythings.org/anki/)</i>
 </p>
 
 Let's start out with importing necessary packages. We do not need many packages for this practice and they are already installed in the Colab environment. We just need to import them.
@@ -169,4 +171,4 @@ print([deu_words[x] for x in deu_sentences[0]])
 ['<sos>', 'soweit', 'ist', 'alles', 'in', 'ordnung', '<eos>']
 ```
 
-In this posting, I introduced Seq2Seq and its overall architecture. In the next posting, I will implement the Seq2Seq model with Pytorch and show how to train it with the preprocessed data. Thank you for reading.
+In this posting, Seq2Seq and its overall architecture have been introduced. In the next posting, I will implement the Seq2Seq model with Pytorch and show how to train it with the preprocessed data. Thank you for reading.
