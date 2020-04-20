@@ -22,13 +22,11 @@ K = V = (h_1, h_2, ... h_n)
 
 Wheareas $Q$ is the (current) hidden state of the decoder, i.e., $s_i$. The weights for $V$ are computed by the *alignment model* ($a$) that aligns $Q$ and $K$. The normalized weights ($\alpha_{ik}$) are then used to compute the context vector ($c_t$). As we have seen in the [previous posting](https://buomsoo-kim.github.io/attention/2020/03/19/Attention-mechanism-13.md/), there are many choices for the alignment model, i.e., how to compute $c_t$. 
 
+$$ V = (v_1, v_2, ..., v_m) $$
 
-\begin{equation}
-V = (v_1, v_2, ..., v_m) \newline
-\alpha_{ij} = softmax(a(s_{i-1}, h_j)), j = 1, 2, ..., m \newline
-c_t = \sum_{k=1}^{m} \alpha_{ik}v_k = \sum_{k=1}^{m} \alpha_{ik}h_k  \newline
-\end{equation} 
+$$ \alpha_{ij} = softmax(a(s_{i-1}, h_j)), j = 1, 2, ..., m $$
 
+$$c_t = \sum_{k=1}^{m} \alpha_{ik}v_k = \sum_{k=1}^{m} \alpha_{ik}h_k $$
 
 
 ## Scaled dot-product attention
@@ -79,12 +77,10 @@ tokens in the sequence. To this end, we add "positional encodings" to the input 
 
 Among many choices for positional encoding, the authors used sine and cosine functions. For each position $pos$ in the sequence and dimension $i$, encodings are obtained with below functions.
 
-\begin{split}
-\begin{equation}
-PE_{pos, 2i} = sin(\frac{pos}{10000^{2i/d_{model}}}) \\
-PE_{pos, 2i + 1} = cos(\frac{pos}{10000^{2i/d_{model}}})\\
-\end{equation} 
-\end{split}
+
+$$PE_{pos, 2i} = sin(\frac{pos}{10000^{2i/d_{model}}}) $$
+$$ PE_{pos, 2i + 1} = cos(\frac{pos}{10000^{2i/d_{model}}})$$
+
 
 The dimension ($i$) spans through 1 to $d_model$, which is the dimensionality of the embedding space. Therefore, outputs from positional encoding have the same tensor size as the embedded sequences. They are added up and passed onto the next layer, which is *multi-head* attention.
 
