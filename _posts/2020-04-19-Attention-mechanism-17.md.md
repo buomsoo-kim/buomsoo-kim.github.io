@@ -54,7 +54,7 @@ One of the key characteristics of the Transformer that differentiates from *RNN 
 
 <p align = "center">
 <img src ="/data/images/2020-04-19/0.PNG" width = "400px" class="center">
-[Image source: [Cheng et al. 2016](https://arxiv.org/pdf/1601.06733.pdf)]
+[Image source: Cheng et al. (2016)]
 </p>
 
 
@@ -79,6 +79,7 @@ Among many choices for positional encoding, the authors used sine and cosine fun
 
 
 $$PE_{pos, 2i} = sin(\frac{pos}{10000^{2i/d_{model}}}) $$
+
 $$ PE_{pos, 2i + 1} = cos(\frac{pos}{10000^{2i/d_{model}}})$$
 
 
@@ -103,8 +104,14 @@ Finally, we have gone through all of the key building blocks of Transformer. Now
 
 <p align = "center">
 <img src ="/data/images/2020-04-19/1.PNG" width = "300px" class="center">
-[Image source: Vaswani et al. 2017]
+[Image source: Vaswani et al. (2017)]
 </p>
 
 
 In the next posting, let's try implementing the Transformer with Pytorch. Good new is that Pytorch provides ```nn.Transformer``` and related modules that makes implemenation extremely easy. See you in the next posting!
+
+
+### References
+
+- [Vaswani et al. (2017)](https://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf)
+- [Cheng et al. 2016](https://arxiv.org/pdf/1601.06733.pdf)
