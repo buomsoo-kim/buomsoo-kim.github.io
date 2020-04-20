@@ -22,13 +22,13 @@ K = V = (h_1, h_2, ... h_n)
 
 Wheareas $Q$ is the (current) hidden state of the decoder, i.e., $s_i$. The weights for $V$ are computed by the *alignment model* ($a$) that aligns $Q$ and $K$. The normalized weights ($\alpha_{ik}$) are then used to compute the context vector ($c_t$). As we have seen in the [previous posting](https://buomsoo-kim.github.io/attention/2020/03/19/Attention-mechanism-13.md/), there are many choices for the alignment model, i.e., how to compute $c_t$. 
 
-\begin{align*}
+
 \begin{equation}
-V = (v_1, v_2, ..., v_m) \\
-\alpha_{ij} = softmax(a(s_{i-1}, h_j)), j = 1, 2, ..., m \\ 
-c_t = \sum_{k=1}^{m} \alpha_{ik}v_k = \sum_{k=1}^{m} \alpha_{ik}h_k  \\
+V = (v_1, v_2, ..., v_m) \newline
+\alpha_{ij} = softmax(a(s_{i-1}, h_j)), j = 1, 2, ..., m \newline
+c_t = \sum_{k=1}^{m} \alpha_{ik}v_k = \sum_{k=1}^{m} \alpha_{ik}h_k  \newline
 \end{equation} 
-\end{align*}
+
 
 
 ## Scaled dot-product attention
