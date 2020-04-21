@@ -152,17 +152,28 @@ The best way to understand how Pytorch models work is by analyzing tensor operat
 
 Here, let's fetch the first batch of the training data and see how it is transformed step-by-step in the Transformer network.
 
-
 ```python
 src, tgt = next(iter(train_loader))
 print(src.shape, tgt.shape)   # (BATCH_SIZE, SEQ_LEN)
 ```
 
-<div style="background-color:rgba(245,161,66,.2); padding:30px">
+Each batch tensor from the ```train_loader``` has the shape of ```(BATCH_SIZE, MAX_SENT_LEN)```.
+
+<div style="background-color:rgba(245,66,194,.15); padding-left: 30px">
 torch.Size([128, 10]) torch.Size([128, 10])
 </div>
 
 
+```python
+enc_embedding = nn.Embedding(ENG_VOCAB_SIZE, EMBEDDING_DIM)
+dec_embedding = nn.Embedding(DEU_VOCAB_SIZE, EMBEDDING_DIM)
+src, tgt = enc_embedding(src), dec_embedding(tgt)
+print(src.shape, tgt.shape)                # (BATCH_SIZE, SEQ_LEN, EMBEDDING_DIM)
+```
+
+<div style="background-color:rgba(245,66,194,.15); padding-left: 30px">
+torch.Size([128, 10, 30]) torch.Size([128, 10, 30])
+</div>
 
 
 ## Transformer network in (almost) 10 lines of code
