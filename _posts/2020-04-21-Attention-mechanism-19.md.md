@@ -152,17 +152,21 @@ The best way to understand how Pytorch models work is by analyzing tensor operat
 
 Here, let's fetch the first batch of the training data and see how it is transformed step-by-step in the Transformer network.
 
+Each batch tensor from the ```train_loader``` has the shape of ```(BATCH_SIZE, MAX_SENT_LEN)```.
+
 ```python
 src, tgt = next(iter(train_loader))
 print(src.shape, tgt.shape)   # (BATCH_SIZE, SEQ_LEN)
 ```
 
-Each batch tensor from the ```train_loader``` has the shape of ```(BATCH_SIZE, MAX_SENT_LEN)```.
-
 <div style="background-color:rgba(245,66,194,.15); padding-left: 30px">
 torch.Size([128, 10]) torch.Size([128, 10])
 </div>
 
+
+### Embedding
+
+After being embedded, they have the shape of ```(BATCH_SIZE, MAX_SENT_LEN, EMBEDDING_DIM)```.
 
 ```python
 enc_embedding = nn.Embedding(ENG_VOCAB_SIZE, EMBEDDING_DIM)
@@ -176,33 +180,160 @@ torch.Size([128, 10, 30]) torch.Size([128, 10, 30])
 </div>
 
 
-## Transformer network in (almost) 10 lines of code
+### Positional encoding
 
-As mentioned, implementing a Transformer network is simple and straightforward. With around 10 lines of code, a simple and straightfoward Transformer network for sequence-to-sequence modeling can be created. 
+Then, the embedded tensors have to be *positionally encoded* to take into account the order of sequences. I borrowed this code from the official Pytorch Tranformer tutorial, after just replacing ```math.log()``` with ```np.log()```.
+
+
+```python
+## source: https://pytorch.org/tutorials/beginner/transformer_tutorial.html
+class PositionalEncoding(nn.Module):
+    def __init__(self, d_model, dropout=0.1, max_len=5000):
+        super(PositionalEncoding, self).__init__()
+        self.dropout = nn.Dropout(p=dropout)
+        pe = torch.zeros(max_len, d_model)
+        position = torch.arange(0, max_len, dtype=torch.float).unsqueeze(1)
+        div_term = torch.exp(torch.arange(0, d_model, 2).float() * (-np.log(10000.0) / d_model))
+        pe[:, 0::2] = torch.sin(position * div_term)
+        pe[:, 1::2] = torch.cos(position * div_term)
+        pe = pe.unsqueeze(0).transpose(0, 1)
+        self.register_buffer('pe', pe)
+
+    def forward(self, x):
+        x = x + self.pe[:x.size(0), :]
+        return self.dropout(x)
+```
+
+Before positional encoding, we swap the first and second dimensions. This can be sometimes unnecessary if your data shape is different or employing different code for positional encoding. And after positional encoding, the tensors have the same shape. Remember that positional encoding is simply element-wise adding information regarding the relative/absolute position without altering the tensor shape.
+
+```python
+pe = PositionalEncoding(EMBEDDING_DIM, max_len = MAX_SENT_LEN)
+src, tgt = pe(src.permute(1, 0, 2)), pe(tgt.permute(1, 0, 2))
+print(src.shape, tgt.shape)              # (SEQ_LEN, BATCH_SIZE, EMBEDDING_DIM)
+```
+
+<div style="background-color:rgba(245,66,194,.15); padding-left: 30px">
+torch.Size([10, 128, 30]) torch.Size([10, 128, 30])
+</div>
+
+
+### Encoder
+
+<p align = "center">
+<img src ="/data/images/2020-04-21/0.PNG" width = "300px" class="center">
+<i>[Image source: Vaswani et al. (2017)]</i>
+</p>
+
+Now we can pass on the input to the encoder. There are two modules related to the encoder - ```nn.TransformerEncoderLayer``` and ```nn.TransformerEncoder```. Remember that the encoder is a stack of $N$ identical layers ($N = 6$ in the Vaswani et al. paper). Each "layer" consists of multi-head attention and position-wise feed-forward networks. 
+
+```nn.TransformerEncoderLayer``` generates a single layer and ```nn.TransformerEncoder``` basically stacks up $N$ copies of that instance. The output shapes from all layers are identical, making this much simple. Also note that we can specify the dropout rate with the ```dropout``` parameter, making nodes in each layer "dropped out" to prevent overfitting.
+
+
+```python
+enc_layer = nn.TransformerEncoderLayer(EMBEDDING_DIM, NUM_HEADS, HIDDEN_SIZE, DROPOUT)
+memory = enc_layer(src)
+print(memory.shape)                      # (SEQ_LEN, BATCH_SIZE, EMBEDDING_DIM)
+```
+
+<div style="background-color:rgba(245,66,194,.15); padding-left: 30px">
+torch.Size([10, 128, 30])
+</div>
+
+
+```nn.TransformerEncoder``` stacks up ```NUM_LAYERS``` copies of encoder layers. The outputs from the encoder are named "memory," indicating that the encoder *memorizes* information from source sequences and passes them on to the decoder.
+
+
+```python
+encoder = nn.TransformerEncoder(enc_layer, num_layers = NUM_LAYERS)
+memory = encoder(src)
+print(memory.shape)                     # (SEQ_LEN, BATCH_SIZE, EMBEDDING_DIM)
+```
+
+<div style="background-color:rgba(245,66,194,.15); padding-left: 30px">
+torch.Size([10, 128, 30])
+</div>
+
+
+
+### Decoder
+
+<p align = "center">
+<img src ="/data/images/2020-04-21/1.PNG" width = "300px" class="center">
+<i>[Image source: Vaswani et al. (2017)]</i>
+</p>
+
+The decoder architecture is similar, but it has two multi-head attention networks to (1) process the "memory" from the encoder and (2) extract information from target sequences. Therefore, ```nn.TransformerDecoderLayer``` and ```nn.TransformerDecoder``` have two inputs, ```tgt``` and ```memory```.
+
+
+```python
+dec_layer = nn.TransformerDecoderLayer(EMBEDDING_DIM, NUM_HEADS, HIDDEN_SIZE, DROPOUT)
+decoder = nn.TransformerDecoder(dec_layer, num_layers = NUM_LAYERS)
+transformer_output = decoder(tgt, memory)
+print(transformer_output.shape)        # (SEQ_LEN, BATCH_SIZE, EMBEDDING_DIM)
+```
+
+<div style="background-color:rgba(245,66,194,.15); padding-left: 30px">
+torch.Size([10, 128, 30])
+</div>
+
+
+### Final dense layer
+
+To classify each token, we need to have an additional layer to calculate the probabilities. The output size of the final dense layer is equivalent to the vocabulary size of target language.
+
+```python
+dense = nn.Linear(EMBEDDING_DIM, DEU_VOCAB_SIZE)
+final_output = dense(transformer_output)
+print(final_output.shape)             # (SEQ_LEN, BATCH_SIZE, EMBEDDING_DIM)
+```
+
+<div style="background-color:rgba(245,66,194,.15); padding-left: 30px">
+torch.Size([10, 128, 6893])
+</div>
+
+
+## Putting it together
+
+Now, we can just put all things together and create a blueprint for the Transformer network that can be used for most of sequence-to-sequence mapping tasks.
 
 ```python
 class TransformerNet(nn.Module):
-  def __init__(self, num_src_vocab, num_tgt_vocab, embedding_dim, hidden_size, nhead, n_layers):
+  def __init__(self, num_src_vocab, num_tgt_vocab, embedding_dim, hidden_size, nheads, n_layers, max_src_len, max_tgt_len, dropout):
     super(TransformerNet, self).__init__()
+    # embedding layers
     self.enc_embedding = nn.Embedding(num_src_vocab, embedding_dim)
     self.dec_embedding = nn.Embedding(num_tgt_vocab, embedding_dim)
-    self.transformer = nn.Transformer(d_model = embedding_dim, nhead = nhead, num_encoder_layers=n_layers, num_decoder_layers = n_layers, dim_feedforward = hidden_size, dropout = dropout)
+
+    # positional encoding layers
+    self.enc_pe = PositionalEncoding(embedding_dim, max_len = max_src_len)
+    self.dec_pe = PositionalEncoding(embedding_dim, max_len = max_tgt_len)
+
+    # encoder/decoder layers
+    enc_layer = nn.TransformerEncoderLayer(embedding_dim, nheads, hidden_size, dropout)
+    dec_layer = nn.TransformerDecoderLayer(embedding_dim, nheads, hidden_size, dropout)
+    self.encoder = nn.TransformerEncoder(enc_layer, num_layers = n_layers)
+    self.decoder = nn.TransformerDecoder(dec_layer, num_layers = n_layers)
+
+    # final dense layer
     self.dense = nn.Linear(embedding_dim, num_tgt_vocab)
     self.log_softmax = nn.LogSoftmax()
 
   def forward(self, src, tgt):
-    src, tgt = self.enc_embedding(src), self.dec_embedding(tgt)
-    x = self.transformer(src, tgt)
-    return self.log_softmax(self.dense(x))
+    src, tgt = self.enc_embedding(src).permute(1, 0, 2), self.dec_embedding(tgt).permute(1, 0, 2)
+    src, tgt = self.enc_pe(src), self.dec_pe(tgt)
+    memory = self.encoder(src)
+    transformer_out = self.decoder(tgt, memory)
+    final_out = self.dense(transformer_out)
+    return self.log_softmax(final_out)
 ```
 
 ```python
-model = TransformerNet(ENG_VOCAB_SIZE, DEU_VOCAB_SIZE, EMBEDDING_DIM, HIDDEN_SIZE, NUM_HEADS, NUM_LAYERS, DROPOUT).to(DEVICE)
+model = TransformerNet(ENG_VOCAB_SIZE, DEU_VOCAB_SIZE, EMBEDDING_DIM, HIDDEN_SIZE, NUM_HEADS, NUM_LAYERS, MAX_SENT_LEN, MAX_SENT_LEN, DROPOUT).to(DEVICE)
 criterion = nn.NLLLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr = LEARNING_RATE)
 ```
 
-After creating the model, it can be trained and evaluated the same way as the previous ones.
+After training, you can see that this Transformer network shows more stable and robust result compared to the one we trained in the previous posting.
 
 ```python
 %%time
@@ -212,7 +343,7 @@ for epoch in tqdm(range(NUM_EPOCHS)):
   for i, (x, y) in enumerate(train_loader):
     x, y  = x.to(DEVICE), y.to(DEVICE)
     outputs = model(x, y)
-    loss = criterion(outputs.permute(0, 2, 1), y)
+    loss = criterion(outputs.permute(1, 2, 0), y)
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
@@ -226,10 +357,9 @@ plt.ylabel('Loss')
 plt.show()
 ```
 
-
-## Is this it?
-
-We implemented a quick and easy, yet extremely powerful neural networks model for sequence to sequence modeling. However, there is more to it. For instance, we didn't include the *positioning encoding*, which is a critical element of Transformer. Also, the building blocks of ```nn.Transformer``` can be decomposed and modified for better performance and more applications. And there are a number of parameters that can be fine-tuned for optimal performance. So, from the next posting, let's have a deeper look under the hood of ```nn.Transformer```.
+<p align = "center">
+<img src ="/data/images/2020-04-21/2.png" width = "300px" class="center">
+</p>
 
 
 ### References
