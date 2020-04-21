@@ -12,7 +12,7 @@ In previous posting, I introduced the attention mechanism and outlined its (not 
 
 <p align = "center">
 <img src ="https://3.bp.blogspot.com/-3Pbj_dvt0Vo/V-qe-Nl6P5I/AAAAAAAABQc/z0_6WtVWtvARtMk0i9_AtLeyyGyV6AI4wCLcB/s1600/nmt-model-fast.gif" width = "600px"/>
-<a href = "https://www.datasciencecentral.com/profiles/blogs/seq2seq"> Image source </a>
+<i><a href = "https://www.datasciencecentral.com/profiles/blogs/seq2seq"> [Image source] </a></i>
 </p>
 
 
@@ -22,7 +22,7 @@ Deep neural networks are highly effective tools to model non-linear data for var
 
 <p align = "center">
 <img src ="/data/images/2020-01-09/bret-kavanaugh-_af0_qAh4K4-unsplash.jpg" width = "400px"/>
-[Photo by Bret Kavanaugh on Unsplash]
+<i>[Photo by Bret Kavanaugh on Unsplash]</i>
 </p>
 
 
@@ -43,14 +43,14 @@ Therefore, Seq2Seq was proposed to model variable-length source inputs with temp
 
 <p align = "center">
 <img src ="/data/images/2020-01-09/Fig1.png" width = "400px"/>
-[Image source: Cho et al. (2014)]
+<i>[Image source: Cho et al. (2014)]</i>
 </p>
 
 Both encoder and decoder comprise multiple recurrent neural network (RNN) cells such as LSTM and GRU cells. The number of cells varies across different instances to take into account varying number of source and target words. Each RNN cells have multiple outputs to model dependencies among input vectors. In addition to sequence outputs, LSTM cells have hidden and cell states and GRU cells have hidden states. For more information on RNN structure, please refer to [RNN tutorial with Pytorch](https://github.com/buomsoo-kim/PyTorch-learners-tutorial/blob/master/PyTorch%20Basics/pytorch-model-basics-4%20%5BRNN%5D.ipynb).
 
 <p align = "center">
 <img src ="https://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-chain.png" width = "500px"/>
-<a href = "https://colah.github.io/posts/2015-08-Understanding-LSTMs/"> Image source </a>
+<i><a href = "https://colah.github.io/posts/2015-08-Understanding-LSTMs/"> [Image source] </a></i>
 </p>
 
 The final hidden state of the encoder, **c**, functions as a summary of the inputs to the encoder, i.e., the source sentence. In other words, information from the source sentence is distilled in a vector with a fixed dimensionality. In the decoder , **c** is an input to RNN cells, along with previous hidden state and target word. Therefore, the hidden state at level *t* is calculated as below (*f* is the RNN operation in this context).
@@ -69,7 +69,7 @@ Then, the calculated probabilities are softmaxed to find the word with the highe
 
 <p align = "center">
 <img src ="/data/images/2020-01-01/3.png" width = "600px"/>
-[Image source: Sutskever et al. (2014)]
+<i>[Image source: Sutskever et al. (2014)]</i>
 </p>
 
 Following Cho et al. (2014), many studies such as [Sutskever et al. (2014)](https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf) proposed similar deep learning architectures to RNN Encoder-Decoder with LSTM. Hence, we call variants of RNN models mapping sequences to sequences with the encoder and decoder *Seq2Seq*.
