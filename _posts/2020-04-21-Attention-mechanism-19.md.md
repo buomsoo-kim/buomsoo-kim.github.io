@@ -159,7 +159,7 @@ src, tgt = next(iter(train_loader))
 print(src.shape, tgt.shape)   # (BATCH_SIZE, SEQ_LEN)
 ```
 
-<div style="background-color:rgba(245,66,194,.15); padding-left: 30px">
+<div style="background-color:rgba(245,66,194,.15); padding-left: 30px; padding-top: 10px; padding-bottom: 10px">
 torch.Size([128, 10]) torch.Size([128, 10])
 </div>
 
@@ -175,7 +175,7 @@ src, tgt = enc_embedding(src), dec_embedding(tgt)
 print(src.shape, tgt.shape)                # (BATCH_SIZE, SEQ_LEN, EMBEDDING_DIM)
 ```
 
-<div style="background-color:rgba(245,66,194,.15); padding-left: 30px">
+<div style="background-color:rgba(245,66,194,.15); padding-left: 30px; padding-top: 10px; padding-bottom: 10px">
 torch.Size([128, 10, 30]) torch.Size([128, 10, 30])
 </div>
 
@@ -212,7 +212,7 @@ src, tgt = pe(src.permute(1, 0, 2)), pe(tgt.permute(1, 0, 2))
 print(src.shape, tgt.shape)              # (SEQ_LEN, BATCH_SIZE, EMBEDDING_DIM)
 ```
 
-<div style="background-color:rgba(245,66,194,.15); padding-left: 30px">
+<div style="background-color:rgba(245,66,194,.15); padding-left: 30px; padding-top: 10px; padding-bottom: 10px">
 torch.Size([10, 128, 30]) torch.Size([10, 128, 30])
 </div>
 
@@ -235,7 +235,7 @@ memory = enc_layer(src)
 print(memory.shape)                      # (SEQ_LEN, BATCH_SIZE, EMBEDDING_DIM)
 ```
 
-<div style="background-color:rgba(245,66,194,.15); padding-left: 30px">
+<div style="background-color:rgba(245,66,194,.15); padding-left: 30px; padding-top: 10px; padding-bottom: 10px">
 torch.Size([10, 128, 30])
 </div>
 
@@ -249,7 +249,7 @@ memory = encoder(src)
 print(memory.shape)                     # (SEQ_LEN, BATCH_SIZE, EMBEDDING_DIM)
 ```
 
-<div style="background-color:rgba(245,66,194,.15); padding-left: 30px">
+<div style="background-color:rgba(245,66,194,.15); padding-left: 30px; padding-top: 10px; padding-bottom: 10px">
 torch.Size([10, 128, 30])
 </div>
 
@@ -272,7 +272,7 @@ transformer_output = decoder(tgt, memory)
 print(transformer_output.shape)        # (SEQ_LEN, BATCH_SIZE, EMBEDDING_DIM)
 ```
 
-<div style="background-color:rgba(245,66,194,.15); padding-left: 30px">
+<div style="background-color:rgba(245,66,194,.15); padding-left: 30px; padding-top: 10px; padding-bottom: 10px">
 torch.Size([10, 128, 30])
 </div>
 
@@ -287,7 +287,7 @@ final_output = dense(transformer_output)
 print(final_output.shape)             # (SEQ_LEN, BATCH_SIZE, EMBEDDING_DIM)
 ```
 
-<div style="background-color:rgba(245,66,194,.15); padding-left: 30px">
+<div style="background-color:rgba(245,66,194,.15); padding-left: 30px; padding-top: 10px; padding-bottom: 10px">
 torch.Size([10, 128, 6893])
 </div>
 
