@@ -158,8 +158,8 @@ src, tgt = next(iter(train_loader))
 print(src.shape, tgt.shape)   # (BATCH_SIZE, SEQ_LEN)
 ```
 
-<div style="background-color:rgba(245,161,66,.2);padding-left: 300px">
-DONATE
+<div style="background-color:rgba(245,161,66,.2); padding:30px">
+torch.Size([128, 10]) torch.Size([128, 10])
 </div>
 
 
