@@ -158,26 +158,12 @@ src, tgt = next(iter(train_loader))
 print(src.shape, tgt.shape)   # (BATCH_SIZE, SEQ_LEN)
 ```
 
-<div style="background-color:rgba(0, 255, 0, .5)">
+<div style="background-color:rgba(245,161,66,.2);padding-left: 300px">
 DONATE
 </div>
 
 
 
-```javascript
-src, tgt = next(iter(train_loader))
-print(src.shape, tgt.shape)   # (BATCH_SIZE, SEQ_LEN)
-```
-
-```html
-src, tgt = next(iter(train_loader))
-print(src.shape, tgt.shape)   # (BATCH_SIZE, SEQ_LEN)
-```
-
-```R
-src, tgt = next(iter(train_loader))
-print(src.shape, tgt.shape)   # (BATCH_SIZE, SEQ_LEN)
-```
 
 ## Transformer network in (almost) 10 lines of code
 
