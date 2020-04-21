@@ -164,8 +164,9 @@ DONATE
 
 
 
-```python
-
+```javascript
+src, tgt = next(iter(train_loader))
+print(src.shape, tgt.shape)   # (BATCH_SIZE, SEQ_LEN)
 ```
 
 ## Transformer network in (almost) 10 lines of code
