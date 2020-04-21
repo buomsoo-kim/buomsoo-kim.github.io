@@ -7,12 +7,12 @@ tags: [Attention mechanism, Deep learning, Pytorch]
 
 # Attention Mechanism in Neural Networks - 18. Transformer (2)
 
-In the [previous posting](https://buomsoo-kim.github.io/attention/2020/04/19/Attention-mechanism-17.md/), we have gone through the details of the Transformer architecture proposed by [Vaswani et al. (2017)](https://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf). From now on, let's see how we can implement the Transformer network in Pytorch, using ```nn.Transformer```. The details of Transformer can be very complicated and daunting. However, with some background knowledge obtained from the [previous posting](https://buomsoo-kim.github.io/attention/2020/04/19/Attention-mechanism-17.md/) and ```nn.Transformer```'s help, it is not so difficult.
+In the [previous posting](https://buomsoo-kim.github.io/attention/2020/04/20/Attention-mechanism-18.md/), we tried implementing the simple Transformer architecture with ```nn.Transformer```. In this posting, let's dig a little deeper and see how ```nn.Transformer``` works under the hood.
 
 
 ## Data import & preprocessing
 
-We come back to the English-German machine translation dataset from [manythings.org](https://www.manythings.org/anki/). If you are new here and interested in details, please refer to my [previous postings](https://buomsoo-kim.github.io/attention/2020/01/12/Attention-mechanism-3.md/) on *Seq2Seq*.
+Steps up to *creating dataset and datalodaer* are almost identical. So you can skim through these preliminary steps if you are familar with.
 
 Using Jupyter Notebook or Google Colaboratory, the data file can be fetched directly from the Web and unzipped.
 
@@ -94,6 +94,7 @@ Most of paramter setting is similar to the *RNN Encoder-Decoder* network and its
 - ```HIDDEN SIZE```: previously this was used to set the number of hidden cells in the RNN network. However, here it will be used to set the dimensionality of the feedforward network, or the dense layers.
 - ```NUM_LAYERS```: similary, instead of setting the number of RNN layers, this is used to determine the number of dense layers.
 - ```NUM_HEADS```: this is a new parameter used to determine the number of heads in multihead attention. If you are unsure what multihead attention is, refer to the [previous posting](https://buomsoo-kim.github.io/attention/2020/04/19/Attention-mechanism-17.md/).
+- ```DROPOUT```: Another parameter that we can consider is ```DROPOUT```, which determines the probability of dropping out a node in the encoder/decoder layer. This can be set to the same value across all layers, or can be fine-tuned to set to different values in each layer. However, in most cases it is a single value across all layers for simplicity.
 
 ```python
 ENG_VOCAB_SIZE = len(eng_words)
@@ -105,6 +106,7 @@ BATCH_SIZE = 128
 NUM_HEADS = 2
 NUM_LAYERS = 3
 LEARNING_RATE = 1e-2
+DROPOUT = .3
 DEVICE = torch.device('cuda') 
 ```
 
@@ -143,6 +145,28 @@ train_loader = torch.utils.data.DataLoader(dataset, batch_size = BATCH_SIZE, sam
 test_loader = torch.utils.data.DataLoader(dataset, batch_size = BATCH_SIZE, sampler = test_sampler)
 ```
 
+
+## Under the hood of ```nn.Transformer``` 
+
+The best way to understand how Pytorch models work is by analyzing tensor operations between layers and functions. In most cases, we do not need to attend to the specific values of tensors, but just can keep track of tensor shapes, or sizes. Making sense of how each element in the size (shape) array is mapped to dimensionality of input/output tensors and how they are manipulated with matrix operations are critical.
+
+Here, let's fetch the first batch of the training data and see how it is transformed step-by-step in the Transformer network.
+
+
+```python
+src, tgt = next(iter(train_loader))
+print(src.shape, tgt.shape)   # (BATCH_SIZE, SEQ_LEN)
+```
+
+<div style="background-color:rgba(0, 0, 0, 0.0470588); text-align:center; vertical-align: middle; padding:40px 0;">
+DONATE
+</div>
+
+
+
+```python
+
+```
 
 ## Transformer network in (almost) 10 lines of code
 
@@ -195,7 +219,7 @@ plt.show()
 ```
 
 <p align = "center">
-<img src ="/data/images/2020-04-20/0.png" width = "500px" class="center">
+<img src ="/data/images/2020-04-20/0.PNG" width = "500px" class="center">
 [Image source: Vaswani et al. (2017)]
 </p>
 
@@ -207,3 +231,4 @@ We implemented a quick and easy, yet extremely powerful neural networks model fo
 ### References
 
 - [Vaswani et al. (2017)](https://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf)
+- [Pytorch Transformer official tutorial](https://pytorch.org/tutorials/beginner/transformer_tutorial.html)
