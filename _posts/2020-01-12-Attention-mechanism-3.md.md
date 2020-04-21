@@ -26,7 +26,7 @@ Many of earlier ground-breaking studies in neural machine translation employ Seq
 
 <p align = "center">
 <img src ="/data/images/2020-01-09/Fig1.png" width = "400px"/>
-<i>Image source: Cho et al. (2014)</i>
+<i>[Image source: Cho et al. (2014)]</i>
 </p>
 
 ## Dataset
@@ -35,14 +35,14 @@ The dataset used in this posting is English-German sentence pairs dataset downlo
 
 <p align = "center">
 <img src ="/data/images/2020-01-13/1.png" width = "900px"/>
-<i>Image [source](https://www.manythings.org/anki/)</i>
+<i><a href = "https://www.manythings.org/anki/" > [Image source]</a></i>
 </p>
 
 The data are tab-separated, with each line consisting of English sentence + TAB + Another language sentence + TAB + Attribution. Therefore, we can extract (English sentence, another language sentence) from each line while splitting each line with TAB ("\t").
 
 <p align = "center">
 <img src ="/data/images/2020-01-13/2.png" width = "700px"/>
-<i>Image [source](https://www.manythings.org/anki/)</i>
+<i><a href = "https://www.manythings.org/anki/" > [Image source]</a></i>
 </p>
 
 Let's start out with importing necessary packages. We do not need many packages for this practice and they are already installed in the Colab environment. We just need to import them.

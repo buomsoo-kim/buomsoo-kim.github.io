@@ -11,7 +11,7 @@ In the [previous posting](https://buomsoo-kim.github.io/attention/2020/03/05/Att
 
 <p align = "center">
 <img src ="/data/images/2020-03-05/0.PNG" width = "300px"/>
-[Bahdahanu et al. (2015)]
+<i>[Image source: Bahdahanu et al. (2015)]</i>
 </p>
 
 

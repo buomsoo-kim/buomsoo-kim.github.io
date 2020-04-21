@@ -54,7 +54,7 @@ One of the key characteristics of the Transformer that differentiates from *RNN 
 
 <p align = "center">
 <img src ="/data/images/2020-04-19/0.PNG" width = "400px" class="center">
-<i>Image source: Cheng et al. (2016) </i>
+<i>[Image source: Cheng et al. (2016)] </i>
 </p>
 
 
@@ -104,7 +104,7 @@ Finally, we have gone through all of the key building blocks of Transformer. Now
 
 <p align = "center">
 <img src ="/data/images/2020-04-19/1.PNG" width = "600px" class="center">
-<i> Image source: Vaswani et al. (2017)</i>
+<i> [Image source: Vaswani et al. (2017)]</i>
 </p>
 
 

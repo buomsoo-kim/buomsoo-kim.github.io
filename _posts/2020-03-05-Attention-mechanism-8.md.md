@@ -13,7 +13,7 @@ So far, we looked into Seq2Seq, or the *RNN Encoder-Decoder*, proposed by [Cho e
 
 <p align = "center">
 <img src ="/data/images/2020-03-05/0.PNG" width = "200px"/>
-<i>Image source: Bahdahanu et al. (2015)</i>
+<i>[Image source: Bahdahanu et al. (2015)]</i>
 </p>
 
 Such shortcoming leads to a potential loss of information, especially in case of long sentences as noted. Therefore, [Bahdahanu et al. (2015)](https://arxiv.org/pdf/1409.0473.pdf) proposed an improve sequence-to-sequence architecture that *aligns* source and target sequences. This will enable the model to *attend to* a specific part of the source sentence, minimizing information loss from long sentences. In addition, such mechanism enables explanations of mapping between the source and target as in saliency maps below.
@@ -21,7 +21,7 @@ Such shortcoming leads to a potential loss of information, especially in case of
 
 <p align = "center">
 <img src ="/data/images/2020-03-05/1.PNG" width = "600px"/>
-<i>Image source: Bahdahanu et al. (2015)</i>
+<i>[Image source: Bahdahanu et al. (2015)]</i>
 </p>
 
 

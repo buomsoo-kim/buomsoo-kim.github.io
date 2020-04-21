@@ -71,7 +71,7 @@ Prior to implemeting the encoder and decoder, let's briefly review the inner wor
 
 <p align = "center">
 <img src ="https://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-shorttermdepdencies.png" width = "600px"/>
-Image [source](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+<i><a href = "https://colah.github.io/posts/2015-08-Understanding-LSTMs/" > [Image source]</a></i>
 </p>
 
 
