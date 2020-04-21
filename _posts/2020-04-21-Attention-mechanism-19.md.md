@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Attention in Neural Networks - 18. Transformer (2)
+title: Attention in Neural Networks - 19. Transformer (3)
 category: Attention
 tags: [Attention mechanism, Deep learning, Pytorch]
 ---
 
-# Attention Mechanism in Neural Networks - 18. Transformer (2)
+# Attention Mechanism in Neural Networks - 19. Transformer (3)
 
 In the [previous posting](https://buomsoo-kim.github.io/attention/2020/04/20/Attention-mechanism-18.md/), we tried implementing the simple Transformer architecture with ```nn.Transformer```. In this posting, let's dig a little deeper and see how ```nn.Transformer``` works under the hood.
 
@@ -158,7 +158,7 @@ src, tgt = next(iter(train_loader))
 print(src.shape, tgt.shape)   # (BATCH_SIZE, SEQ_LEN)
 ```
 
-<div style="background-color:rgba(0, 0, 0, 0.0470588); text-align:center; vertical-align: middle; padding:40px 0;">
+<div style="background-color:rgba(0, 255, 0, 0.0470588); text-align:center; vertical-align: middle; padding:40px 0;">
 DONATE
 </div>
 
