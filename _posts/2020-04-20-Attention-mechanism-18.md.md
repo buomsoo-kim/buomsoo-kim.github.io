@@ -195,8 +195,7 @@ plt.show()
 ```
 
 <p align = "center">
-<img src ="/data/images/2020-04-20/0.png" width = "500px" class="center">
-[Image source: Vaswani et al. (2017)]
+<img src ="/data/images/2020-04-20/0.png" width = "300px" class="center">
 </p>
 
 ## Is this it?
