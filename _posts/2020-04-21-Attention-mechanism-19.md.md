@@ -158,13 +158,23 @@ src, tgt = next(iter(train_loader))
 print(src.shape, tgt.shape)   # (BATCH_SIZE, SEQ_LEN)
 ```
 
-<div style="background-color:rgba(0, 255, 0, 0.0470588); text-align:center; vertical-align: middle; padding:40px 0;">
+<div style="background-color:rgba(0, 255, 0, .5)">
 DONATE
 </div>
 
 
 
 ```javascript
+src, tgt = next(iter(train_loader))
+print(src.shape, tgt.shape)   # (BATCH_SIZE, SEQ_LEN)
+```
+
+```html
+src, tgt = next(iter(train_loader))
+print(src.shape, tgt.shape)   # (BATCH_SIZE, SEQ_LEN)
+```
+
+```R
 src, tgt = next(iter(train_loader))
 print(src.shape, tgt.shape)   # (BATCH_SIZE, SEQ_LEN)
 ```
@@ -219,10 +229,6 @@ plt.ylabel('Loss')
 plt.show()
 ```
 
-<p align = "center">
-<img src ="/data/images/2020-04-20/0.PNG" width = "500px" class="center">
-[Image source: Vaswani et al. (2017)]
-</p>
 
 ## Is this it?
 
