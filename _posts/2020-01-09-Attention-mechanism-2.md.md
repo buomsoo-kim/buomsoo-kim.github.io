@@ -12,7 +12,7 @@ In previous posting, I introduced the attention mechanism and outlined its (not 
 
 <p align = "center">
 <img src ="https://3.bp.blogspot.com/-3Pbj_dvt0Vo/V-qe-Nl6P5I/AAAAAAAABQc/z0_6WtVWtvARtMk0i9_AtLeyyGyV6AI4wCLcB/s1600/nmt-model-fast.gif" width = "600px"/>
-Image [source](https://www.datasciencecentral.com/profiles/blogs/seq2seq)
+<a href = "https://www.datasciencecentral.com/profiles/blogs/seq2seq"> Image source </a>
 </p>
 
 
@@ -50,7 +50,7 @@ Both encoder and decoder comprise multiple recurrent neural network (RNN) cells 
 
 <p align = "center">
 <img src ="https://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-chain.png" width = "500px"/>
-Image [source](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+<a href = "https://colah.github.io/posts/2015-08-Understanding-LSTMs/"> Image source </a>
 </p>
 
 The final hidden state of the encoder, **c**, functions as a summary of the inputs to the encoder, i.e., the source sentence. In other words, information from the source sentence is distilled in a vector with a fixed dimensionality. In the decoder , **c** is an input to RNN cells, along with previous hidden state and target word. Therefore, the hidden state at level *t* is calculated as below (*f* is the RNN operation in this context).
@@ -76,3 +76,9 @@ Following Cho et al. (2014), many studies such as [Sutskever et al. (2014)](http
 
 
 In this posting, I introduced Seq2Seq and its overall architecture. In the next posting, I will explain the Seq2Seq architecture in detail, while implementing it with Pytorch. Thank you for reading.
+
+
+## References
+
+- [Cho et al. (2014)](http://emnlp2014.org/papers/pdf/EMNLP2014179.pdf)
+- [Sutskever et al. (2014)](https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf)
