@@ -18,18 +18,7 @@ As we did in the previous posting, let's import the IMDB movie review sample dat
 from fastai.text import *
 path = untar_data(URLs.IMDB_SAMPLE)
 data = pd.read_csv(path/'texts.csv')
-data.head()
 ```
-
-<div style="background-color:rgba(245,66,194,.15); padding-left: 30px; padding-top: 10px; padding-bottom: 10px">
-label text  is_valid
-0 negative  Un-bleeping-believable! Meg Ryan doesn't even ... False
-1 positive  This is a extremely well-made film. The acting... False
-2 negative  Every once in a long while a movie will come a... False
-3 positive  Name just says it all. I watched this movie wi... False
-4 negative  This movie succeeds at being one of the most u... False
-</div>
-
 
 ```python
 MAX_REVIEW_LEN = 10
@@ -323,7 +312,7 @@ plt.show()
 ```
 
 <p align = "center">
-<img src ="/data/images/2020-04-27/0.PNG" width = "400px" class="center">
+<img src ="/data/images/2020-04-27/0.png" width = "400px" class="center">
 </p>
 
 
