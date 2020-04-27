@@ -34,10 +34,10 @@ label text  is_valid
 
 ## Data Preprocessing
 
-Now, we have to process the data as we did for HAN. However, here we do not need to consider the hierarchical structure of sentences and words, so it is much simpler. There are 1,000 movie reviews and 5,317 unique tokens when setting the maximum length of review (```MAX_REVIEW_LEN```) to 30.
+Now, we have to process the data as we did for HAN. However, here we do not need to consider the hierarchical structure of sentences and words, so it is much simpler. There are 1,000 movie reviews and 5,317 unique tokens when setting the maximum length of review (```MAX_REVIEW_LEN```) to 20.
 
 ```python
-MAX_REVIEW_LEN = 30
+MAX_REVIEW_LEN = 20
 reviews, labels = [], []
 unique_tokens = set()
 
@@ -75,8 +75,8 @@ print([unique_tokens[x] for x in reviews[0]])
 ```
 
 <div style="background-color:rgba(245,66,194,.15); padding-left: 30px; padding-top: 10px; padding-bottom: 10px">
-[4613, 4082, 3535, 4032, 1654, 4050, 2500, 4881, 3984, 2699, 1228, 816, 2217, 5235, 1040, 3071, 959, 2050, 159, 3260, 113, 2699, 3613, 5089, 4497, 1495, 4043, 1388, 3687, 4939]
-['un', 'bleeping', 'believable', 'meg', 'ryan', 'doesn', 't', 'even', 'look', 'her', 'usual', 'pert', 'lovable', 'self', 'in', 'this', 'which', 'normally', 'makes', 'me', 'forgive', 'her', 'shallow', 'ticky', 'acting', 'schtick', 'hard', 'to', 'believe', 'she']
+[663, 2188, 53, 3336, 1155, 325, 176, 1727, 1666, 1934, 283, 2495, 105, 130, 2498, 1979, 2598, 3056, 2981, 2424]
+['un', 'bleeping', 'believable', 'meg', 'ryan', 'doesn', 't', 'even', 'look', 'her', 'usual', 'pert', 'lovable', 'self', 'in', 'this', 'which', 'normally', 'makes', 'me']
 </div>
 
 
@@ -145,6 +145,7 @@ As mentioned, we do not need a decoder since we do not have additional sequences
 
 ```python
 ## source: https://pytorch.org/tutorials/beginner/transformer_tutorial.html
+## source: https://pytorch.org/tutorials/beginner/transformer_tutorial.html
 class PositionalEncoding(nn.Module):
     def __init__(self, d_model, dropout=0.1, max_len=5000):
         super(PositionalEncoding, self).__init__()
@@ -175,16 +176,17 @@ class TransformerNet(nn.Module):
     self.encoder = nn.TransformerEncoder(enc_layer, num_layers = n_layers)
 
     # final dense layer
-    self.dense = nn.Linear(embedding_dim*embedding_dim, num_labels)
+    self.dense = nn.Linear(embedding_dim*max_len, num_labels)
     self.log_softmax = nn.LogSoftmax()
 
   def forward(self, x):
     x = self.embedding(x).permute(1, 0, 2)
     x = self.pe(x)
-    x = x.reshape((x.shape[1], -1))
+    x = self.encoder(x)
+    x = x.reshape(x.shape[1], -1)
     x = self.dense(x)
     return x
-
+    
 model = TransformerNet(VOCAB_SIZE, EMBEDDING_DIM, HIDDEN_SIZE, NUM_HEADS, NUM_LAYERS, MAX_REVIEW_LEN, NUM_LABELS, DROPOUT).to(DEVICE)
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr = LEARNING_RATE)
