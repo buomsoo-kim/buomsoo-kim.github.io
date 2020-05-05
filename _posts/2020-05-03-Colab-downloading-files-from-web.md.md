@@ -34,6 +34,10 @@ The data is contained in the ```iris.data``` file. We do not need to download th
 
 Since the data is delimited with commas (,), we can just paste the link in the first argument of ```read_csv()``` function. It will return a Pandas dataframe containing the content of the file.
 
+```python
+df = pd.read_csv("url_to_the_file", header = None)
+```
+
 <p align = "center">
 <img src ="/data/images/2020-05-03/1.PNG" width = "700px" class="center">
 </p>
@@ -60,21 +64,25 @@ In some cases, column names *are* specified at the first row of the file. Then, 
 For some datasets, you would like to skip a few rows since they contain unnecessary information such as general descriptions about the data. In such cases, consider setting the ```skiprows``` parameter. 
 
 
-## ```load_txt()``` function in NumPy
+## ```loadtxt()``` function in NumPy
 
-Alternatively, we can also use ```np.load_txt()```. This had limited functionality compared to Pandas since we can only download text files, but can be efficient sometimes. ```np.load_txt()``` will automatically convert the data into a NumPy array, which can be instantly used as inputs to many machine learning and deep learning models.
+Alternatively, we can also use ```np.loadtxt()```. This had limited functionality compared to Pandas since we can only download text files, but can be efficient sometimes. ```np.loadtxt()``` will automatically convert the data into a NumPy array, which can be instantly used as inputs to many machine learning and deep learning models.
+
+```python
+arr = np.loadtxt("url_to_the_file", delimiter = ",")
+```
 
 <p align = "center">
 <img src ="/data/images/2020-05-03/2.PNG" width = "700px" class="center">
 </p>
 
 
-Again, below are some considerations for importing data with ```np.load_txt()``` and troubleshooting guidelines.
+Again, below are some considerations for importing data with ```np.loadtxt()``` and troubleshooting guidelines.
 
 
 ### Delimiter
 
-This is the same problem with ```pd.read_csv()```. For ```np.load_txt()```, manipulate the ```delimiter``` argument that has the same functionality as the ```sep``` argument in ```pd.read_csv()```. 
+This is the same problem with ```pd.read_csv()```. For ```np.loadtxt()```, manipulate the ```delimiter``` argument that has the same functionality as the ```sep``` argument in ```pd.read_csv()```. 
 
 
 ### Data types
