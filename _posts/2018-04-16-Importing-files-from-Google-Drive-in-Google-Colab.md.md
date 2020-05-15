@@ -5,8 +5,8 @@ category: Colab
 tags: [Python, Colab, Colaboratory]
 ---
 
-<div style="background-color:rgba(242,188,131,.15); padding-left: 30px; padding-top: 10px; padding-bottom: 10px; padding-right:20px">
-**Note**: This posting describes how to import one file at a time from Google Drive with file ID. IF you want to import multiple files or have access to all content in Google Drive, please refer to [this posting on mounting Google Drive](https://buomsoo-kim.github.io/colab/2020/05/09/Colab-mounting-google-drive.md/)
+<div style="background-color:rgba(242,188,131,.15); padding-left: 15px; padding-top: 10px; padding-bottom: 10px; padding-right:15px">
+<b>Note</b>: This posting describes <i>how to import one file at a time</i> from Google Drive with file ID. IF you want to <i>import multiple files or have access to all content in Google Drive</i>, please refer to <b><a href = "https://buomsoo-kim.github.io/colab/2020/05/09/Colab-mounting-google-drive.md/">this posting on mounting Google Drive</a></b>
 </div>
 
 # Importing files from Google Drive
