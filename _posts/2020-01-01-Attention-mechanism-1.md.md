@@ -154,3 +154,13 @@ In this posting, the concept of attention mechanism was gently introduced and ma
 - [Neural Machine Translation and Models with Attention](https://www.youtube.com/watch?v=IxQtK2SjWWM)
  (Chris Manning)
 - [Attention Model](https://www.youtube.com/watch?v=quoGRI-1l0A&t=130s) (Andrew Ng)
+
+
+## Links to this posting series 
+
+- [Seq2Seq (1) - Introduction to Seq2Seq](https://buomsoo-kim.github.io/attention/2020/01/09/Attention-mechanism-2.md/)
+- [Seq2Seq (2) - Preparing data for machine translation Seq2Seq](https://buomsoo-kim.github.io/attention/2020/01/12/Attention-mechanism-3.md/) / [Colab Notebook](https://colab.research.google.com/drive/1n_h0yl6WidPFHvaQtu_tXq0BvuUtQKvt?usp=sharing)
+- [Seq2Seq (3) - Implementation of Seq2Seq](https://buomsoo-kim.github.io/attention/2020/01/25/Attention-mechanism-4.md/) / [Colab Notebook](https://colab.research.google.com/drive/1n_h0yl6WidPFHvaQtu_tXq0BvuUtQKvt?usp=sharing)
+- [Seq2Seq (4) - Training and evaluating Seq2Seq](https://buomsoo-kim.github.io/attention/2020/01/26/Attention-mechanism-5.md/) / [Colab Notebook](https://colab.research.google.com/drive/1n_h0yl6WidPFHvaQtu_tXq0BvuUtQKvt?usp=sharing)
+- [Seq2Seq (5) - Variant of Seq2Seq](https://buomsoo-kim.github.io/attention/2020/02/07/Attention-mechanism-6.md/) / [Colab Notebook](https://colab.research.google.com/drive/13r258kYenOkZS-YNCMAVhAKnqmAELhGw?usp=sharing)
+- [Seq2Seq (6) - Mini-batch Seq2Seq](https://buomsoo-kim.github.io/attention/2020/02/09/Attention-mechanism-7.md/) / [Colab Notebook](https://colab.research.google.com/drive/1luqL2GJMmPGXQ0T9_7A6YnndvWbgEnxO?usp=sharing)

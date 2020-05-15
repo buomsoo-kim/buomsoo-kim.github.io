@@ -5,7 +5,12 @@ category: Attention
 tags: [Attention mechanism, Deep learning, Pytorch]
 ---
 
+
 # Attention Mechanism in Neural Networks - 7. Sequence-to-Sequence (Seq2Seq) (6)
+
+<div style="background-color:rgba(94,151,242,.15); padding-left: 15px; padding-top: 10px; padding-bottom: 10px; padding-right: 15px">
+<b><a href = "https://colab.research.google.com/drive/1luqL2GJMmPGXQ0T9_7A6YnndvWbgEnxO?usp=sharing"> Link to Colab Notebook </a></b>
+</div>
 
 In the [previous posting](https://buomsoo-kim.github.io/attention/2020/02/07/Attention-mechanism-6.md/), we tried implementing another variant of the Seq2Seq model presented by [Sutskever et al. (2014)](https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf). Two key improvements in the variant, i.e., deep LSTM layers and reversing the order of input sequences, are claimed to significantly enhance the performances, especially in the existence of big data. 
 

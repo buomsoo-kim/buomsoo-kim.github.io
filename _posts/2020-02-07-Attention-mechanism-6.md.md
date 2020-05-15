@@ -7,6 +7,10 @@ tags: [Attention mechanism, Deep learning, Pytorch]
 
 # Attention Mechanism in Neural Networks - 6. Sequence-to-Sequence (Seq2Seq) (5)
 
+<div style="background-color:rgba(94,151,242,.15); padding-left: 15px; padding-top: 10px; padding-bottom: 10px; padding-right: 15px">
+<b><a href = "https://colab.research.google.com/drive/13r258kYenOkZS-YNCMAVhAKnqmAELhGw?usp=sharing"> Link to Colab Notebook </a></b>
+</div>
+
 In the [previous posting](https://buomsoo-kim.github.io/attention/2020/01/25/Attention-mechanism-4.md/), we trained and evaluated the RNN Encoder-Decoder model by [Cho et al. (2014)](http://emnlp2014.org/papers/pdf/EMNLP2014179.pdf) with Pytorch. In this posting, let's look into another very similar, yet subtly different, Seq2Seq model proposed by [Sutskever et al. (2014)](https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf)
 
 ## Model

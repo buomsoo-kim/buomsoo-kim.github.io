@@ -7,6 +7,10 @@ tags: [Attention mechanism, Deep learning, Pytorch]
 
 # Attention Mechanism in Neural Networks - 4. Sequence-to-Sequence (Seq2Seq) (3)
 
+<div style="background-color:rgba(94,151,242,.15); padding-left: 15px; padding-top: 10px; padding-bottom: 10px; padding-right: 15px">
+<b><a href = "https://colab.research.google.com/drive/1n_h0yl6WidPFHvaQtu_tXq0BvuUtQKvt?usp=sharing"> Link to Colab Notebook </a></b>
+</div>
+
 In the [previous posting](https://buomsoo-kim.github.io/attention/2020/01/12/Attention-mechanism-3.md/), we saw how to prepare machine translation data for Seq2Seq. In this posting, let's implement the Seq2Seq model delineated by [Cho et al. (2014)](http://emnlp2014.org/papers/pdf/EMNLP2014179.pdf) with Pytorch with the prepared data.
 
 
