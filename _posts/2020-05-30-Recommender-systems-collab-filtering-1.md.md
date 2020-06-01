@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Implementing recommender systems with Python - (1) Introduction to recommender systems
+title: Recommender systems with Python - (1) Introduction to recommender systems
 category: Recommender systems
 tags: [Python, Recommender systems, Collaborative filtering]
 ---
