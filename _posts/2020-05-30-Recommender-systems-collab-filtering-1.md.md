@@ -24,15 +24,18 @@ Although there is a fine line between them, there are largely three types of rec
 Content-based systems try to recommend items that are *similar to the items that the user likes*. For instance, if a Netflix user likes the movie Iron Man, we can recommend the movie Avengers to the user since Iron Man and Avengers are likely to have high content similarity. Alternatively, we can find a set of similar users and see which items those users like, among items that the user of interest had not liked yet.
 
 
+
 <p align = "center">
 <img src ="/data/images/2020-05-31/0.png" width = "500px" class="center">
 </p>
 
 
+
 For instance, Amazon's "products related to this item" recommendations are likely to be suggested by picking items that are similar to the product that the user is viewing.
 
+
 <p align = "center">
-<img src ="/data/images/2020-05-31/1.PNG" width = "800px" class="center">
+<img src ="/data/images/2020-05-31/1.PNG" width = "700px" class="center">
 </p>
 
 
@@ -41,9 +44,8 @@ As many could have noticed, measuring the similarity between items is a fundamen
 
 <p align = "center">
 <img src ="https://upload.wikimedia.org/wikipedia/commons/b/b9/TheProductSpace.png" width = "600px" class="center">
+[Image Source](https://en.wikipedia.org/wiki/The_Product_Space)
 </p>
-
-[Source](https://en.wikipedia.org/wiki/The_Product_Space)
 
 
 However, defining such similarity function might be tricky and burdensome since many items do not have explicit features that can be easily quantified. Besides, it can require a great amount of compuational resources to calculate pairwise similarity scores, especially when the number of products is large. Fortunately, some of those limitations can be tackled with the *collaborative filtering* approach, which will be explained in the following subsection.
@@ -60,21 +62,22 @@ Going back to the movie recommendations example, let us assume that there are th
 </p>
 
 
-As mentioned, collaborative filtering is where a great amount of research has been carried out recently. Besides, collaborative filtering methods are widely used in practice to recommend various products to users. One of the reasons is that with advancements in information technology, we now have the tools to store, process, and analyze large-scale *interaction patterns* between users and items. This was not possible before tech giants such as FAANG started to recognize the value of such data and utilize them for recommendation.
+As mentioned, collaborative filtering is where a great amount of research has been carried out recently. Besides, collaborative filtering methods are widely used in practice to recommend various products to users. One of the reasons is that with advancements in information technology, we now have the tools to store, process, and analyze large-scale *interaction patterns* between users and items. This was not possible before tech giants such as [FAANG](https://en.wikipedia.org/wiki/Big_Tech) started to recognize the value of such data and utilize them for recommendation.
 
 <p align = "center">
-<img src ="/data/images/2020-05-31/3.PNG" width = "800px" class="center">
+<img src ="/data/images/2020-05-31/3.PNG" width = "500px" class="center">
+[Image Source: Gomez-Uribe and Hunt 2015]
 </p>
 
-[Source: Gomez-Uribe and Hunt 2015]
 
 
 Nevertheless, collaborative filtering systems are far from perfect. The most critical one arises from the classical cold-start problem, in which we do not have any past record of a user. In such case, it is difficult to find users that have similar preferences and to recommend items, accordingly. Assume that a new user (D) creates an account to a streaming service. We do not have information, so it is hard to make a recommendation for D. And this is why Netflix asks for the shows that you liked when you first make your account - to avoid the cold start problem and start recommendation right away, which accounts for 80% of total streaming.
 
 
 <p align = "center">
-<img src ="/data/images/2020-05-31/4.png" width = "800px" class="center">
+<img src ="/data/images/2020-05-31/4.png" width = "700px" class="center">
 </p>
+
 
 
 ## Hybrid recommender systems
