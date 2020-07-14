@@ -16,7 +16,7 @@ With that said, in this posting series, let's delve into recommender systems and
 
 # Types of recommender systems
 
-Although there is a fine line between them, there are largely three types of recommender systems. They are **_(1) content-based, (2) collaborative filtering, and (3) hybrid_** recommender systems. Let's have a brief look at each of them and what are their pros and cons.
+Although there is a fine line between them, there are largely three types of recommender systems. They are **(1) content-based, (2) collaborative filtering **, and **(3) hybrid recommender systems**. Let's have a brief look at each of them and what are their pros and cons.
 
 
 ## Content-based recommender systems
@@ -75,7 +75,7 @@ Nevertheless, collaborative filtering systems are far from perfect. The most cri
 
 
 <p align = "center">
-<img src ="/data/images/2020-05-31/4.png" width = "700px" class="center">
+<img src ="/data/images/2020-05-31/4.png" width = "500px" class="center">
 </p>
 
 
