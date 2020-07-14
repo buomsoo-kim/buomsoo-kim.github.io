@@ -137,7 +137,6 @@ class Encoder(nn.Module):
   def __init__(self, vocab_size, hidden_size, embedding_dim):
     super(Encoder, self).__init__()
     self.hidden_size = hidden_size
-    self.num_layers = num_layers
 
     self.embedding = nn.Embedding(vocab_size, embedding_dim)
     self.lstm = nn.LSTM(embedding_dim, hidden_size)
@@ -159,7 +158,6 @@ class Decoder(nn.Module):
   def __init__(self, vocab_size, hidden_size, embedding_dim):
     super(Decoder, self).__init__()
     self.hidden_size = hidden_size
-    self.num_layers = num_layers
 
     self.embedding = nn.Embedding(vocab_size, embedding_dim)
     self.lstm = nn.LSTM(embedding_dim, hidden_size)
