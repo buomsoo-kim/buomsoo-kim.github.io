@@ -36,11 +36,18 @@ There are largely two branches of CF. The memory-based (aka heuristic-based or n
 [Image source: Koren et al.]
 </p>
 
+Advantages of memory-based methods include, but are not limited to:
+
+* Simplicity: intuitive and simple to implement.
+* Justifiability: results are interpretable and the reasons for recommendation can be inferred by examining neighbors in most cases.
+* Efficiency: does not require large-scale model training and neighbors can be pre-computed and stored.
+* Stability: less affected by the addition of users, items, and ratings.
+
 
 There are two methods to implement memory-based CF systems - (1) user-based and (2) item-based. The user-based approach first finds similar users to a user of interest, i.e., *neighbors.* Then, the rating for a new item is inferred based on rating patterns of the neighbors. In contrast, the rating for an item is predicted with ratings of the user for items that are similar to the item of interest. We will see how these two approaches differ in detail in the next postings. 
 
 <p align = "center">
-<img src ="/data/images/2020-07-14/4.PNG" width = "400px" class="center">
+<img src ="/data/images/2020-07-14/4.PNG" width = "700px" class="center">
 [Amazon's item-based recommendation]
 </p>
 
