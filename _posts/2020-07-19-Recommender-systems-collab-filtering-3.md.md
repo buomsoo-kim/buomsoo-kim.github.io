@@ -64,7 +64,7 @@ Memory-based methods borrow intuition from the [*k*-neareast neighbors (*k*-NN) 
 
 
 <p align = "center">
-<img src ="/data/images/2020-07-19/4.jpg" width = "500px" class="center">
+<img src ="/data/images/2020-07-19/4.png" width = "500px" class="center">
 [<span> <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/KnnClassification.svg/220px-KnnClassification.svg.png">Image source</a></span>]
 </p>
 
