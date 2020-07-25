@@ -23,7 +23,7 @@ The first step is mounting your Google Drive. Run below two lines of code and ge
 
 ```python
 from google.colab import drive
-drive.mount("content/drive")
+drive.mount("/content/drive")
 ```
  
 <p align = "center">
