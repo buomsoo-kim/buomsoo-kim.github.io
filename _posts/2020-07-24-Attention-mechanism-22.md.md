@@ -11,7 +11,7 @@ In a few previous postings, we looked into Transformer and tried implementing it
 
 <p align = "center">
 <img src ="/data/images/2020-07-24/0.jpg" width = "500px" class="center">
-[Image Source](https://en.wikipedia.org/w/index.php?curid=3178421)
+<a href="https://en.wikipedia.org/w/index.php?curid=3178421">[Image Source]</a>
 </p>
 
 As explained in earlier postings, BERT (Bidirectional Encoder Representations from Transformers) is one of the pioneering methods for pre-training with Transformer- and attention-inspired deep learning models. It showed SOTA results in a number of tasks in 2019 and opened a new era of natural language processing. Since then, many Transformer-based language models such as *XLNet, RoBERTa, DistillBERT*, and *ALBERT*, have been proposed. All those variants have slightly different architectures from each other, but it is easier to grasp and apply any of them for your project if you have a firm understanding of BERT. 
@@ -26,14 +26,14 @@ In the abstract, BERT combines unsupervised learning and supervised learning to 
 Unsupervised word embedding models such as [Word2vec](https://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf) and [GloVe](https://www.aclweb.org/anthology/D14-1162.pdf) have become an indispensable part of contemporary NLP systems. However, despite being highly effective in representing semantics and syntactic regularities, they are not trained in an end-to-end manner. That is, a separate classifier using pre-trained embeddings as input features has to be trained. Therefore, more recent methods have been increasingly training the embeddings and classifier simultaneously in a single neural network architecture (e.g., Kim 2014).
 
 <p align = "center">
-<img src ="/data/images/2020-07-24/1.PNG" width = "500px" class="center">
+<img src ="/data/images/2020-07-24/1.PNG" width = "600px" class="center">
 [Kim 2014]
 </p>
 
 Each of the two methods has own pros and cons. We can train word embedding models with a tremendously large unlabled text data, capturing as many language features as possible. Also, the trained embeddings are generalizable - it can be used for virtually any downstream tasks. However, this is based on a strong assumption that syntactic and semantic patterns in corpora are largely similar across different tasks and datasets. Our common sense argues that this is not always the case. Even when the same person is writing, languages used for different tasks and objectives can differ significantly. For instance, vocabularies that I use for Amazon reviews or Tweets will be dramatically different from those that I use for these kind of postings or manuscripts for academic journals.  
 
 <p align = "center">
-<img src ="/data/images/2020-07-24/2.PNG" width = "500px" class="center">
+<img src ="/data/images/2020-07-24/2.PNG" width = "600px" class="center">
 [Devlin et al. 2019]
 </p>
 
