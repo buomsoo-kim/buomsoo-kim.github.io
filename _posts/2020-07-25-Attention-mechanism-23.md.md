@@ -43,12 +43,12 @@ Furthermore, they can be used as input features for various machine learning mod
 However, they are not *contextualized representations* of words. That is, they are unable to model how the meanings of words can differ depending on linguistic contexts, i.e., modeling polysemy. Most words that we use frequently are highly polysemous. For instance, consider the use of word *"bright"* in two sentences below. In the first sentence, the word "bright" is synonymous to "smart" or "intelligent," but in the second sentence, the word is antonymous to "dark."
 
 > Jane was a *bright* student.
-> The room was glowing with *bright*, purplish light pouring down from the ceiling
+> The room was glowing with *bright*, purplish light pouring down from the ceiling.
 
 However, it is difficult to model such context with unsupervised word embedding models such as word2vec and glove since they only look at word-level patterns. Therefore, *contextualized word representation* methods have been proposed recently to model such patterns. [Embeddings from Language Models (ELMo)](https://arxiv.org/pdf/1802.05365.pdf) is one of the successfuly attempts to __*deeply contextualize*__ word vectors. 
 
 <p align = "center">
-<img src ="/data/images/2020-07-25/2.jpg" width = "300px" class="center">
+<img src ="/data/images/2020-07-25/2.gif" width = "300px" class="center">
 <a href="https://en.wikipedia.org/wiki/File:Elmo_from_Sesame_Street.gif#/media/File:Elmo_from_Sesame_Street.gif">[Image Source]</a>
 </p>
 
@@ -64,21 +64,21 @@ As a result, ELMo was able to improve the word representation significantly comp
 Unsupervised pre-training methods, contextualized or not, are somehow limited in terms of applicability since they are not aligned with downstream tasks. That is, they are not specificially tuned for a supervised task of interest. Therefore, NLP researchers started to borrow insights from computer vision, in which the concept of transfer learning has been *en vogue.* In practice, convolutional neural networks (CNN) are rarely trained from scratch nowadays. The image recognition field has standard, widely-accepted large-scale datasets such as CIFAR-10 and ImageNet. The images in those datasets are meticulously tagged and reliably verified by a number of studies. Established deep CNN architectures such as GoogleNet and VGG are pre-trained and publicly avaiable to anyone. Those pre-trained models show a remarkable capability for feature extraction in any given image. A classifier that is suitable for the downstream task, such as image segmentation and object detection, is placed on the top of the CNN and the CNN is retrained. For more information on transfer learning CNNs, please refer to [this posting](https://cs231n.github.io/transfer-learning/) by CS231n (CNN for visual recognition) or Oquab et al (2013).
 
 <p align = "center">
-<img src ="/data/images/2020-07-25/4.PNG" width = "500px" class="center">
+<img src ="/data/images/2020-07-25/4.PNG" width = "700px" class="center">
 [Oquab et al. 2013]
 </p>
 
 Motivated by the intuition in computer vision, Howard and Ruder (2018) proposed the [Universal Language Model Fine-Tuning (ULMFiT)](https://arxiv.org/pdf/1801.06146.pdf). ULMFiT is one of the most successful attempts to apply inductive transfer learning for NLP tasks. It consists of two components - the language model (LM) and classifier. LM is a three-layer LSTM network followed after an embedding layer. First, LM is pre-trained on a general-domain corpus (usually large in scale) then fine-tuned on target task data. Finally, the classifier is fine-tuned on the target task. 
 
 <p align = "center">
-<img src ="/data/images/2020-07-25/3.PNG" width = "500px" class="center">
+<img src ="/data/images/2020-07-25/3.PNG" width = "600px" class="center">
 [Howard and Ruder 2018]
 </p>
 
 OpenAI's [Generative Pretrained Transformer (GPT)](https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf) by Radford et al. (2018) takes a similar approach of *generative pre-training* followed by *discriminative fine-tuning*. Similar to ULMFiT, a standard LM is first pre-trained with an unsupervised corpus. Then, the overall model including the classifier is fine-tuned according to the target task. A novelty in GPT is that they use a multi-layer *Transformer decoder*, which is basically a variant of Transformer (Vaswani et al. 2017). Since different target tasks require different input structures, inputs are transformed depending on the target task. Below figure shows some examples of such transformations.
 
 <p align = "center">
-<img src ="/data/images/2020-07-25/5.PNG" width = "500px" class="center">
+<img src ="/data/images/2020-07-25/5.PNG" width = "700px" class="center">
 [Radford et al. 2018]
 </p>
 
