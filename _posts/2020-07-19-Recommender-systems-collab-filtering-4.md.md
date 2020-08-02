@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Recommender systems with Python - (3) Memory-based collaborative filtering - 1 
+title: Recommender systems with Python - (4) Memory-based collaborative filtering - 1 
 category: Recommender systems
 tags: [Python, Recommender systems, Collaborative filtering]
 ---
