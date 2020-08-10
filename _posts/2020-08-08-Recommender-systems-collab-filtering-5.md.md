@@ -13,7 +13,7 @@ In the [previous posting](https://buomsoo-kim.github.io/recommender%20systems/20
 As in most data mining problems, it is convenient to think users and items as vectors in a user-item interaction matrix. Assume that we are building a movie recommender system. We just started to build it, so there are only five users now, who are **Tony, Willie, Wiggum, Nelson, and Krusty** (BTW, these are my favorite characters in *Simpsons.* Don't ask why lol). They rated six movies, which are *The Godfather, Inception, Leon, The Departed, Pulp Fiction,* and *Forrest Gump,* in a 10-point scale. Once we get data regarding their ratings information, we need to record such data in some consistent format. The most common approach to record such information is creating a table using spreadsheets such as below. 
 
 <p align = "center">
-<img src ="/data/images/2020-08-08/0.png" width = "700px" class="center">
+<img src ="/data/images/2020-08-08/0.png" width = "1000px" class="center">
 </p>
 
 Each row pertains to a user and each column is for a movie. And each element in the table shows rating information __*by a user in the corresponding row of a movie in the corresponding column*__. For instance, the number in the first row, third column is Tony's ratings of the movie *Leon*, which is 8 out of 10. And the number in the fourth row, sixth column is Nelson's rating for the movie *Forrest Gump.* Now, the rating information indicates how users *interacted with* movies, i.e., items. Hence, **user-item interaction matrix** is essentially a fancy name for this table. So don't be afraid of technical terms "interaction" or "matrix" - even you can create a small user-item interaction matrix using Excel or Google Sheets.
