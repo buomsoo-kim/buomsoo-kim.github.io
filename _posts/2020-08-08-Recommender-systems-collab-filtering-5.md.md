@@ -14,6 +14,7 @@ As in most data mining problems, it is convenient to think users and items as ve
 
 <p align = "center">
 <img src ="/data/images/2020-08-08/0.png" width = "700px" class="center">
+</p>
 
 Each row pertains to a user and each column is for a movie. And each element in the table shows rating information __*by a user in the corresponding row of a movie in the corresponding column*__. For instance, the number in the first row, third column is Tony's ratings of the movie *Leon*, which is 8 out of 10. And the number in the fourth row, sixth column is Nelson's rating for the movie *Forrest Gump.* Now, the rating information indicates how users *interacted with* movies, i.e., items. Hence, **user-item interaction matrix** is essentially a fancy name for this table. So don't be afraid of technical terms "interaction" or "matrix" - even you can create a small user-item interaction matrix using Excel or Google Sheets.
 
@@ -26,6 +27,7 @@ If there are much more missing values than positive values, we have a *sparsity 
 
 <p align = "center">
 <img src ="/data/images/2020-08-08/1.PNG" width = "500px" class="center">
+</p>
 
 Thus, in many practical cases, we rely on implicit feedbacks, which are subtle cues that indicate the user's preference. The number of revisits to a movie page and search history can be good examples of implicit feedbacks. But here, let's just focus on *explicit feedbacks,* since they are most straightforward to model. We can come back to implicit feedbacks after we familiarize with explicit feedbacks.
 
