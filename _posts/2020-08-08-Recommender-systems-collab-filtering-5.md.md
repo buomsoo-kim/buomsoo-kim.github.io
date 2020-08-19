@@ -36,6 +36,10 @@ Thus, in many practical cases, we rely on implicit feedbacks, which are subtle c
 
 Now, let's come back to the point that users and items can be represented as vectors. For instance, a vector for Tony in the matrix is $v_{tony} = (10, -1, 8, 10, 9, 4)$ and a vector for Krusty the clown is $v_{krusty} = (6, -1, -1, -1, 8, 10)$. Similarly, vectors for movies can be obtained by column-wise slicing of the matrix. The key advantage of doing this is that we can perform various arithmetic operations and optimization tasks. 
 
+<p align = "center">
+<img src ="/data/images/2020-08-08/Manhattan_distance.svg" width = "400px" class="center">
+</p>
+
 A simplest way to obtained a distance between two users (or items) is to subtract one vector from another and sum the absolute values. This is called *Mahattan distance.* The intuition behind is pretty self-explanatory. The absolute value of element-wise subtraction is **the difference in ratings to that movie by both users.** For instance, since Tony gave 10 scores to *The Godfather* and Krusty gave 6, the absolute difference is 4. In more mathematical terms, the distance in *The Godfather* dimension is 4. Therefore, we are summing up distances in each dimension, i.e., each movie, to obtain an aggregated distance for all movies.  
 
 \begin{equation}
