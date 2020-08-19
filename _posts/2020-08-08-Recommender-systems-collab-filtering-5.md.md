@@ -38,6 +38,7 @@ Now, let's come back to the point that users and items can be represented as vec
 
 <p align = "center">
 <img src ="/data/images/2020-08-08/Manhattan_distance.svg" width = "400px" class="center">
+<a href = "https://en.wikipedia.org/wiki/Taxicab_geometry#/media/File:Manhattan_distance.svg">Image source</a>
 </p>
 
 A simplest way to obtained a distance between two users (or items) is to subtract one vector from another and sum the absolute values. This is called *Mahattan distance.* The intuition behind is pretty self-explanatory. The absolute value of element-wise subtraction is **the difference in ratings to that movie by both users.** For instance, since Tony gave 10 scores to *The Godfather* and Krusty gave 6, the absolute difference is 4. In more mathematical terms, the distance in *The Godfather* dimension is 4. Therefore, we are summing up distances in each dimension, i.e., each movie, to obtain an aggregated distance for all movies.  
