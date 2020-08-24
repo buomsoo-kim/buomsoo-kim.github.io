@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Recommender systems with Python - (5) Memory-based collaborative filtering - 2 
+title: Recommender systems with Python - (6) Memory-based collaborative filtering - 3 
 category: Recommender systems
 tags: [Python, Recommender systems, Collaborative filtering]
 ---
@@ -25,11 +25,11 @@ In the previous posting, we have discussed how to calculate the distance between
 The distance between items can be calculated in a similar manner. We just need to use corresponding columns, instead of rows in this case. We can see that the movie *The Godfather* is more close to the movie *Leon* than the movie *Forrest Gump.* 
 
 \begin{equation}
-|v_{the godfather} - v_{forrest gump}| = |(6, 0, 6, -4)| = 16
+|v_{the \ godfather} - v_{forrest  \ gump}| = |(6, 0, 6, -4)| = 16
 \end{equation}
 
 \begin{equation}
-|v_{the godfather} - v_{leon}| = |(2, -2, 6)| = 10
+|v_{the \ godfather} - v_{leon}| = |(2, -2, 6)| = 10
 \end{equation}
 
 
@@ -57,7 +57,7 @@ The numerator of the metric measures how the ratings by the two users tend to va
 MSD is another popular similarity metric. It is the inverse of the mean squared difference of ratings between users *u* and *v*. MSD is similar to the Pearson Correlation coefficient since it also tries to capture normalized covariant pattenrs between user ratings. However, MSD does not take into account negative correlation since it can only take positive values. 
 
 \begin{equation}
-MSD(u, v) = \frac{|I|}{\sqrt{\displaystyle\sum_{i \in I}(r_{ui} - r_{vi})^2}
+MSD(u, v) = \frac{|I|}{\sqrt{\displaystyle\sum_{i \in I}(r_{ui} - r_{vi})^2}}
 \end{equation}
 
 
