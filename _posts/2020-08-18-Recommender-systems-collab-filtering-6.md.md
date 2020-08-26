@@ -54,7 +54,7 @@ The numerator of the metric measures how the ratings by the two users tend to va
 
 # Mean squared diffrence (MSD)
 
-MSD is another popular similarity metric. It is the inverse of the mean squared difference of ratings between users *u* and *v*. MSD is similar to the Pearson Correlation coefficient since it also tries to capture normalized covariant pattenrs between user ratings. However, MSD does not take into account negative correlation since it can only take positive values. 
+MSD is another popular similarity metric. It is the inverse of the mean squared difference of ratings between users *u* and *v*. Note that it is expressed as *an inverse of the difference* to indicate how similar two users (items) are. Furthermore, MSD is similar to the Pearson Correlation coefficient since it also tries to capture normalized covariant pattenrs between user ratings. Nonetheless, MSD does not take into account negative correlation since it can only take positive values. 
 
 \begin{equation}
 MSD(u, v) = \frac{|I|}{\sqrt{\displaystyle\sum_{i \in I}(r_{ui} - r_{vi})^2}}
@@ -63,7 +63,7 @@ MSD(u, v) = \frac{|I|}{\sqrt{\displaystyle\sum_{i \in I}(r_{ui} - r_{vi})^2}}
 
 # Other similarity metrics
 
-So far, we have seen three widely used similarity (distance) metrics. However, there are many other metrics such as *cosine similarity, Jaccard similarity,* and *Spearman rank correlation*. Furthermore, you can define your own similarity function that suits the problem context! All metrics have their own pros and cons and you can be creative to complement limitations of existing approaches. In the following posting, let's see how we can use calculated similarity metrics to recommend items to a user.
+So far, we have seen three widely used similarity (distance) metrics. However, there are many other metrics such as *cosine similarity, Jaccard similarity,* and *Spearman rank correlation*. As in any other data mining problem, I should say there is no one-size-fits-all method to measure the level of similarity. Furthermore, you can define your own similarity function that suits the problem context! All metrics have their own pros and cons and you can be creative to complement limitations of existing approaches. In the following posting, let's see how we can use calculated similarity metrics to recommend items to a user.
 
 
 # References
