@@ -40,7 +40,7 @@ Here, similar improvements such as weighting and normalization can be employed.
 
 # User- or Item-based, which one is better?
 
-Traditionally, user-based recommendation methods were employed in practice. However, they were reported to have severe scalability and sparsity issues, especially with very large datasets that are prevelant nowadays. Hence, large-scale web applications such as Amazon.com started to move onto item-based collaborative filtering (Sarwar et al. 2001, Linden et al. 2003). In my opinion, both are strong baselines with appealing features such as convenient implementation and explainability of the results. Thus, it would be meaningful to employ both methods and compare the results with more sophisticated methods that we are going to have a look in the following postings.
+Traditionally, user-based recommendation methods were employed in practice. However, they were reported to have severe scalability and sparsity issues, especially with very large datasets that are prevelant nowadays. Hence, large-scale web applications such as Amazon.com started to move onto item-based collaborative filtering (Sarwar et al. 2001, Linden et al. 2003). In my opinion, both are methodologically sound, strong baselines with appealing features such as convenient implementation and explainability of the results. Thus, it would be meaningful to employ both methods and compare the results with more sophisticated methods that we are going to have a look in the following postings.
 
 
 
