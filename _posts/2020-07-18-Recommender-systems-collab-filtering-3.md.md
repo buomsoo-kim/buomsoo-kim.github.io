@@ -99,7 +99,9 @@ Number of rating instances:  1761439
 
 # Prediction and evaluation
 
-There are a few prediction algorithms that can be readily used in Surprise. [The list](https://surprise.readthedocs.io/en/stable/prediction_algorithms_package.html) includes widely-used CF methods such as [k-nearest neighbor](https://surprise.readthedocs.io/en/stable/knn_inspired.html#surprise.prediction_algorithms.knns.KNNBasic) and [probabilistic matrix factorization](https://surprise.readthedocs.io/en/stable/matrix_factorization.html#surprise.prediction_algorithms.matrix_factorization.SVD). But since we haven't looked into the details of those methods, let's use the [```BaselineOnly``` algorithm](https://surprise.readthedocs.io/en/stable/basic_algorithms.html), which predicts "baseline estimates," i.e., calculating ratings using just bias terms of users and items. To put it simply, it does not take into account complex interaction patterns between users and items - considers only "averaged" preference patterns pertaining to users and items. 
+There are a few prediction algorithms that can be readily used in Surprise. [The list](https://surprise.readthedocs.io/en/stable/prediction_algorithms_package.html) includes widely-used CF methods such as [k-nearest neighbor](https://surprise.readthedocs.io/en/stable/knn_inspired.html#surprise.prediction_algorithms.knns.KNNBasic) and [probabilistic matrix factorization](https://surprise.readthedocs.io/en/stable/matrix_factorization.html#surprise.prediction_algorithms.matrix_factorization.SVD). 
+
+But since we haven't looked into the details of those methods, let's use the [```BaselineOnly``` algorithm](https://surprise.readthedocs.io/en/stable/basic_algorithms.html), which predicts "baseline estimates," i.e., calculating ratings using just bias terms of users and items. To put it simply, it does not take into account complex interaction patterns between users and items - considers only "averaged" preference patterns pertaining to users and items. For more information on the baseline model, please refer to [Koren (2010)](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.476.4158&rep=rep1&type=pdf) 
 
 ```python
 clf = BaselineOnly()
@@ -122,4 +124,5 @@ On average, the prediction shows a mean average error (MAE) of 3.42. Not that ba
 
 # References
 
+- Koren, Y. (2010). Factor in the neighbors: Scalable and accurate collaborative filtering. ACM Transactions on Knowledge Discovery from Data (TKDD), 4(1), 1-24.
 - Ricci, F., Rokach, L., & Shapira, B. (2011). Introduction to recommender systems handbook. In Recommender systems handbook (pp. 1-35). Springer, Boston, MA.
