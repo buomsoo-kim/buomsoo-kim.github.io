@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Recommender systems with Python - (3) Introduction to Surprise package in Python
+title: Recommender systems with Python - (8) Memory-based collaborative filtering - 5 (k-NN with Surprise)
 category: Recommender systems
 tags: [Python, Recommender systems, Collaborative filtering]
 ---
