@@ -52,3 +52,18 @@ Now you can import files from the Google Drive using functions such as ```pd.rea
 ```python
 /content/drive/My Drive/location_of_the_file
 ```
+
+For instance, if you want to open ```example.csv``` in ```/content/drive/My Drive/my_directory/```, you can use below command using Pandas:
+
+
+```
+data = pandas.read_csv('/content/drive/My Drive/my_directory/example.csv')
+```
+
+Or, you could also use ```loadtxt()``` in NumPy.
+
+```
+data = numpy.loadtxt('/content/drive/My Drive/my_directory/example.csv', delimiter = ',')
+```
+
+For more information on decoding/parsing various file types, please refer to [this posting](https://buomsoo-kim.github.io/colab/2018/04/15/Colab-Importing-CSV-and-JSON-files-in-Google-Colab.md/)
