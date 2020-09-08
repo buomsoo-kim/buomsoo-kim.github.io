@@ -36,7 +36,11 @@ print("Number of rating instances: ", len(ratings))
 print("Number of unique users: ", len(set([x[0] for x in ratings])))
 print("Number of unique items: ", len(set([x[1] for x in ratings])))
 ```
-
+<div style="background-color:rgba(250, 202, 220,.30); padding-left: 15px; padding-top: 10px; padding-bottom: 10px; padding-right: 15px">
+Number of rating instances:  100000
+<br>Number of unique users:  943
+<br>Number of unique items:  1682
+</div>  
 
 # Training & evaluation
 
