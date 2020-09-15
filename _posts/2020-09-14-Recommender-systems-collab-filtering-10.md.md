@@ -33,7 +33,7 @@ However, the baseline model has apparent limitations. To start with, it doesn't 
 Therefore, more sophisticated models, namely latent factor models, have been proposed to model complex collaborative patterns. Such patterns are highly non-linear and non-transitive. One of the seminal models have been popularized during the Netflix Prize (Funk 2006), the matrix factorization (MF) model. 
 
 <p align = "center">
-<img src ="/data/images/2020-08-08/0.PNG" width = "700px" class="center">
+<img src ="/data/images/2020-08-08/0.png" width = "700px" class="center">
 </p>
 
 Do you remember the user-item interaction matrix comprising rating records? MF models attempt to decompose that matrix into two matrices that characterize users and items, respectively. In doing so, the difference between the predicted ratings and actual ratigns are minimized. We will look into MF in detail in the following postings.
@@ -54,14 +54,14 @@ Deep learning provides a great amount of flexibility in terms of model architect
 
 
 <p align = "center">
-<img src ="/data/images/2020-09-14/0.PNG" width = "500px" class="center">
-[Image source: Cheng et al. (2016)] </a>
+<img src ="/data/images/2020-09-14/0.PNG" width = "300px" class="center">
+[Image source: Cheng et al. (2016)] 
 </p>
 
 
 <p align = "center">
-<img src ="/data/images/2020-09-14/1.PNG" width = "500px" class="center">
-[Image source: He et al. (2017)] </a>
+<img src ="/data/images/2020-09-14/1.PNG" width = "300px" class="center">
+[Image source: He et al. (2017)] 
 </p>
 
 
