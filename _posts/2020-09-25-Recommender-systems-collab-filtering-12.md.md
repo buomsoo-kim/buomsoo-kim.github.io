@@ -20,7 +20,7 @@ As described earlier, MF for recommendation is a loosely defined term to denote 
 We return to the user-item interaction matrix again. To recap, user-item interaction matrices generally lists users and items in rows and columns, respectively. Then, the interaction records between them are represented as corresponding elements in the matrix. Below matrix is an example of an interaction matrix in a movie recommender engine. Rows in the matrix shows how each user rated items (movies) and columns show how each movie is rated by all users. For more information on user-item interaction matrices, please refer to [this posting](https://buomsoo-kim.github.io/recommender%20systems/2020/08/08/Recommender-systems-collab-filtering-5.md/).
 
 <p align = "center">
-<img src ="/data/images/2020-09-25/0.PNG" width = "800px" class="center">
+<img src ="/data/images/2020-09-25/0.png" width = "800px" class="center">
 </p>
 
 
@@ -30,7 +30,7 @@ After the user-item interaction matrix is generated, it has to be decomposed int
 
 
 <p align = "center">
-<img src ="/data/images/2020-09-25/1.PNG" width = "800px" class="center">
+<img src ="/data/images/2020-09-25/1.png" width = "800px" class="center">
 </p>
 
 **The low-dimensional, latent features are characterized by the algorithm such that they capture correlational patterns in previous user-item interaction records.** Therefore, when properly estimated, the user and item matrices can precisely approximate previous user-item interaction patterns and ultimately, used to predict unknown records in the rating matrix. Take the example above of decomposing movie rating matrix. Here, the number of latent features is set to 3 - this is an arbitrary number set by the developer (generally set to a value significantly smaller than the number of users or items). Each row of $Q$ ($q_i$) describes each user and each column of $P$ ($p_j$) describes each movie. And the dot product of $q_i$ and $p_j$ is the estimated rating by the corresponding user to the movie. In a succint equation form,
