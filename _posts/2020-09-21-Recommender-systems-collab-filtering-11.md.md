@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Netflix Challenge - Recommender systems with Python 11
+title: The Netflix Challenge - Collaborative filtering with Python 11
 category: Recommender systems
 tags: [Python, Recommender systems, Collaborative filtering]
 ---
@@ -25,7 +25,7 @@ The Netflix Prize provided the data and incentives for researchers that led to  
 The dataset includes 5-star rating records on 17,770 movies and 480,189 users. The total number of ratings was 100,480,507, which includes the "probe set" of 1,408,395 ratings to validate the performance. Finally, there is a qualifying set of size 2,817,131. The objective is to achieve a root mean squared error (RMSE) under 0.8563
 on the "Quiz subset" of the qualifying set. Finally, the Grand Prize is given to the team with the lowest RMSE score on the remaining ratings in the qualifying set, i.e., "test set." (Töscher et al. 2009)
 
-<p align = "center" style="text-align: center">
+<p align = "center">
 <img src ="/data/images/2020-09-21/1.PNG" width = "400px" class="center">
 [Image source: Töscher et al. 2009]
 </p>
@@ -40,7 +40,7 @@ Moreover, with more and more researchers diving into the field, many variants of
 
 Nonetheless, most MF models and variants have common components, which are *decomposing a (user-item interaction) matrix and learning the latent factors to describe users and items.* The factors are like dimensions to measure the features of items or proclivity of users. In Figure 2 (Koren et al. 2009) below, the two factors (dimensions) describe masculinity/femininity (geared towards males/females) and seriousness (serious/escapist) of movies. Note that not only items (movies) but also users can be described in terms of combinations of factors based on their preference patterns.
 
-<p align = "center" style="text-align: center">
+<p align = "center">
 <img src ="/data/images/2020-09-21/2.PNG" width = "500px" class="center">
 [Image source: Koren et al. 2009]
 </p>
@@ -52,7 +52,7 @@ Nevertheless, individual users' preference patterns are much more complicated an
 MF models do most of those dirty jobs for us. They inductively learn the factors and corresponding user/item representations by examining users' interaction patterns. And this is the most imortant component of most MF algorithms. Various optimization schemes are used for such inference, differentiating many MF models from each other. From the following posting, let's see how established MF models learn those patterns.
 
 
-<p align = "center" style="text-align: center">
+<p align = "center">
 <img src ="https://developers.google.com/machine-learning/recommendation/images/Matrixfactor.svg" width = "600px" class="center">
 <a href="https://developers.google.com/machine-learning/recommendation/collaborative/matrix"> Image source</a>
 </p>
