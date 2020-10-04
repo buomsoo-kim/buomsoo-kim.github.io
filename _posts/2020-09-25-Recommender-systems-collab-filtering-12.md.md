@@ -51,7 +51,7 @@ The optimization process, like in any other machine learning algorithms, lies at
 
 
 \begin{equation}
-minimize \sum_{i, j} (r_{ij} - q_{i}p_{j})^2
+minimize \sum_{i, j} difference(r_{ij} - q_{i}p_{j})
 \end{equation}
 
 
