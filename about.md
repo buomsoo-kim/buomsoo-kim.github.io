@@ -8,11 +8,11 @@ title: About
 
 # Buomsoo (Raymond) Kim
 
-I am Research Associate / Ph.D. student at <a href = "https://www.insiteua.org" target="_blank"> INSITE: Center for Business Intelligence and Analytics </a> at Eller College of Management, University of Arizona. 
+I am a Ph.D. cadidate at the Management Information Systems department, Eller College of Management, University of Arizona. 
 
 My interests include, but are not limited to:
 * ```Deep Learning, Statistical Machine Learning```
-* ```Machine Learning Interpretability```
+* ```Explainable Artificial Intelligence, Machine Learning Interpretability```
 * ```Data Visualization```
 * ```Text Analytics```
 * ```Web Analytics```
@@ -20,5 +20,5 @@ My interests include, but are not limited to:
 
 The aim of this web page is to organize and share my works from research, lectures, and projects.Anyone is welcome to use and contribute to materials exhibited in this page.
 
-* <a href = "https://github.com/buomsoo-kim" target="_blank"> Github </a>
-* [Curriculum Vitae](https://drive.google.com/file/d/1YzMaXy88UM4cXoxVewYkGirnb1R_gLHo/view?usp=sharing)
+* <a href = "https://github.com/buomsoo-kim" target="_blank"> Github repositories</a>
+* [Curriculum Vitae](https://drive.google.com/file/d/1g7xgmvIKoa4BKChe-q0TqXSUR6xwnxXV/view?usp=sharing)
