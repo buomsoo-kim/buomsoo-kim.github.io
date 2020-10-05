@@ -13,7 +13,7 @@ In the [previous posting](https://buomsoo-kim.github.io/recommender%20systems/20
 As briefly discussed earlier, virtually every MF model essentially tries to minimize the difference between observed and predicted rating. And predicted rating is the dot product of corresponding user ($q_u$) and item  ($p_i$) latent factors. Therefore, we get the basic optimization scheme:
 
 \begin{equation}
-minimize \sum_{u, i} difference(r_{ui} - q_{u}p_{i})
+minimize \sum_{u, i} difference(r_{ui} - q_{u}^{T}p_{i})
 \end{equation}
 
 
@@ -31,13 +31,13 @@ It has two distinct features from the vanilla MF that we have seen earlier - (1)
 
 
 \begin{equation}
-\hat{r_{ui}} = \mu + b_u + b_i + q_{u}p_{i}
+\hat{r_{ui}} = \mu + b_u + b_i + q_{u}^{T}p_{i}
 \end{equation}
 
 where $\mu$ is the overall average rating. Also, the squared error is regularized to prevent overfitting to a user and/or item. By adding the two to the optimization objective, SVD generally demonstrates a superior performance over validation test data. 
 
 \begin{equation}
-minimize \sum_{u, i} (r_{ui} - (\mu + b_u + b_i + q_{u}p_{i}))^2 + \lambda(b_u^2 + b_i^2 + {\parallel q_u \parallel}^2 + {\parallel p_i \parallel}^2)
+minimize \sum_{u, i} (r_{ui} - (\mu + b_u + b_i + q_{u}^{T}p_{i}))^2 + \lambda(b_u^2 + b_i^2 + {\parallel q_u \parallel}^2 + {\parallel p_i \parallel}^2)
 \end{equation}
 
 
@@ -48,8 +48,14 @@ A simple stochastic gradient descent (SGD) algorithm can be applied to update th
 
 \begin{equation}
 b_u \leftarrow b_u + \gamma (e_{ui} - \lambda b_u) \\
+\end{equation}
+\begin{equation}
 b_i \leftarrow b_i + \gamma (e_{ui} - \lambda b_i) \\
+\end{equation}
+\begin{equation}
 q_u \leftarrow q_u + \gamma (e_{ui} - \lambda q_u) \\
+\end{equation}
+\begin{equation}
 p_i \leftarrow p_i+ \gamma (e_{ui} - \lambda p_i) \\
 \end{equation}
 
@@ -67,7 +73,18 @@ To model the implicit feedback, an additional term is added to $q_u$ to represen
 q_u + {|R(u)|}^{-1/2} + \sum_{j \in R(u)} y_j
 \end{equation}
  
-where $R(u)$ is the set of items rated by the user $u$ and $y_j$ is anothger factor vector to represent each item in $R(u)$. Hence, to represent a user, SVD++ combines the user factor learned from explicit ratings ($q_u$) and implicit information from items that the user has rated (or searched, shared, visited, etc.) previously ($R(u)$). In other words, it *combines the model-based and memory-based approaches in a single equation.* 
+where $R(u)$ is the set of items rated by the user $u$ and $y_j$ is anothger factor vector to represent each item in $R(u)$. Hence, to represent a user, SVD++ combines the user factor learned from explicit ratings ($q_u$) and implicit information from items that the user has rated (or searched, shared, visited, etc.) previously ($R(u)$). In other words, it *combines the model-based and memory-based approaches in a single equation.* As a resul, it generally shows superior performances to both SVD and memory-based models such as k-NN.
+
+
+According to the changes in the user representations, the equation for rating estimation is modified as follows:
+
+
+\begin{equation}
+\hat{r_{ui}} = \mu + b_u + b_i + (q_{u} + {|R(u)|}^{-1/2} + \sum_{j \in R(u)} y_j)^{T}(p_{i})
+\end{equation}
+
+
+The parameters can be updated using SGD, similar to the learning scheme for SVD. Just note that we have additional parameters to run, i.e., $y_j$'s, for implicit information. 
 
 
 # References
