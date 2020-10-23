@@ -64,6 +64,12 @@ From my experience, two of the most important hyperparameters when running the s
 
 Here let's try grid search, which is trying all possible combinations of specified hyperparameter choices. For more information on hyperparameter optimization, please refer to [this Wikipedia article](https://en.wikipedia.org/wiki/Hyperparameter_optimization). Below code runs 4X4 grid search using five-fold cross validation and prints out the best MAE and hyperparameter combinations that yielded the best score.
 
+\begin{tabular}{ccc}
+I'm totally text    &     Me To    &    I'm Also text\\
+This means that     &     You can  &    Easily just put\\
+Math in each entry!  &    $\alpha$ &    $ \frac{cool math}{here}$
+\end{tabular}
+
 ```python
 from surprise.model_selection import GridSearchCV
 
