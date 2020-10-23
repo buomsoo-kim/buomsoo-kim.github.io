@@ -60,15 +60,13 @@ But again, don't be discouraged too early. Remember the first k-NN model that we
 
 Remember the accuracy scores fluctuated as we changed $k$ when implementing k-NN models? We also learned that $k$ is a hyperparameter that should be determined prior to training a machine learning model. We can do a similar thing here, but with different hyperparameters. 
 
-From my experience, two of the most important hyperparameters when running the stochastic gradient descent (SGD) algorithm are __*learning rate*__ and __*number of epochs*__. Learning rate is the value $\gamma$ that is used to update the parameters and number of epochs counts how many parameter updates that the model is to carry out. 
+From my experience, two of the most important hyperparameters when running the stochastic gradient descent (SGD) algorithm are __*learning rate*__ and __*number of epochs*__. Learning rate is the value $\gamma$ that is used to update the parameters and number of epochs counts how many parameter updates that the model is to carry out. The default settings for learning rate and number of epochs are 0.005 and 20, respectively. However, this might not be the optimal setting for our data.
 
-Here let's try grid search, which is trying all possible combinations of specified hyperparameter choices. For more information on hyperparameter optimization, please refer to [this Wikipedia article](https://en.wikipedia.org/wiki/Hyperparameter_optimization). Below code runs 4X4 grid search using five-fold cross validation and prints out the best MAE and hyperparameter combinations that yielded the best score.
+Hence, let's try grid search, which is an optimization scheme trying all possible combinations of specified hyperparameter choices. For more information on hyperparameter optimization, please refer to [this Wikipedia article](https://en.wikipedia.org/wiki/Hyperparameter_optimization). Below code runs grid search using five-fold cross validation and prints out the best MAE and hyperparameter combinations that yielded the best score. Specifically, we try 16 (4 by 4) possible combinations of two parameters: 
 
-\begin{tabular}{ccc}
-I'm totally text    &     Me To    &    I'm Also text\\
-This means that     &     You can  &    Easily just put\\
-Math in each entry!  &    $\alpha$ &    $ \frac{cool math}{here}$
-\end{tabular}
++ __learning rate__: (5, 10, 20, 30)
++ __number of epochs__: (.0025, .005, .001, .01)
+
 
 ```python
 from surprise.model_selection import GridSearchCV
