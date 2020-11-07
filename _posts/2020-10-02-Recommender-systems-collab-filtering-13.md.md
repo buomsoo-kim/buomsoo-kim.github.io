@@ -73,7 +73,7 @@ To model the implicit feedback, an additional term is added to $q_u$ to represen
 q_u + {|R(u)|}^{-1/2} + \sum_{j \in R(u)} y_j
 \end{equation}
  
-where $R(u)$ is the set of items rated by the user $u$ and $y_j$ is anothger factor vector to represent each item in $R(u)$. Hence, to represent a user, SVD++ combines the user factor learned from explicit ratings ($q_u$) and implicit information from items that the user has rated (or searched, shared, visited, etc.) previously ($R(u)$). In other words, it *combines the model-based and memory-based approaches in a single equation.* As a resul, it generally shows superior performances to both SVD and memory-based models such as k-NN.
+where $R(u)$ is the set of items rated by the user $u$ and $y_j$ is anothger factor vector to represent each item in $R(u)$. Hence, to represent a user, SVD++ combines the user factor learned from explicit ratings ($q_u$) and implicit information from items that the user has rated (or searched, shared, visited, etc.) previously ($R(u)$). In other words, it *combines the model-based and memory-based approaches in a single equation.* As a result, it generally shows superior performances to both SVD and memory-based models such as k-NN.
 
 
 According to the changes in the user representations, the equation for rating estimation is modified as follows:
@@ -87,9 +87,13 @@ According to the changes in the user representations, the equation for rating es
 The parameters can be updated using SGD, similar to the learning scheme for SVD. Just note that we have additional parameters to run, i.e., $y_j$'s, for implicit information. 
 
 
+One apparent drawback of SVD++ is that it is not entirely *model-based.* That is, ${|R(u)|}^{-1/2} + \sum_{j \in R(u)} y_j$ term has to be calculated for each user, possibly making the training process significantly slower. Also, the model should be entirely re-trained when a new user is added, a.k.a. the cold-start problem. There are methods such as *asymmetric SVD* (Koren 2008) to mitigate such problems, which we will see later.
+
+
 # References
 
 
 - Funk, S. (2006) Netflix Update: Try This at Home. (https://sifter.org/~simon/journal/20061211.html)
+- Koren, Y. (2008, August). Factorization meets the neighborhood: a multifaceted collaborative filtering model. In Proceedings of the 14th ACM SIGKDD international conference on Knowledge discovery and data mining (pp. 426-434).
 - Koren, Y., Bell, R., & Volinsky, C. (2009). Matrix factorization techniques for recommender systems. Computer, 42(8), 30-37.
 - Ricci, F., Rokach, L., & Shapira, B. (2011). Introduction to recommender systems handbook. In Recommender systems handbook (pp. 1-35). Springer, Boston, MA.
