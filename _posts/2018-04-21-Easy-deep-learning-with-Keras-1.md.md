@@ -5,6 +5,9 @@ category: Keras
 tags: [Python, Keras, Deep Learning, 케라스]
 ---
 
+> Update (2020/11/15):텐서플로 최신 버전과 Google Colab 지원을 위해 본 포스팅 시리즈의 소스 코드가 업데이트 되었습니다. [Github Repo](https://github.com/buomsoo-kim/Easy-deep-learning-with-Keras)의 ipynb 파일을 확인해 주시기 바랍니다!
+
+
 # 다층 퍼셉트론 1 (Regression with MLP)
 
 Objective: 케라스로 다층 퍼셉트론 모델을 만들고, 이를 회귀(regression) 문제에 적용해 본다
