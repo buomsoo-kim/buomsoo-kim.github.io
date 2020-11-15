@@ -120,7 +120,21 @@ Thus, the Transformer architecture discards the convolution and recursive operat
 <i>[Image source: Devlin et al. (2018)]</i>
 </p>
 
-The intuition behind Transformer inspired a number of researchers, leading to the development of self-attention-based models such as Bidirectional Encoder Representations from Transformers (BERT) by [Devlin et al. (2019)](https://arxiv.org/pdf/1810.04805.pdf?source=post_elevate_sequence_page---------------------------).  BERT pretrains bidirectional representations with the improved Transformer architecture. BERT shows state-of-the-art performance in various NLP tasks as of 2019. And there have a number of transformer-based language models that showed breakthrough results such as XLNet, RoBERTa, GPT-2, and ALBERT.
+The intuition behind Transformer inspired a number of researchers, leading to the development of self-attention-based models such as Bidirectional Encoder Representations from Transformers (BERT) by [Devlin et al. (2019)](https://arxiv.org/pdf/1810.04805.pdf?source=post_elevate_sequence_page---------------------------). BERT pretrains bidirectional representations with the improved Transformer architecture. BERT shows state-of-the-art performance in various NLP tasks as of 2019. And there have a number of transformer-based language models that showed breakthrough results such as XLNet, RoBERTa, GPT-2, and ALBERT.
+
+
+## Vision Transformer
+
+In the last few years, Transformer definitely revolutionalized the NLP field. Transformer-inspired models such as GPT and BERT showed record-breaking results on numerous NLP tasks. With that said, Dosovitskiy et al. (2020) demonstrated claimed that Transformer can be used for computer vision tasks, which is another *AI-complete problem.* This might sound a bit outdated since attention has been used for image-related tasks fairly extensively, e.g., Xu et al. (2015). 
+
+However, Dosovitskiy et al. (2020)'s claim is revolutionary since in their proposed model architecture, Transformer virtually replaces convolutional layers rather than complementing them. Furthermore, the *Vision Transformer* outperforms state-of-the-art, large-scale CNN models when trained with sufficient data. This might mean that CNN's golden age, which lasted for years, can come to end similar to that of RNN by Transformer.
+
+<p align = "center">
+<img src ="/data/images/2020-01-01/12.png" width = "600px"/>
+<i>[Image source: Dosovitskiy et al. (2020) ]</i>
+</p>
+
+
 
 
 ## Other applications
@@ -147,6 +161,7 @@ In this posting, the concept of attention mechanism was gently introduced and ma
 - [Yang et al. 2016](https://www.aclweb.org/anthology/N16-1174.pdf)
 - [Vaswani et al. (2017)](https://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf)
 - [Devlin et al. (2019)](https://arxiv.org/pdf/1810.04805.pdf?source=post_elevate_sequence_page---------------------------)
+- [Dosovitskiy et al. (2020)](https://arxiv.org/pdf/2010.11929.pdf)
 
 ## Videos for more intuitive and in-depth explanations on attention...
 
