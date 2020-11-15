@@ -5,6 +5,9 @@ category: Attention
 tags: [Attention mechanism, Deep learning, Pytorch]
 ---
 
+> Updated 11/15/2020: Visual Transformer
+
+
 # Attention Mechanism in Neural Networks - 1. Introduction
 
 Attention is arguably one of the most powerful concepts in the deep learning field nowadays. It is based on a common-sensical intuition that we **"attend to"** a certain part when processing a large amount of information. 
@@ -129,8 +132,9 @@ In the last few years, Transformer definitely revolutionalized the NLP field. Tr
 
 However, Dosovitskiy et al. (2020)'s claim is revolutionary since in their proposed model architecture, Transformer virtually replaces convolutional layers rather than complementing them. Furthermore, the *Vision Transformer* outperforms state-of-the-art, large-scale CNN models when trained with sufficient data. This might mean that CNN's golden age, which lasted for years, can come to end similar to that of RNN by Transformer.
 
+
 <p align = "center">
-<img src ="/data/images/2020-01-01/12.png" width = "600px"/>
+<img src ="/data/images/2020-01-01/12.PNG" width = "600px"/>
 <i>[Image source: Dosovitskiy et al. (2020) ]</i>
 </p>
 
