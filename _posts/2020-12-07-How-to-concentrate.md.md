@@ -21,7 +21,7 @@ This quote by Von Neumann, a great mathematician/physicist, that Swami Sarvapriy
 
 <p align = "center">
 <img src ="/data/images/2020-12-09/0.jpg" width = "400px" class = "center">
-[Image source](https://occ-0-1068-92.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABSbpqs6JAOMic369rooO6Q7bqPSDclenFVfHkGK1LPHycRPPxDRL3xNKteLy1TAcWK8HfTQS0OYtcHJlf-lXtaxT5gvfr53NsF2lEuXf7rT4bTyRqqO5lSPcL7h_JA.jpg?r=9dd)
+<a href = "https://occ-0-1068-92.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABSbpqs6JAOMic369rooO6Q7bqPSDclenFVfHkGK1LPHycRPPxDRL3xNKteLy1TAcWK8HfTQS0OYtcHJlf-lXtaxT5gvfr53NsF2lEuXf7rT4bTyRqqO5lSPcL7h_JA.jpg?r=9dd">[Image source]</a>
 </p>
 
 In short, modern information technologies, such as social media and mobile devices, are very detrimental to concentration. As competition gets fiercer and fiercer in the digital space, many IT companies are increasingly offering their products gratuitously. We can use many web and mobile applications without charge, such as Google search, YouTube, Facebook, Instagram, and Whatsapp, to name just a few. However, instead of charging users explicitly, they are striving to grab their attention. And the user's engagement while using the service is a new type of currency in the attention economy of the 21st century. As users use an application more frequently and subconciously, the company creates monetary value from them by advertising, subsidy, freemium services, etc. If you want to know more on how IT companies make money in free economy, refer to literature on [two-sided markets](https://en.wikipedia.org/wiki/Two-sided_market) and [attention economy](https://en.wikipedia.org/wiki/Attention_economy).
@@ -56,8 +56,8 @@ Persistence is the key in concentration as well. Many people think mental capabi
 ## Raja yoga - the best method for concentration.
 
 <p align = "center">
-<img src ="/data/images/2020-12-09/1.jpg" width = "400px" class = "center">
-[Image source](https://www.vedantany.org/emblem-of-ramakrishna-order/)
+<a href = "https://www.vedantany.org/emblem-of-ramakrishna-order/"><img src ="/data/images/2020-12-09/1.jpg" width = "200px" class = "center">
+[Image source]</a>
 </p>
 
 There is a snake surrounding the emblem of Ramakrishna order, which was designed by Swami Vivekananda himself. The serpent implies (raja) yoga and awakened kundalini. When a snake is approaching a prey, it is intensely focusing. Also, it is extending its hood, which can be interpreted as cutting out all distractions. Finally, it holds onto one thing for a long period of time. To summarize, three key aspects of concentration are (1) focusing on one thing, (2) removing all other things that can be distractions, and (3) keeping the attention for as long as possible. 
