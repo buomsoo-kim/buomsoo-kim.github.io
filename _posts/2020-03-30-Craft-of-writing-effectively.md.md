@@ -12,7 +12,7 @@ Writing is one of the most salient skills in professional life of individuals, e
 
 # About the speaker
 
-[Lawrence McEnerney](https://www.warrior-scholar.org/larry-mcenerney) is the Director of Writing Programs at the University of Chicago. Besides teaching students how to write and speak, he serves as Resident Master and consulted numerous clients such as universities, institues, and businesses on effective communication.
+Lawrence McEnerney is the Director of Writing Programs at the University of Chicago. Besides teaching students how to write and speak, he serves as Resident Master and consulted numerous clients such as universities, institues, and businesses on effective communication.
 
 Below is the summarization of his talk on the craft of writing.
 
