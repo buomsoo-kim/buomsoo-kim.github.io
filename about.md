@@ -8,17 +8,13 @@ title: About
 
 # Buomsoo (Raymond) Kim
 
-I am a Ph.D. cadidate at the Management Information Systems department, Eller College of Management, University of Arizona. 
+Ph.D. cadidate at the Management Information Systems department, Eller College of Management, University of Arizona. 
 
-My interests include, but are not limited to:
-* ```Deep Learning, Statistical Machine Learning```
-* ```Explainable Artificial Intelligence, Machine Learning Interpretability```
-* ```Data Visualization```
-* ```Text Analytics```
-* ```Web Analytics```
-* ```Network Science```
+## Research Interests
+- Methodology: Interpretable Machine Learning, Graph Analytics, Recommender Systems, Natural Language Processing, Field Experiments
+- Domain: Healthcare, Mobile Applications, Public Policy, Environmental Science
 
-The aim of this web page is to organize and share my works from research, lectures, and projects.Anyone is welcome to use and contribute to materials exhibited in this page.
+## Resources
 
-* <a href = "https://github.com/buomsoo-kim" target="_blank"> Github repositories</a>
 * [Curriculum Vitae](https://drive.google.com/file/d/1g7xgmvIKoa4BKChe-q0TqXSUR6xwnxXV/view?usp=sharing)
+* <a href = "https://github.com/buomsoo-kim" target="_blank"> Github repositories</a>
